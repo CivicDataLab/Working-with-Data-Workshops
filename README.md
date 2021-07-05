@@ -8,6 +8,12 @@
 4. Telling stories using data
 5. Introduction to scripting languages
 
+## Timelines
+
+| Session | Topic | Date | Resources | Session Recording |
+| ------- | ----- | ------ | --------- | ----------------- |
+| 1 | Data Collection | 16/07/21 | [Link]() | [Link]() |
+
 ## Moderators
 
 1. [Apoorv Anand](mailto:apoorv@civicdatalab.in)
