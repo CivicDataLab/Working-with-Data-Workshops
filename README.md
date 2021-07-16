@@ -12,7 +12,7 @@
 
 | Session | Topic | Date | Slide Deck | Session Recording | Notes |
 | ------- | ----- | ------ | --------- | ----------------- |------|
-| 1 | Data Collection | 16/07/21 | [Link](https://civicdatalab.in/Working-with-Data-Workshops/) | [Link](https://youtu.be/DwfiBPyxlLM) | [Link](https://docs.google.com/document/d/1ZBMfqCvjPmqRQr2cUpVazK81SYK4GFJK3qf3uXxJoOY/edit?usp=sharing) |
+| 1 | Data Collection | 16/07/21 | [Link](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.html) | [Link](https://youtu.be/DwfiBPyxlLM) | [Link](https://docs.google.com/document/d/1ZBMfqCvjPmqRQr2cUpVazK81SYK4GFJK3qf3uXxJoOY/edit?usp=sharing) |
 
 Note: You can use keyboard shortcuts for browsing the slide deck. Press `h` to view all shortcuts. 
 
