@@ -17,6 +17,14 @@ output:
 xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
 ```
 
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
 style_mono_accent(base_color = "#3F88C5",colors = c(
@@ -399,11 +407,9 @@ xaringanExtra::use_panelset()
 - [3 common bad practices in sharing tables and spreadsheets and how to avoid them](http://luisdva.github.io/pls-don't-do-this/)
 
 ---
-
-# Extracting data from PDF files
-
 class: center, middle
 
+# Extracting data from PDF files
 
 The essential feature of a portable document is that it looks the same (with exceptions for accessible views or views on mobile)wherever and whenever it is viewed or printed. This is a basis for reliable communication, when a document is sent, published, archived, or distributed, as the basis for further discussion<sup>1</sup>
 
@@ -412,10 +418,9 @@ The essential feature of a portable document is that it looks the same (with exc
 ]
 
 ---
+class: center, middle
 
 # PDF for data and content
-
-class: center, middle
 
 
 ![](assets/pdf-1.png)
