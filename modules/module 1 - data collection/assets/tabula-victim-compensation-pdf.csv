@@ -1,0 +1,38 @@
+S.NO,SLSA,"Applicationsreceived directlyby Legal ServiceInstitutions (A)","Applications /orders marked /directed by anyCourt (B)","Applicationsreceivedincluding CourtOrders (A+B)","ApplicationsDecided","ApplicationsPending","CompensationAwarded in(Rs.)"
+1,"Andaman &Nicobar Islands",0,0,0,0,0,0
+2,Andhra Pradesh,43,43,86,17,71,6050000
+3,Arunachal Pradesh,21,2,23,17,0,5650000
+4,Assam,284,580,864,777,617,79262000
+5,Bihar,625,271,896,405,581,68825707
+6,Chhattisgarh,366,515,881,488,635,38978000
+7,"Dadra & NagarHaveli",2,4,6,5,0,1150000
+8,Daman & Diu,0,0,0,0,0,0
+9,Delhi,1050,1605,2655,2574,1361,672671700
+10,Goa,0,0,0,0,0,0
+11,Gujarat,457,225,682,310,545,87854870
+12,Haryana,58,449,507,505,100,150470000
+13,Himachal Pradesh,138,146,284,127,5,15667500
+14,Jammu & Kashmir,0,30,30,30,0,6025000
+15,Jharkhand,238,560,798,484,1149,98935000
+16,Karnataka,614,329,943,839,1521,110382213
+17,Kerala,143,184,327,119,159,25079582
+18,Lakshadweep,0,0,0,0,0,0
+19,Madhya Pradesh,821,748,1569,961,570,92249103
+20,Maharashtra,124,67,191,116,272,9176000
+21,Manipur,0,12,12,0,47,0
+22,Meghalaya,74,17,91,75,0,785000
+23,Mizoram,181,26,207,44,78,11820000
+24,Nagaland,0,19,19,18,12,2465000
+25,Odisha,1503,233,1736,1219,2312,154859000
+26,Puducherry,0,9,9,1,0,750000
+27,Punjab,663,151,814,293,312,60538081
+28,Rajasthan,978,1032,2010,2242,451,327520000
+29,Sikkim,0,27,27,27,0,2000000
+30,Tamil Nadu,666,68,734,274,826,36262000
+31,Telengana,3,29,32,33,28,2200000
+32,Tripura,51,23,74,47,52,14315000
+33,U. T. Chandigarh,12,10,22,16,16,3804890
+34,Uttar Pradesh,59,0,59,59,0,10887500
+35,Uttarakhand,10,40,50,55,33,12095000
+36,West Bengal,208,234,442,246,8,44420000
+"",Grand Total,9392,7688,17080,12423,11761,2153148146

@@ -19,41 +19,46 @@ xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
-style_mono_accent(base_color = "#3F88C5")
+style_mono_accent(base_color = "#3F88C5",colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF"
+))
 ```
+
+# Onboarding - Things to do
+
+- Check the [onboarding document](https://docs.google.com/document/d/1pLM15pna-MH-uy_pIsF5P9U1F8czBfOoTXWavLzrF7M/)
+- Create an account on [Rocket Chat](chat.civicdatalab.in/)
+- Take the [survey](https://forms.gle/jtCU8xa5Ud8JgJh7A)
+
+---
 
 # Session Structure
 
-- Introductions and On-boarding
-- Source of Data Collection
-  - Primary Sources
-  - Secondary Sources
-     - Dealing with CSV files
-     - Portable Document Format (PDF) 
+- Data Collection - How to
+- Collecting data from secondary sources
+  - The data biography
+  - Structured vs Unstructured data sources
+  - Collecting (structured) data from secondary sources
+     - Working with CSV files
+     - Extracting data from PDF files
      - Collecting data from the web
-        - Web scraping 101
-        - Ethical of web scraping
-        - Tips and Tricks
-- Data Quality Assessments
-- Brief introduction about the second session [Data scraping vs Data standards]
+- Dealing with (messy) public datasets 
+- Session 2 - Introduction
+- Reading List
 
 ---
 
-# Starting a Data Project / Data literacy slide
+# Data Collection - How to ?
 
-A few questions to consider:
-
----
-
-# Data Collection
-
-How to collect data:
-
-Collecting it yourself 
+**Collecting it yourself** 
 
 > The requirements for equitable data collection are complex. It’s not as simple as trying to ask everyone and not leave people out. Sample selection is important of course, but so is survey design, collector behaviour, scope and scale, cultural translation, collection mediums, data corruption, compatibility and fidelity and much more. It’s super worth doing, if for no other reason than your data will be more useful.<sup>1</sup>  
 
-- **Sourcing it from secondary data sources**
+**.bg-purple[.white[Sourcing it from secondary data sources]]**
 
 .footnote[
 [1] [We All Count - Data Equity Framework](https://weallcount.com/the-data-process/)
@@ -61,9 +66,7 @@ Collecting it yourself
 
 ---
 
-# Collecting data from secondary sources
-
-> Now, if you’re sourcing data, rather than collecting it first hand, instead of a jewel, you’re probably better off considering the data a steaming pile of garbage. At least until you know it’s not. <sup>1</sup>
+# Secondary data sources
 
 A few challenges we might face while using secondary data sources for research and analysis:
 
@@ -72,8 +75,7 @@ A few challenges we might face while using secondary data sources for research a
 3. Maintaining periodic datasets is hard and time consuming.
 4. Cannot be used out of the box for research and analysis. 
 
-Maintaining a _data biography_ at an org level really helps in making secondary datasets more accessible. 
-
+> Now, if you’re sourcing data, rather than collecting it first hand, instead of a jewel, you’re probably better off considering the data a steaming pile of garbage. At least until you know it’s not. <sup>1</sup>
 
 .footnote[
 [1] [We All Count - Data Equity Framework](https://weallcount.com/the-data-process/)
@@ -83,13 +85,16 @@ Maintaining a _data biography_ at an org level really helps in making secondary 
 
 # The data biography
 
+Maintaining a _data biography_ at an org level really helps in making secondary datasets more accessible. 
+
 > A comprehensive data biography – the where, why and how of any dataset – is absolutely crucial to equitable analysis. Get to know your data on the nitty-gritty, how-did-they-get-this, look-at-the-original-survey-wording, who-did-they-miss, level. When you really know your data and run it through the filter for potential bias and equity issues, you can begin to use facts and figures with confidence. You can maintain a buck-stops-here attitude towards ensuring inclusive, non-garbage, truthful data science. </sup>1</sup>
 
 [A Data biography Template](https://docs.google.com/spreadsheets/d/1Ych5dzBfGLoQGYb-Jtq6VMn0PKdj_Y_tk6nGjopEduw/edit#gid=0)
 
 ---
 
-# Structured vs Unstructured data sources
+# Structured vs Unstructured
+
 ```{r xaringan-panelset-1, echo=FALSE}
 xaringanExtra::use_panelset()
 ```
@@ -100,9 +105,19 @@ xaringanExtra::use_panelset()
 
 **Structured data** is a lot easier to work with but often times we're limited with the scope of datasets. On the other hand, the process of converting **unstructured data** to a format that can be analysed is hard but it creates a lot of opportunities for research. 
 
-> All data has some structure, but ‘structured data’ refers to data where the structural relation between elements is explicit in the way the data is stored on a computer disk<sep>1</sep>
+> All data has some structure, but ‘structured data’ refers to data where the structural relation between elements is explicit in the way the data is stored on a computer disk <sep>1</sep>
+ 
+]
+
+.panel[
+
+.panel-name[Use-cases]
+
+1. [Criminal 'Injustice': How Courts Use 'Remand' to Penalise the Poor](https://www.thequint.com/news/law/how-delhi-courts-penalise-the-poor-through-mechanical-remand#read-more) - _Analysis of 153 remand orders_
+2. [Sharp Fall in Citation of Supreme Court Judgments by Foreign Courts After 2014, Study Finds](https://thewire.in/law/supreme-court-foreign-citations-study) - _Analysis of Judgements from 43 countries_
 
 ]
+
 .panel[
 .panel-name[Types]
 
@@ -120,17 +135,21 @@ Unstructured sources
   - Newspaper Reports
   - Ethnographic summaries
 ]
-]]
+]
+
+]
 
 .footnote[
 [1] [Open Data Handbook - Glossary](https://opendatahandbook.org/glossary/en/terms/structured-data/)
 ]
 
 ---
+class: center, middle
 
-# Collecting (structured) data from secondary sources
+# Collecting .red[(structured)] data
 
 ---
+class: center, middle
 
 # Working with CSV files
 
@@ -139,15 +158,26 @@ Unstructured sources
 # Why CSV
 
 - One of the most widely used data formats
+
+--
+
 - Synonymous with open datasets
+
+--
+
 - Offers a lot of flexibility for building tools that aid in research and analysis
 
-Challenges:
+
+---
+
+# Challenges with CSV's
 
 - Not a standard way to create a CSV file.
     - CSVs generated from standard spreadsheets and databases as a matter of course use variable encodings, variable quoting of special characters, and variable line endings.
-- CSV files are desperately poor at providing contextual information that can aid in automated processing of the data that they hold or even in informing developers about how they should be interpreted.
 
+--
+
+- CSV files are desperately poor at providing contextual information that can aid in automated processing of the data that they hold or even in informing developers about how they should be interpreted.
 
 ---
 
@@ -159,22 +189,49 @@ Focusing on the data entry and storage aspects, we can follow a set of best prac
 
 .footnote[
 [1] [2014: The year of CSV](https://theodi.org/article/2014-the-year-of-csv/)
-[2] [ Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets, The American Statistician, 72:1, 2-10, DOI: 10.1080/00031305.2017.1375989 ](https://doi.org/10.1080/00031305.2017.1375989)
+
+[2] [Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 ]
 
 ---
+
 # Core principles
 
-.left-column[
 - Be consistent
-]
 
-.right-column[
+--
+
+- Build a tidy dataset
+
+--
+
+- Create a data dictionary
+
+--
+
+- No calculations in the raw data files
+
+--
+
+- Don't use font color or highlighting as data
+
+--
+
+- Use data validation to avoid errors
+
+
+---
+
+# Be consistent
+
 - Use consistent codes for categorical variables
+
 - Use a single fixed code for any missing values
+
 - Use consistent variable names<sup>1</sup>
+
 - Use a single common format for all dates
-]
+
 
 .footnote[
 [1] [Choose good names for things](https://kbroman.org/dataorg/pages/names.html)
@@ -182,21 +239,14 @@ Focusing on the data entry and storage aspects, we can follow a set of best prac
 
 ---
 
-# Core principles
+# A tidy dataset
 
-.left-column[
-- Be consistent
-- Build a tidy dataset
-]
-
-.right-column[
 A **tidy dataset** is a standard way of mapping the meaning of a dataset to its structure.  A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations,variables and types.  
 
 In tidy data:
 - Each variable forms a column.
 - Each observation forms a row.
 - Each type of observational unit forms a table.
-]
 
 ---
 
@@ -240,62 +290,39 @@ A general rule of thumb is that it is easier to describe functional relationship
 
 ---
 
+# Create a data dictionary
 
-# Core principles
+_It’s helpful to have a separate file that explains what all of the variables are_
 
-.left-column[
-- Be consistent
-- Build a tidy dataset
-- Create a data dictionary
-]
-
-.right-column[
-It’s helpful to have a separate file that explains what all of the variables are.
-
-Such a “data dictionary” might contain:
+Such a “data dictionary”<sup>1</sup> might contain:
 
 - The exact variable name as in the data file.
 - A version of the variable name that might be used in data visualizations.
 - A longer explanation of what the variable means.
 - The measurement units.
 - Expected minimum and maximum values, perhaps.
+
+.footnote[
+[1] [Data Dictionary - Justice Hub Docs](https://docs.justicehub.in/data-dictionary.html)
 ]
 
 ---
 
 
-# Core principles
+# No calculations in the raw data files
 
-.left-column[
-- Be consistent
-- Build a tidy dataset
-- Create a data dictionary
-- No calculations in the raw data files
-]
-
-.right-column[
-Often, the Excel files include all kinds of calculations and graphs. The primary data file should contain just the data and nothing else: **no calculations, no graphs**.
+Often, the Excel files include all kinds of calculations and graphs. The primary data file should contain just the data and nothing else: **.red[no calculations, no graphs]**.
 
 Your primary data file should be a pristine store of data. Write-protect it, back it up, and don’t touch it.
 
 If you want to do some analyses in Excel, make a copy of the file and do your calculations and graphs in the copy.
-]
 
 ---
 
-# Core principles
+# Don't use font color or highlighting as data
 
-.left-column[
-- Be consistent
-- Build a tidy dataset
-- Create a data dictionary
-- No calculations in the raw data files
-- Don't use font color or highlighting as data
-]
 
-.right-column[
-You might be tempted to highlight particular cells with suspicious data, or rows that should be ignored. Instead, add another column with an indicator variable (for example, "trusted", with values TRUE or FALSE).
-]
+You might be tempted to highlight particular cells with suspicious data, or rows that should be ignored. Instead, add another column with an indicator variable (for example, "trusted", with values TRUE or FALSE)
 
 ---
 
@@ -318,22 +345,11 @@ xaringanExtra::use_panelset()
 
 ---
 
-# Core principles
+# Use data validation to avoid errors
 
-.left-column[
-- Be consistent
-- Build a tidy dataset
-- Create a data dictionary
-- No calculations in the raw data files
-- Don't use font color or highlighting as data
-- Use data validation to avoid errors
-]
+CSV looks easy, but it can be hard to make a CSV file that other people can work with. [CSVLint](https://csvlint.io/),<sup>1</sup> helps you to check that your CSV file is readable. And you can use it to check whether it contains the columns and types of values that it should.
 
-.right-column[
-CSV looks easy, but it can be hard to make a CSV file that other people can work with. [CSVLint](https://csvlint.io/),sup>1</sup> helps you to check that your CSV file is readable. And you can use it to check whether it contains the columns and types of values that it should.
-
-This service is maintained by an open source community and hosted by the [Open Data Institute (ODI)](https://theodi.org/). 
-]
+This service is maintained by an open source community and hosted by the [Open Data Institute (ODI)](https://theodi.org/).
 
 .footnote[
 [1] [CSVLint](https://csvlint.io/about)
@@ -345,8 +361,11 @@ This service is maintained by an open source community and hosted by the [Open D
 xaringanExtra::use_panelset()
 ```
 
-# Common warnings and errors in CSV files
-.panelset[.panel[.panel-name[Errors]
+# Common warnings and errors
+
+.panelset[
+
+.panel[.panel-name[Errors]
 
 - Invalid encoding: if there are any odd characters in a file which could cause encoding errors
 - Line breaks: if line breaks are not the same throughout the file
@@ -355,8 +374,6 @@ xaringanExtra::use_panelset()
 - Blank rows: if there are any blank rows
 - Stray/Unclosed quote: if there are any unclosed quotes in the file
 - Whitespace: if there is any whitespace between commas and double quotes around fields
-
-
 ]
 
 .panel[.panel-name[Warnings]
@@ -367,11 +384,12 @@ xaringanExtra::use_panelset()
 - Empty column name: if all the columns don't have a name
 - Duplicate column name: if all the column names aren't unique
 - Title row: if there appears to be a title field in the first row of the CSV.
-]]
+]
+]
 
---- 
+---
 
-# More resources on working with CSV files
+# Resources on dealing with CSV files
 
 - Leek Group guide to data sharing](https://github.com/jtleek/datasharing)
 - [Data Carpentry](http://datacarpentry.org/) lesson on [using spreadsheets](https://github.com/datacarpentry/excel-ecology)
@@ -384,6 +402,9 @@ xaringanExtra::use_panelset()
 
 # Extracting data from PDF files
 
+class: center, middle
+
+
 The essential feature of a portable document is that it looks the same (with exceptions for accessible views or views on mobile)wherever and whenever it is viewed or printed. This is a basis for reliable communication, when a document is sent, published, archived, or distributed, as the basis for further discussion<sup>1</sup>
 
 .footnote[
@@ -394,7 +415,11 @@ The essential feature of a portable document is that it looks the same (with exc
 
 # PDF for data and content
 
+class: center, middle
+
+
 ![](assets/pdf-1.png)
+[Source](https://odileeds.org/blog/files/Best%20Practices%20for%20PDF%20and%20Data.pdf)
 
 ---
 
@@ -417,9 +442,20 @@ Open source tools:
 
 # Working with Tabula
 
-[Tabula](https://tabula.technology/) only works on text-based PDFs, not scanned documents. If you can click-and-drag to select text in your table in a PDF viewer (even if the output is disorganized trash), then your PDF is text-based and Tabula should work.
+**Objective** - _Collect data to analyse state level trends in victim compensation_
+
+**Source** - [NALSA](https://nalsa.gov.in/statistics/r-o-victim-compensation-schemes-report)
+
+**Input Dataset** - [Link](https://nalsa.gov.in/statistics/r-o-victim-compensation-schemes-report/r-o-victim-compensation-schemes-april-2019-to-march-2020)
+
+**Output Dataset** - [Link](assets/tabula-victim-compensation-pdf.csv)
+
+---
+
+# Learning to use Tabula
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/of9680dgqIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ---
 
@@ -437,7 +473,7 @@ Often times data is not made accessible using common file formats, but is presen
 
 2 - Human manual copy-and-paste
 
-3 - **HTML Parsing**
+3 - **.bg-purple[.white[HTML Parsing]]**
 
 ---
 
@@ -471,7 +507,7 @@ and a lot more ....
 ]]
 
 .footnote[
-[1] [An introduction to Statistical Programming Methoda in R](https://smac-group.github.io/ds/web-scraping-in-r.html)
+[1] [An introduction to Statistical Programming Methods in R](https://smac-group.github.io/ds/web-scraping-in-r.html)
 ]
 
 ---
@@ -540,9 +576,49 @@ Syntax - `IMPORTFEED(url, [query], [headers], [num_items])`
 Query - `=IMPORTFEED("https://vidhilegalpolicy.in/feed/","items","TRUE",50)`
 
 ]
-
-
 ]
 
+---
+
+# Public data is messy
+
+[Here](https://github.com/Quartz/bad-data-guide) is a guide that might help you in dealing with a few common problems that we associate with datasets.
+
+> Most of these problems can be solved. Some of them can’t be solved and that means you should not use the data. Others can’t be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can’t help you. <sup>1</sup> 
+
+.footnote[
+[1] [The Quartz guide to bad data](https://github.com/Quartz/bad-data-guide)
+]
 
 ---
+
+# Session 2 - Introduction
+
+**Discussion Topics**
+
+- Data standards
+
+--
+
+- When to scrape data vs when to build data standards
+
+--
+
+- Case Studies
+  - Akoma Ntoso
+  
+--
+
+  - Data standard for publishing crime statistics
+  
+---
+
+# Reading List
+
+1. [The Daily Shaping of State Transparency: Standards, Machine-Readability and the Confi guration of Open Government Data Policies](https://sciencetechnologystudies.journal.fi/article/view/60221/pdf_36)
+2. [Responsible Data Handbook](https://the-engine-room.github.io/responsible-data-handbook/)
+3. [A brief history of open data](https://www.paristechreview.com/2013/03/29/brief-history-open-data/)
+4. [Science friction: Data, metadata, and collaboration](https://doi.org/10.1177%2F0306312711413314)
+5. [From open data to information justice](https://dl.acm.org/doi/10.1007/s10676-014-9351-8)
+6. [THE DATA EQUITY FRAMEWORK](https://weallcount.com/the-data-process/)
+
