@@ -25,6 +25,7 @@ xaringanExtra::use_fit_screen()
 xaringanExtra::use_tile_view()
 ```
 
+
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
 style_mono_accent(base_color = "#3F88C5",colors = c(
