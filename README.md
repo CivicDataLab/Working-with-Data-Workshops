@@ -10,9 +10,9 @@
 
 ## Timelines
 
-| Session | Topic | Date | Slide Deck | Session Recording |
+| Session | Topic | Date | Slide Deck | Session Recording | Notes |
 | ------- | ----- | ------ | --------- | ----------------- |
-| 1 | Data Collection | 16/07/21 | [Link]() | [Link]() |
+| 1 | Data Collection | 16/07/21 | [Link](modules/module_1_data_collection/session-1.html) | [Link]() | [Link](https://docs.google.com/document/d/1ZBMfqCvjPmqRQr2cUpVazK81SYK4GFJK3qf3uXxJoOY/edit?usp=sharing) |
 
 ## Moderators
 
