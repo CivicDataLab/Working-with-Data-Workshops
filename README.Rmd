@@ -22,7 +22,7 @@ library(fontawesome)
 
 | Session | Topic | Date | Slide Deck | Session Recording | Notes |
 | :-----: | :---: | :--: | :--------: | :---------------: | :---: |
-| 1 | Data Collection | 16/07/21 | [`r fa(name = "firefox-browser", fill = "steelblue")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.html) [`r fa(name = "file-pdf", fill = "steelblue")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.pdf) | [`r fa(name = "youtube", fill = "steelblue")`](https://youtu.be/DwfiBPyxlLM) | [`r fa(name = "file-word", fill = "steelblue")`](https://docs.google.com/document/d/1ZBMfqCvjPmqRQr2cUpVazK81SYK4GFJK3qf3uXxJoOY/edit?usp=sharing) |
+| 1 | Data Collection | 16/07/21 | [`r fa(name = "firefox-browser", fill = "steelblue", height = "15px")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.html) [`r fa(name = "file-pdf", fill = "steelblue")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.pdf) | [`r fa(name = "youtube", fill = "steelblue")`](https://youtu.be/DwfiBPyxlLM) | [`r fa(name = "file-word", fill = "steelblue")`](https://docs.google.com/document/d/1ZBMfqCvjPmqRQr2cUpVazK81SYK4GFJK3qf3uXxJoOY/edit?usp=sharing) |
 
 Note: You can use keyboard shortcuts for browsing the HTML version of the slide deck. Press `h` to view all shortcuts. 
 
