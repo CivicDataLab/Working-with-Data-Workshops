@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Module 1 - Session 2 - Data Collection</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <script src="libs/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Module 1 - Session 2 - Data Collection
+## Working effectively with data
+### CivicDataLab
+### 2021/07/24 (updated: 2021-07-25)
+
+---
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://civicdatalab.in'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+
+
+
+# Session 1 - Recap
+
+What we discussed
+--
+
+- Data Collection - How to (Primary vs Secondary)
+- Collecting data from secondary sources
+- The data biography (A must when using data from secondary data sources)
+- Structured vs Unstructured data sources (Limited but easy to analyse vs Vast but hard to work with)
+
+---
+
+# Session 1 - Recap
+
+- Collecting (structured) data from secondary sources
+- Working with CSV files (Quite prone to certain data collection errors)
+- Extracting data from PDF files (Working with Tabula)
+- Collecting data from the web (Ethical web scraping)
+- Using google sheets to scrape data from web pages
+
+&gt; Resources from all sessions can be accessed at [this link](https://civicdatalab.in/working-with-Data-Workshops/)
+
+
+---
+
+# Session 2 - Introduction
+
+- Common issues with real-world datasets and how to resolve them
+- Data collection use-cases
+  - Supreme Court Judge Profiles
+  - State wise mortality data from Devdatalab
+- Data Standards
+    - What
+    - Why
+    - Examples
+    
+---
+
+
+# Public data is messy
+
+[Here](https://github.com/Quartz/bad-data-guide) is a guide that will help you in dealing with a few common problems that we associate with datasets.
+
+
+
+&gt; Most of these problems can be solved. Some of them can’t be solved and that means you should not use the data. Others can’t be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can’t help you. &lt;sup&gt;1&lt;/sup&gt; 
+
+.footnote[
+[1] [The Quartz guide to bad data](https://github.com/Quartz/bad-data-guide)
+]
+
+---
+
+# Data collection use-cases
+
+---
+
+# Supreme Court Judge Profiles
+
+Website - [https://main.sci.gov.in/chief-justice-judges](https://main.sci.gov.in/chief-justice-judges)
+
+Requirement - Get judge profile details in a structured format
+
+Challenges:
+
+1. Direct download not available
+2. Judge profile hidden behind a link
+3. Current and Former judges are on different tabs but on the same URL
+
+---
+
+# State wise mortality data from Devdatalab
+
+Link to dataset - [Dropbox](https://www.dropbox.com/sh/y949ncp39towulf/AACJRhJs6uzbjkB6uM5O9mKga/mortality/csv?dl=0&amp;subfolder_nav_tracking=1)
+
+Objectives:
+
+1. Explore the dataset on google sheets
+2. Compare state wise mortality figures in the last three years using a line chart
+
+---
+
+# Exploring data from eCourts
+
+Source - [http://www.devdatalab.org/judicial-data](http://www.devdatalab.org/judicial-data)
+
+---
+
+# Open data standards - What
+
+&gt; An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. &lt;sup&gt;1&lt;/sup&gt;
+
+.footnote[
+[1] [Open data standards directory](https://datastandards.directory/glossary)
+]
+
+---
+
+# Open data standards - Why
+
+- To standardise data collection across time and space - _A shared language_
+- Data interoperability
+- Standard documentation and implementation guidelines
+- Can be developed in the open with maximum stakeholder participation
+- Opportunity for a dialogue between consumers and producers of datasets
+
+---
+
+# Open data standards - Examples
+
+
+
+.panelset[
+
+.panel[.panel-name[Legislature]
+
+| Title | Description |
+|---|---|
+| Popolo | The standard was designed as a simple and transferable vocabulary for sharing international government open data |
+| Akoma Ntoso | Akoma Ntoso (Architecture for Knowledge-Oriented Management of African Normative Texts using Open Standards and Ontologies) introduces common structures and ontologies for parliamentary, legislative and judiciary documents. These include parliamentary debates, committee briefs, and the entire life-cycle of a piece of legislation |
+
+]
+
+.panel[.panel-name[Crime]
+
+| Title | Description |
+|---|---|
+| International Classification of Crime for Statistical Purposes | The ICCS provides a comprehensive framework for producing statistics on crime and criminal justice. |
+
+]
+
+.panel[.panel-name[Transit]
+
+| Title | Description |
+|---|---|
+| General Transit Feed Specification (GTFS) | GTFS allows public transportation agencies to provide application developers with real-time updates about the locations, estimated arrival times and other important information regarding transit vehicles. |
+
+]
+
+.panel[.panel-name[Finance]
+
+| Title | Description |
+|---|---|
+| Open Contracting Data Standard (OCDS) | For disclosing public procurement data in open formats about contracting processes from planning to implementation stage. |
+
+]
+
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
