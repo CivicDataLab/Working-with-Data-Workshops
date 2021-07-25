@@ -59,19 +59,26 @@ What we discussed
 
 > Resources from all sessions can be accessed at [this link](https://civicdatalab.in/working-with-Data-Workshops/)
 
-
 ---
 
 # Session 2 - Introduction
 
 - Common issues with real-world datasets and how to resolve them
-- Data collection use-cases
-  - Supreme Court Judge Profiles
-  - State wise mortality data from Devdatalab
+- Data Collection - Supreme Court Judges
+- Data scraping alternatives
 - Data Standards
     - What
     - Why
+    - What can be standardised
     - Examples
+- Exploring data standards
+    - Popolo
+    - Akoma Ntoso
+    - ICCS
+    - GTFS
+- Data standards - Other resources
+- Data exploration - State wise mortality data from Devdatalab
+- The Tyranny of Spreadsheets
     
 ---
 
@@ -79,7 +86,6 @@ What we discussed
 # Public data is messy
 
 [Here](https://github.com/Quartz/bad-data-guide) is a guide that will help you in dealing with a few common problems that we associate with datasets.
-
 
 
 > Most of these problems can be solved. Some of them can’t be solved and that means you should not use the data. Others can’t be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can’t help you. <sup>1</sup> 
