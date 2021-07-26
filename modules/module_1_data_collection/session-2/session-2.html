@@ -18,7 +18,7 @@ class: center, middle, inverse, title-slide
 # Module 1 - Session 2 - Data Collection
 ## Working effectively with data
 ### CivicDataLab
-### 2021/07/24 (updated: 2021-07-25)
+### 2021/07/24 (updated: 2021-07-26)
 
 ---
 
@@ -69,8 +69,14 @@ What we discussed
 --
 
 - Data Collection - How to (Primary vs Secondary)
+--
+
 - Collecting data from secondary sources
+--
+
 - The data biography (A must when using data from secondary data sources)
+--
+
 - Structured vs Unstructured data sources (Limited but easy to analyse vs Vast but hard to work with)
 
 ---
@@ -78,26 +84,43 @@ What we discussed
 # Session 1 - Recap
 
 - Collecting (structured) data from secondary sources
+--
+
 - Working with CSV files (Quite prone to certain data collection errors)
+--
+
 - Extracting data from PDF files (Working with Tabula)
+--
+
 - Collecting data from the web (Ethical web scraping)
+--
+
 - Using google sheets to scrape data from web pages
 
-&gt; Resources from all sessions can be accessed at [this link](https://civicdatalab.in/working-with-Data-Workshops/)
 
+
+&gt; Resources from all sessions can be accessed at [this link](https://civicdatalab.in/working-with-Data-Workshops/)
 
 ---
 
 # Session 2 - Introduction
 
 - Common issues with real-world datasets and how to resolve them
-- Data collection use-cases
-  - Supreme Court Judge Profiles
-  - State wise mortality data from Devdatalab
+- Data Collection - Supreme Court Judges
+- Data scraping alternatives
 - Data Standards
     - What
     - Why
+    - What can be standardised
     - Examples
+- Exploring data standards
+    - Popolo
+    - Akoma Ntoso
+    - ICCS
+    - GTFS
+- Data standards - Other resources
+- Data exploration - State wise mortality data from Devdatalab
+- The Tyranny of Spreadsheets
     
 ---
 
@@ -107,7 +130,6 @@ What we discussed
 [Here](https://github.com/Quartz/bad-data-guide) is a guide that will help you in dealing with a few common problems that we associate with datasets.
 
 
-
 &gt; Most of these problems can be solved. Some of them can’t be solved and that means you should not use the data. Others can’t be solved, but with precautions you can continue using the data. In order to allow for these ambiguities, this guide is organized by who is best equipped to solve the problem: you, your source, an expert, etc. In the description of each problem you may also find suggestions for what to do if that person can’t help you. &lt;sup&gt;1&lt;/sup&gt; 
 
 .footnote[
@@ -115,6 +137,7 @@ What we discussed
 ]
 
 ---
+class: center, middle
 
 # Data collection use-cases
 
@@ -134,26 +157,48 @@ Challenges:
 
 ---
 
-# State wise mortality data from Devdatalab
+# Data scraping Alternatives
 
-Link to dataset - [Dropbox](https://www.dropbox.com/sh/y949ncp39towulf/AACJRhJs6uzbjkB6uM5O9mKga/mortality/csv?dl=0&amp;subfolder_nav_tracking=1)
+1. Crowd sourced data collection .bg-red[.white[ _More work for humans_ ]]
+&lt;br&gt;
+--
 
-Objectives:
+2. Training bots using AI .bg-red[.white[ _Challenge with implementation and accuracy of information_ ]]
+&lt;br&gt;
+--
 
-1. Explore the dataset on google sheets
-2. Compare state wise mortality figures in the last three years using a line chart
+3. Creating data standards .bg-red[.white[ _More work for data publishers_ ]]
+&lt;br&gt;
+--
 
----
+&lt;br&gt;
+&lt;br&gt;
 
-# Exploring data from eCourts
+.center[
 
-Source - [http://www.devdatalab.org/judicial-data](http://www.devdatalab.org/judicial-data)
+&gt; If your goal is to build something that’s going to be collecting data for a long time, like a government monitoring tool, think about how to identify, rally around, and target common standards. There’s some momentum for building shared code on top of shared data, and we’re starting to see real success stories. And so my closing message is to think long-term about how you collect the data; don’t plan on scraping forever. &lt;sup&gt;1&lt;/sup&gt;
+
+]
+
+
+.footnote[
+[1] [Monitoring Legislatures: The Long Game](https://medium.com/@jpmckinney/monitoring-legislatures-the-long-game-cefa4904ee81)
+]
 
 ---
 
 # Open data standards - What
 
-&gt; An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. &lt;sup&gt;1&lt;/sup&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+.center[.middle[
+
+.bg-purple[.white[An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. &lt;sup&gt;1&lt;/sup&gt;]]
+
+]]
+
 
 .footnote[
 [1] [Open data standards directory](https://datastandards.directory/glossary)
@@ -163,12 +208,30 @@ Source - [http://www.devdatalab.org/judicial-data](http://www.devdatalab.org/jud
 
 # Open data standards - Why
 
-- To standardise data collection across time and space - _A shared language_
-- Data interoperability
-- Standard documentation and implementation guidelines
-- Can be developed in the open with maximum stakeholder participation
+- Scraping is unsustainable
+--
+
+- Machine-readable data is not enough
+--
+
+- To standardise data collection across time and space - _**A shared language**_ that allows error free data exchange
+--
+
+- For generating more interoperable datasets
+--
+
 - Opportunity for a dialogue between consumers and producers of datasets
 
+---
+
+# What can be standardised
+
+.center[.middle[
+![](../assets/we-can-standardise-open-data-institute.png)
+
+Source: [The Open Data Institute](https://theodi.org/)
+
+]]
 ---
 
 # Open data standards - Examples
@@ -182,7 +245,7 @@ Source - [http://www.devdatalab.org/judicial-data](http://www.devdatalab.org/jud
 | Title | Description |
 |---|---|
 | Popolo | The standard was designed as a simple and transferable vocabulary for sharing international government open data |
-| Akoma Ntoso | Akoma Ntoso (Architecture for Knowledge-Oriented Management of African Normative Texts using Open Standards and Ontologies) introduces common structures and ontologies for parliamentary, legislative and judiciary documents. These include parliamentary debates, committee briefs, and the entire life-cycle of a piece of legislation |
+| Akoma Ntoso | Akoma Ntoso introduces common structures and ontologies for parliamentary, legislative and judiciary documents. These include parliamentary debates, committee briefs, and the entire life-cycle of a piece of legislation |
 
 ]
 
@@ -190,7 +253,7 @@ Source - [http://www.devdatalab.org/judicial-data](http://www.devdatalab.org/jud
 
 | Title | Description |
 |---|---|
-| International Classification of Crime for Statistical Purposes | The ICCS provides a comprehensive framework for producing statistics on crime and criminal justice. |
+| International Classification of Crime for Statistical Purposes (ICCS) | The ICCS provides a comprehensive framework for producing statistics on crime and criminal justice. |
 
 ]
 
@@ -212,7 +275,154 @@ Source - [http://www.devdatalab.org/judicial-data](http://www.devdatalab.org/jud
 
 ]
 
+---
+class: center, middle
 
+# Exploring Data Standards
+
+---
+
+# Popolo
+
+_International open government data specifications_
+
+Specification - [https://www.popoloproject.com/](https://www.popoloproject.com/)
+
+- For storing data related to elected officials
+- Platforms like [EveryPolitician](https://everypolitician.org/) that have data for elected officials from 233 countries use the format for storing info
+- OpenAustralia developed [TheyVoteforyou](https://theyvoteforyou.org.au/), a legislative vote tracking tool, to import Popolo data
+
+[Link](https://cdn.rawgit.com/everypolitician/everypolitician-data/829796bc2c9693efb67d39312a22ce674aa4a8b1/data/India/Lok_Sabha/ep-popolo-v1.0.json
+) to explore data for the members of the 16th Lok Sabha. 
+
+---
+
+# Akoma Ntoso
+
+**A**rchitecture for **K**nowledge-**O**riented **M**anagement of **A**frican **N**ormative **T**exts using **O**pen **S**tandards and **O**ntologies - _A data standard for parliamentary, legislative and judiciary documents_
+
+Specification - [Akoma Ntoso](http://www.akomantoso.org/)
+
+- Akoma Ntoso is an initiative of [Africa i-Parliament Action Plan](https://publicadministration.un.org/parliaments/#.XDxOKy2ZPOQ), a programme of UN/DESA.
+- Schema explorer - [Link](https://schema.akomantoso.com/element/akomaNtoso)
+
+---
+
+# Semantics
+
+.center[.middle[
+
+![](../assets/akoma-ntoso.png)
+
+]]
+
+---
+
+# Use-Case
+
+.center[.middle[
+
+![](../assets/akoma-ntoso-process.png)
+
+]]
+
+---
+
+# Video - The Akoma Ntoso Open Standard 
+
+.center[.middle[
+
+&lt;iframe width="640" height="360" src="https://www.youtube.com/embed/FxpCLerCrN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+[HasgeekTV - Open standards for law courts in Africa](https://www.youtube.com/watch?v=FxpCLerCrN0)
+
+]]
+
+---
+
+# Akoma Ntoso - Reading List
+
+1. [An Open Platform for Laws: How adoption of open standards and tools can strengthen the rule of law](https://www.linkedin.com/pulse/open-platform-laws-how-adoption-standards-tools-can-strengthen-sen/)
+2. [Are Indian laws really ‘open’?](https://blog.okfn.org/2017/07/11/are-indian-laws-really-open/)
+3. [How The Law Factory turns the French parliamentary process into 300 version-controlled Open Data visualizations](https://blog.okfn.org/2014/06/25/gitlaw-how-the-law-factory-turns-the-french-parliamentary-process-into-300-version-controlled-open-data-visualizations/)
+4. [Laws of India in the Akoma Ntoso format](https://github.com/nyaayaIN/laws-of-india)
+5. [Indigo platform](https://blog.indiankanoon.org/2019/11/launching-laws-of-india-in-akoma-ntoso.html) deployed by IndianKanoon to manage the XML laws generated by the Nyaaya team  
+6. [AkomaNtoso.io](https://akomantoso.io/) - _A resource on learning and using the Akoma Ntoso schema_
+7. [A presentation on why XML is important in the context of parliamentary documents](http://www.last-jd.eu/wp-content/uploads/2013/03/opendatav3.pdf)
+
+---
+
+# ICCS
+
+International Classification of Crime for Statistical Purposes (ICCS) - _To enhance the consistency and international comparability of crime statistics, and improve analytical capabilities at both the national and international levels_
+
+Specification - [ICCS Version 1.0](https://unstats.un.org/unsd/classifications/Family/Detail/1000) [PDF](https://www.unodc.org/documents/data-and-analysis/statistics/crime/ICCS/ICCS_English_2016_web.pdf)
+
+.bg-purple[.white[An attempt by the UN to adopt a common data standard to respond to emerging data needs at national and international level, including data needs deriving from the  Sustainable Development Goals (SDGs) in the areas of crime, violence, justice and the rule of law under UNODC mandate.]]
+
+---
+
+# GTFS
+
+General Transit Feed Specification (GTFS) - _A common format for public transportation schedules and associated geographic information_
+
+Specification - [GTFS Resource Center](https://gtfs.mobilitydata.org/spec/gtfs-schedule)
+
+- One of the most commonly used and adopted data standard
+- If the transit information is on Google Maps, then it means that it is stored as GTFS
+- Made it easier for transport agencies across the globe to share their datasets - schedules, rotues, etc
+- Made transit data more accessible to the citizens
+
+---
+
+# GTFS on google maps
+
+.center[.middle[
+
+![](../assets/gtfs-gmaps.png)
+]]
+
+---
+
+# GTFS Links
+
+- [Read more]([Evoloution](https://beyondtransparency.org/chapters/part-2/pioneering-open-data-standards-the-gtfs-story/) of the GTFS standard
+) about how the GTFS standard evolved with time. 
+
+- GTFS Datasets from selected cities can be accessed [here](https://dataspace.mobi/group/gtfs)
+
+- [OpenMobilityData](https://transitfeeds.com/) gives access to GTFS feeds from around the world
+
+---
+
+# Data Standards - Other Resources
+
+- [Guidebook by the ODI](https://standards.theodi.org/introduction/types-of-open-standards-for-data/)
+    - [Podcast](https://standards.theodi.org/community/community-voices/)
+- [Five critical questions for constructing data standards](https://www.timdavies.org.uk/2014/02/21/five-critical-questions-for-constructing-data-standards/)
+
+---
+
+# State wise mortality data from Devdatalab
+
+Link to dataset - [Dropbox](https://www.dropbox.com/sh/y949ncp39towulf/AACJRhJs6uzbjkB6uM5O9mKga/mortality/csv?dl=0&amp;subfolder_nav_tracking=1)
+
+**Objectives**:
+
+1. Explore the dataset on google sheets
+
+
+2. Compare state wise mortality figures in the last three years using a line chart
+
+---
+
+# The Tyranny of Spreadsheets
+
+Nearly 16,000 positive Covid cases had disappeared completely from the UK’s contact tracing system. Why had the cases disappeared? Apparently, **Microsoft Excel had run out of numbers.**
+
+&gt; It was an astonishing story that would, in time, lead me to delve into the history of accountancy, epidemiology and vaccination, discuss file formatting with Microsoft’s founder, Bill Gates, and even trace the aftershocks of the collapse of Enron. But above all, it was a story that would teach me about the way we take numbers for granted. 
+
+Read the story, by Tim Harford,  [here](https://timharford.com/2021/07/the-tyranny-of-spreadsheets/)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

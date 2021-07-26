@@ -43,8 +43,14 @@ What we discussed
 --
 
 - Data Collection - How to (Primary vs Secondary)
+--
+
 - Collecting data from secondary sources
+--
+
 - The data biography (A must when using data from secondary data sources)
+--
+
 - Structured vs Unstructured data sources (Limited but easy to analyse vs Vast but hard to work with)
 
 ---
@@ -52,10 +58,20 @@ What we discussed
 # Session 1 - Recap
 
 - Collecting (structured) data from secondary sources
+--
+
 - Working with CSV files (Quite prone to certain data collection errors)
+--
+
 - Extracting data from PDF files (Working with Tabula)
+--
+
 - Collecting data from the web (Ethical web scraping)
+--
+
 - Using google sheets to scrape data from web pages
+
+
 
 > Resources from all sessions can be accessed at [this link](https://civicdatalab.in/working-with-Data-Workshops/)
 
@@ -95,6 +111,7 @@ What we discussed
 ]
 
 ---
+class: center, middle
 
 # Data collection use-cases
 
@@ -116,11 +133,27 @@ Challenges:
 
 # Data scraping Alternatives
 
-1. Crowd sourced data collection _More work for humans_
-2. Training bots using AI _Challenge with implementation and accuracy of information_
-3. Creating data standards _More work for data publishers_
+1. Crowd sourced data collection .bg-red[.white[ _More work for humans_ ]]
+<br>
+--
+
+2. Training bots using AI .bg-red[.white[ _Challenge with implementation and accuracy of information_ ]]
+<br>
+--
+
+3. Creating data standards .bg-red[.white[ _More work for data publishers_ ]]
+<br>
+--
+
+<br>
+<br>
+
+.center[
 
 > If your goal is to build something that’s going to be collecting data for a long time, like a government monitoring tool, think about how to identify, rally around, and target common standards. There’s some momentum for building shared code on top of shared data, and we’re starting to see real success stories. And so my closing message is to think long-term about how you collect the data; don’t plan on scraping forever. <sup>1</sup>
+
+]
+
 
 .footnote[
 [1] [Monitoring Legislatures: The Long Game](https://medium.com/@jpmckinney/monitoring-legislatures-the-long-game-cefa4904ee81)
@@ -130,7 +163,16 @@ Challenges:
 
 # Open data standards - What
 
-> An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. <sup>1</sup>
+<br>
+<br>
+<br>
+
+.center[.middle[
+
+.bg-purple[.white[An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. <sup>1</sup>]]
+
+]]
+
 
 .footnote[
 [1] [Open data standards directory](https://datastandards.directory/glossary)
@@ -141,19 +183,29 @@ Challenges:
 # Open data standards - Why
 
 - Scraping is unsustainable
+--
+
 - Machine-readable data is not enough
-- To standardise data collection across time and space - - _A shared language_ that allows error free data exchange
+--
+
+- To standardise data collection across time and space - _**A shared language**_ that allows error free data exchange
+--
+
 - For generating more interoperable datasets
+--
+
 - Opportunity for a dialogue between consumers and producers of datasets
 
 ---
 
 # What can be standardised
 
-![](../assets/we-can-standardise-open-data-institute.jpg)
+.center[.middle[
+![](../assets/we-can-standardise-open-data-institute.png)
 
 Source: [The Open Data Institute](https://theodi.org/)
 
+]]
 ---
 
 # Open data standards - Examples
@@ -200,6 +252,7 @@ xaringanExtra::use_panelset()
 ]
 
 ---
+class: center, middle
 
 # Exploring Data Standards
 
@@ -222,7 +275,7 @@ Specification - [https://www.popoloproject.com/](https://www.popoloproject.com/)
 
 # Akoma Ntoso
 
-.red[A]rchitecture for .red[K]nowledge-.red[O]riented .red[M]anagement of .red[A]frican .red[N]ormative .red[T]exts using .red[O]pen .red[S]tandards and .red[O]ntologies - _A data standard for parliamentary, legislative and judiciary documents_
+**A**rchitecture for **K**nowledge-**O**riented **M**anagement of **A**frican **N**ormative **T**exts using **O**pen **S**tandards and **O**ntologies - _A data standard for parliamentary, legislative and judiciary documents_
 
 Specification - [Akoma Ntoso](http://www.akomantoso.org/)
 
@@ -231,9 +284,35 @@ Specification - [Akoma Ntoso](http://www.akomantoso.org/)
 
 ---
 
+# Semantics
+
+.center[.middle[
+
+![](../assets/akoma-ntoso.png)
+
+]]
+
+---
+
+# Use-Case
+
+.center[.middle[
+
+![](../assets/akoma-ntoso-process.png)
+
+]]
+
+---
+
 # Video - The Akoma Ntoso Open Standard 
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FxpCLerCrN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+.center[.middle[
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/FxpCLerCrN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[HasgeekTV - Open standards for law courts in Africa](https://www.youtube.com/watch?v=FxpCLerCrN0)
+
+]]
 
 ---
 
@@ -245,7 +324,7 @@ Specification - [Akoma Ntoso](http://www.akomantoso.org/)
 4. [Laws of India in the Akoma Ntoso format](https://github.com/nyaayaIN/laws-of-india)
 5. [Indigo platform](https://blog.indiankanoon.org/2019/11/launching-laws-of-india-in-akoma-ntoso.html) deployed by IndianKanoon to manage the XML laws generated by the Nyaaya team  
 6. [AkomaNtoso.io](https://akomantoso.io/) - _A resource on learning and using the Akoma Ntoso schema_
-7. [a presentation on why XML is important in the context of parliamentary documents](http://www.last-jd.eu/wp-content/uploads/2013/03/opendatav3.pdf)
+7. [A presentation on why XML is important in the context of parliamentary documents](http://www.last-jd.eu/wp-content/uploads/2013/03/opendatav3.pdf)
 
 ---
 
@@ -255,7 +334,7 @@ International Classification of Crime for Statistical Purposes (ICCS) - _To enha
 
 Specification - [ICCS Version 1.0](https://unstats.un.org/unsd/classifications/Family/Detail/1000) [PDF](https://www.unodc.org/documents/data-and-analysis/statistics/crime/ICCS/ICCS_English_2016_web.pdf)
 
-**An attempt by the UN to adopt a common data standard to respond to emerging data needs at national and international level, including data needs deriving from the  Sustainable Development Goals (SDGs) in the areas of crime, violence, justice and the rule of law under UNODC mandate.**
+.bg-purple[.white[An attempt by the UN to adopt a common data standard to respond to emerging data needs at national and international level, including data needs deriving from the  Sustainable Development Goals (SDGs) in the areas of crime, violence, justice and the rule of law under UNODC mandate.]]
 
 ---
 
@@ -274,7 +353,10 @@ Specification - [GTFS Resource Center](https://gtfs.mobilitydata.org/spec/gtfs-s
 
 # GTFS on google maps
 
+.center[.middle[
+
 ![](../assets/gtfs-gmaps.png)
+]]
 
 ---
 
@@ -301,9 +383,11 @@ Specification - [GTFS Resource Center](https://gtfs.mobilitydata.org/spec/gtfs-s
 
 Link to dataset - [Dropbox](https://www.dropbox.com/sh/y949ncp39towulf/AACJRhJs6uzbjkB6uM5O9mKga/mortality/csv?dl=0&subfolder_nav_tracking=1)
 
-Objectives:
+**Objectives**:
 
 1. Explore the dataset on google sheets
+
+
 2. Compare state wise mortality figures in the last three years using a line chart
 
 ---
@@ -315,5 +399,3 @@ Nearly 16,000 positive Covid cases had disappeared completely from the UK’s co
 > It was an astonishing story that would, in time, lead me to delve into the history of accountancy, epidemiology and vaccination, discuss file formatting with Microsoft’s founder, Bill Gates, and even trace the aftershocks of the collapse of Enron. But above all, it was a story that would teach me about the way we take numbers for granted. 
 
 Read the story, by Tim Harford,  [here](https://timharford.com/2021/07/the-tyranny-of-spreadsheets/)
-
----
