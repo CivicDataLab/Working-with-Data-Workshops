@@ -1,0 +1,187 @@
+---
+title: "Module 2 - Session 1 - Data exploration"
+subtitle: "Working effectively with data"
+institute: "CivicDataLab"
+date: "2021/08/03 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+library(fontawesome)
+style_mono_accent(base_color = "#A63A50",colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF",
+  yellow = "#F1A208"
+  ),link_decoration="underline",table_row_even_background_color = "#FFFFFF")
+
+```
+
+# Past sessions
+
+| Session | Topic | Date | Slide Deck | Session Recording | Notes |
+| :-----: | :---: | :--: | :--------: | :---------------: | :---: |
+| 1 | Data Collection | 16/07/21 | [`r fa(name = "firefox-browser", fill = "steelblue", height = "20px")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.html) [`r fa(name = "file-pdf", fill = "steelblue", height = "20px")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.pdf) | [`r fa(name = "youtube", fill = "steelblue", height = "20px")`](https://youtu.be/DwfiBPyxlLM) | [`r fa(name = "file-word", fill = "steelblue", height = "20px")`](https://docs.google.com/document/d/1ZBMfqCvjPmqRQr2cUpVazK81SYK4GFJK3qf3uXxJoOY/edit?usp=sharing) |
+| 2 | Web scraping & Data Standards | 26/07/21 | [`r fa(name = "firefox-browser", fill = "steelblue", height = "20px")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-2/session-2.html) [`r fa(name = "file-pdf", fill = "steelblue", height = "20px")`](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-2/session-2.pdf) | [`r fa(name = "youtube", fill = "steelblue", height = "20px")`](https://www.youtube.com/watch?v=IaA_qClEFMg) | [`r fa(name = "file-word", fill = "steelblue", height = "20px")`](https://docs.google.com/document/d/1O5AbZhz3rAv9Nyy1BF4GWuvS8-AfR8bzbzU4RzwxTRw/edit) |
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Thanks for sharing your feedback and suggestions with us. If you haven't got a chance to do it yet, the form is still open here -> [https://forms.gle/6pzx8XKBZ7YUGV336](https://forms.gle/6pzx8XKBZ7YUGV336) 
+
+]
+
+---
+class: center, middle
+
+# Data exploration Use-Cases
+
+---
+
+# Exploring state level mortality data
+
+**Dataset** - [Link](https://www.dropbox.com/sh/y949ncp39towulf/AABs8_dECTzr38GdS7BneTH7a?dl=0)
+
+**Source**: [Devdatalab](http://www.devdatalab.org/covid)
+
+**Objective**:
+
+- Import data in google sheets
+- Compare mortality data across states from 2019 - 2021
+- Compare mortality data for Karnataka across years, as shown [here](https://devdatalab.medium.com/making-sense-of-excess-mortality-f26cffe3643e)
+
+**Tags**
+
+.bg-yellow[.black[_google-sheets_]]  .bg-yellow[.black[_data-viz_]]  .bg-yellow[.black[_pivot_]]  .bg-yellow[.black[_data-structure_]]
+
+---
+
+# Most cited IPC acts/sections across courts
+
+**Dataset** - [Link](https://justicehub.in/dataset/e48994b7-e77a-4fa1-869f-923dec3e4636/resource/02005017-cd9d-4fec-94d4-243b5e4f9fcb/download/top_sections.csv)
+
+**Source**: [Contributed by IndianKanoon on the Justice Hub](https://justicehub.in/dataset/indian-kanoon-statistics)
+
+**Objective**:
+
+- Import data in google sheets
+- Filter data for IPC sections
+- Find how many sections contribute to 50% of the cases
+- Add a column for the section title
+
+**Tags**
+
+.bg-yellow[.black[_google-sheets_]]  .bg-yellow[.black[_functions_]]  .bg-yellow[.black[_lookup_]]  .bg-yellow[.black[_scraping_]]  .bg-yellow[.black[_XML_]]  .bg-yellow[.black[_JSoN_]]
+
+
+---
+
+# Working with databases
+
+- Dealing with large datasets
+
+
+- Platform agnostic
+
+
+- Programming language agnostic
+
+
+- Easy to share and maintain as compared to multiple data files
+
+
+---
+
+# Exploring data from eCourts
+
+**Dataset** - [Link](https://www.dropbox.com/sh/hkcde3z2l1h9mq1/AADRe-BuBQ92ozAJiG7YERdCa?dl=0) - _The database contains 81.2 million cases_
+
+**Source**: [Devdatalab](http://www.devdatalab.org/judicial-data)
+
+**Objective**:
+
+- Understand how the data is structured
+- Import the data in a database
+- Explore the sample datasets
+- Find out the total cases present for each district for the year 2018
+
+**Tags**
+
+.bg-yellow[.black[_database_]]  .bg-yellow[.black[_large-datasets_]]  .bg-yellow[.black[_sqlite_]]  .bg-yellow[.black[_eCourts_]]  
+
+---
+
+# Tools 
+
+1. [Sublime Text](https://www.sublimetext.com/) - _For text processing_
+2. [SQLite Browser](https://sqlitebrowser.org/) - _For working with database_
+3. [JSon Editor](https://jsoneditoronline.org/) - _For editing/viewing JSoN files_
+4. [XML to JSON](https://codebeautify.org/xmltojson) - _For converting XML to JSON_
+5. [jq](https://stedolan.github.io/jq/) - _For working with JSON files_
+6. [Agenty](https://chrome.google.com/webstore/detail/agenty-advanced-web-scrap/gpolcofcjjiooogejfbaamdgmgfehgff) - _Chrome extension for scraping data_
+7. [CSVLint](https://csvlint.io/) - _For validating CSV files_
+
+---
+
+# Do try this at home
+
+.pull-left[
+
+**Exercise - 1**
+
+- [Link](https://nalsa.gov.in/dashboard/) to NALSA dashboard
+- Create a CSV file with variables available under the Victim Compensation Schemes table for these states: 
+    - Delhi
+    - Maharashtra
+    - Karnataka
+    - West Bengal
+    - Uttar Pradesh
+- Create a chart to compare the yearly compensation numbers between these states
+- Create a folder [here](https://drive.google.com/drive/u/0/folders/1W1t0j1NETZDQ5F7j7Ts6tDNiMQUTKGXD) and upload the dataset (including the chart) 
+
+]
+
+.pull-right[
+
+**Exercise - 2**
+
+- Install SQLite DB Browser
+- Create a new database
+- Load the judges_clean dataset in the DB
+- Find the distribution of male/female judges in **Bengaluru** district court where judge position is _chief metropolitan magistrate_
+- Save the file, as CSV, in the drive
+
+]
+
+---
+
+# Other Resources
+
+- [Working with SQLite](https://github.com/sqlitebrowser/sqlitebrowser/wiki)
+- [SQL Tutorial](https://www.w3schools.com/sql/)
+- [Databases and SQL practice](https://swcarpentry.github.io/sql-novice-survey/)
