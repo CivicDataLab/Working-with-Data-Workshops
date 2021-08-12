@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Module 2 - Session 2 - Data exploration</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <script src="libs/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Module 2 - Session 2 - Data exploration
+## Working effectively with data
+### CivicDataLab
+### 2021/08/11 (updated: 2021-08-12)
+
+---
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://civicdatalab.in'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+
+
+
+
+
+
+# Exercise - Web Scraping + Data Exploration
+
+- [Link](https://nalsa.gov.in/dashboard/) to NALSA dashboard
+- Create a CSV file with variables available under the Victim Compensation Schemes table for these states: 
+    - Delhi
+    - Maharashtra
+    - Karnataka
+    - West Bengal
+    - Uttar Pradesh
+- Create a chart to compare the yearly compensation numbers between these states
+- Create a folder [here](https://drive.google.com/drive/u/0/folders/1W1t0j1NETZDQ5F7j7Ts6tDNiMQUTKGXD) and upload the dataset (including the chart) 
+
+[Worksheet Link](https://docs.google.com/spreadsheets/d/1IEit4GN7w_d-a855qpa3_eq_J7PnVV5wL0OGu1_OXjo/edit#gid=199180986)
+
+---
+class: center, middle
+
+# Working with databases
+
+---
+
+# Why to use a database ?
+
+- Dealing with large datasets
+
+- Platform agnostic
+
+- Programming language agnostic
+
+- Easy to share and maintain as compared to storing data as multiple data files
+
+---
+
+# A relational database
+
+- Data stored as tables
+
+- Each row in the table is a record with a unique ID called the key (Primary Key). 
+
+- The columns of the table hold attributes of the data, and each record usually has a value for each attribute.
+
+- Uses [SQL (Structured Query Language)](https://www.w3schools.com/sql/) to query ( _storing_, _manipulating_, _retrieving_) data
+
+---
+
+# Database terminologies
+
+1.  **Schema** - _A database schema is the design of tables, columns, relations, and constraints that make up a logically distinct section of a database_. 
+2. **Key** - _A key is a database field whose purpose is to uniquely identify a record_. Type off keys:
+    - **Candidate Key** - _The set of columns that can each uniquely identify a record and from which the primary key is chosen._
+    - **Primary Key** - _This key uniquely identifies a record in a table. It cannot be null.There can be only one Primary key in a table._
+    - **Foreign Key** - _The key linking a record to a record in another table. A table's foreign key must exist as the primary key of another table._
+4. **SQL** - _Structured Query Language, or SQL, is the most commonly used language to access data from a database_
+
+---
+
+# Understanding keys
+
+
+
+.panelset[
+.panel[
+.panel-name[Table 1]
+
+![](assets/keys_master.webp)
+
+]
+
+.panel[.panel-name[Candidate]
+
+![](assets/candidate_keys.webp)
+]
+
+.panel[.panel-name[Primary]
+
+![](assets/primary_alternate.webp)
+]
+
+.panel[.panel-name[Composite]
+
+![](assets/composite_key.webp)
+]
+]
+
+---
+
+# Foregin Keys
+
+**Id** in the **Department table** [Primary Key]
+
+.center[
+![](assets/foreign_1.webp)
+]
+
+**Dep_Id** in the **Employee table** [Foreign Key]
+
+.pull-left[
+![](assets/keys_master.webp)
+]
+
+.pull-right[
+
+![](assets/foreign_2.webp)
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+
+.bg-yellow[.black[SELECT]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**SELECT** {stuff you want to select} **FROM** {the table that it is in}
+
+]
+
+]]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[SELECT ALL]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[The `*` is called a “splat” and is a handy, frequently used shortcut to get all columns.
+]
+
+]]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[ORDER BY]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[SELECT {stuff you want to select} FROM {the table that it is in} ORDER BY {column you want to order by}
+]
+
+**ASC**ending (_default_) or **DESC**ending 
+
+SELECT * FROM tracks ORDER BY name DESC
+
+
+
+]]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[LIMIT]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**LIMIT** the number of rows - SELECT * FROM artists LIMIT {Number to Limit By}
+
+]
+
+SELECT * FROM artists LIMIT 5
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[OFFSET]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**OFFSET** - Where to start returning data - SELECT * FROM artists LIMIT 5 OFFSET {Number of rows to skip}
+
+]
+
+SELECT * FROM artists LIMIT 5 OFFSET 2
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[WHERE]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+The **WHERE** command is followed by the conditions you’d like to filter by.
+
+SELECT * FROM artists WHERE {Filter Conditions};
+
+]
+
+**Single clause** - SELECT * FROM artists WHERE id = 85
+
+**Multiple clauses** - SELECT * FROM tracks WHERE album_id = 89 AND composer = 'Green Day'
+
+**Combinations** - SELECT * FROM tracks WHERE composer = 'Green Day' OR (composer = 'AC/DC' AND milliseconds &gt; 240000)
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[AGGREGATE]]
+
+![](assets/sql-aggregations.png)
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[AGGREGATE]]
+
+**MAX/MIN/AVG of one column** - SELECT MAX(unit_price), MIN(unit_price), AVG(unit_price) FROM tracks
+
+**Total Rows** - SELECT COUNT(*) FROM tracks
+
+**Unique Values in a column** - SELECT COUNT(DISTINCT composer) FROM tracks
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[GROUP BY]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+For splitting aggregations into groups
+
+]
+
+**Counting** - SELECT genre_id, COUNT(*) FROM tracks GROUP BY genre_id
+
+**Count but rename column** - SELECT composer, COUNT(*) as "count" FROM tracks GROUP BY composer ORDER BY "count" DESC
+
+**Aggregate by multiple columns** - SELECT media_type_id, genre_id, COUNT(*) FROM tracks GROUP BY media_type_id, genre_id ORDER BY  media_type_id, genre_id
+
+]
+]
+
+---
+
+# Database tools
+
+.pull-left[
+
+1. Database - [SQLite](https://www.sqlite.org/index.html)
+
+2. Database Explorer - [SQLite Browser](https://sqlitebrowser.org/) - _For working with database_ 
+
+&gt; DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+
+]
+
+.pull-right[
+
+[![](assets/db_browser.png)](https://sqlitebrowser.org/)
+
+]
+
+
+---
+class: center, middle
+
+# Database exercises
+
+---
+
+# Exploring mortality data
+
+- Import the [CSV file](https://docs.google.com/spreadsheets/d/1fbdwMCnR3vLZBEJDG86iGmz733chVP4E4P1Z7tIUEC4/edit#gid=0) in the database
+- Explore variables
+- Find total number of rows
+- Find unique states
+- Find the maximum and minimum number of death across all states and years
+- Find total deaths in April 2020 across all states
+- Calculate total deaths across years
+- Extract the top 5 entries in terms of number of deaths across year and state
+
+---
+
+# Exploring data from eCourts
+
+**Dataset** - [Link](https://www.dropbox.com/sh/hkcde3z2l1h9mq1/AADRe-BuBQ92ozAJiG7YERdCa?dl=0) - _The database contains 81.2 million cases_
+
+**Source**: [Devdatalab](http://www.devdatalab.org/judicial-data)
+
+**Objective**:
+
+- Understand how the data is structured
+- Import the data in a database
+- Explore the sample datasets
+- Find out the total cases present for each district for the year 2018
+
+**Tags**
+
+.bg-yellow[.black[_database_]]  .bg-yellow[.black[_large-datasets_]]  .bg-yellow[.black[_sqlite_]]  .bg-yellow[.black[_eCourts_]]  
+
+---
+
+# Exercise - Using Databases
+
+- Install SQLite DB Browser
+- Create a new database
+- Load the judges_clean dataset in the DB
+- Find the distribution of male/female judges in **Bengaluru** district court where judge position is _chief metropolitan magistrate_
+- Save the file, as CSV, in the drive
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
