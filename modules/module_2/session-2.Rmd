@@ -2,7 +2,7 @@
 title: "Module 2 - Session 2 - Data exploration"
 subtitle: "Working effectively with data"
 institute: "CivicDataLab"
-date: "2021/08/03 (updated: `r Sys.Date()`)"
+date: "2021/08/11 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -135,27 +135,262 @@ xaringanExtra::use_panelset()
 
 # Foregin Keys
 
-.pull-left[
+**Id** in the **Department table** [Primary Key]
 
+.center[
 ![](assets/foreign_1.webp)
+]
 
+**Dep_Id** in the **Employee table** [Foreign Key]
+
+.pull-left[
+![](assets/keys_master.webp)
 ]
 
 .pull-right[
 
 ![](assets/foreign_2.webp)
-
 ]
 
 ---
 
 # SQL Basics
 
+.left-column[.card[
 
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+
+.bg-yellow[.black[SELECT]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**SELECT** {stuff you want to select} **FROM** {the table that it is in}
+
+]
+
+]]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[SELECT ALL]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[The `*` is called a “splat” and is a handy, frequently used shortcut to get all columns.
+]
+
+]]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[ORDER BY]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[SELECT {stuff you want to select} FROM {the table that it is in} ORDER BY {column you want to order by}
+]
+
+**ASC**ending (_default_) or **DESC**ending 
+
+SELECT * FROM tracks ORDER BY name DESC
+
+
+
+]]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[LIMIT]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**LIMIT** the number of rows - SELECT * FROM artists LIMIT {Number to Limit By}
+
+]
+
+SELECT * FROM artists LIMIT 5
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[OFFSET]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+**OFFSET** - Where to start returning data - SELECT * FROM artists LIMIT 5 OFFSET {Number of rows to skip}
+
+]
+
+SELECT * FROM artists LIMIT 5 OFFSET 2
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[WHERE]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+The **WHERE** command is followed by the conditions you’d like to filter by.
+
+SELECT * FROM artists WHERE {Filter Conditions};
+
+]
+
+**Single clause** - SELECT * FROM artists WHERE id = 85
+
+**Multiple clauses** - SELECT * FROM tracks WHERE album_id = 89 AND composer = 'Green Day'
+
+**Combinations** - SELECT * FROM tracks WHERE composer = 'Green Day' OR (composer = 'AC/DC' AND milliseconds > 240000)
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[AGGREGATE]]
+
+![](assets/sql-aggregations.png)
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[AGGREGATE]]
+
+**MAX/MIN/AVG of one column** - SELECT MAX(unit_price), MIN(unit_price), AVG(unit_price) FROM tracks
+
+**Total Rows** - SELECT COUNT(*) FROM tracks
+
+**Unique Values in a column** - SELECT COUNT(DISTINCT composer) FROM tracks
+
+]
+]
+
+---
+
+# SQL Basics
+
+.left-column[.card[
+
+![](assets/sql-queries.png)
+]]
+
+
+.right-column[
+.center[
+.bg-yellow[.black[GROUP BY]]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+For splitting aggregations into groups
+
+]
+
+**Counting** - SELECT genre_id, COUNT(*) FROM tracks GROUP BY genre_id
+
+**Count but rename column** - SELECT composer, COUNT(*) as "count" FROM tracks GROUP BY composer ORDER BY "count" DESC
+
+**Aggregate by multiple columns** - SELECT media_type_id, genre_id, COUNT(*) FROM tracks GROUP BY media_type_id, genre_id ORDER BY  media_type_id, genre_id
+
+]
+]
 
 ---
 
 # Database tools
+
+.pull-left[
+
+1. Database - [SQLite](https://www.sqlite.org/index.html)
+
+2. Database Explorer - [SQLite Browser](https://sqlitebrowser.org/) - _For working with database_ 
+
+> DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+
+]
+
+.pull-right[
+
+[![](assets/db_browser.png)](https://sqlitebrowser.org/)
+
+]
+
 
 ---
 class: center, middle
@@ -164,7 +399,16 @@ class: center, middle
 
 ---
 
-# Exercise 1 - 
+# Exploring mortality data
+
+- Import the [CSV file](https://docs.google.com/spreadsheets/d/1fbdwMCnR3vLZBEJDG86iGmz733chVP4E4P1Z7tIUEC4/edit#gid=0) in the database
+- Explore variables
+- Find total number of rows
+- Find unique states
+- Find the maximum and minimum number of death across all states and years
+- Find total deaths in April 2020 across all states
+- Calculate total deaths across years
+- Extract the top 5 entries in terms of number of deaths across year and state
 
 ---
 
@@ -187,25 +431,11 @@ class: center, middle
 
 ---
 
-# Tools 
-
-1. [Sublime Text](https://www.sublimetext.com/) - _For text processing_
-2. [SQLite Browser](https://sqlitebrowser.org/) - _For working with database_
-3. [JSon Editor](https://jsoneditoronline.org/) - _For editing/viewing JSoN files_
-4. [XML to JSON](https://codebeautify.org/xmltojson) - _For converting XML to JSON_
-5. [jq](https://stedolan.github.io/jq/) - _For working with JSON files_
-6. [Agenty](https://chrome.google.com/webstore/detail/agenty-advanced-web-scrap/gpolcofcjjiooogejfbaamdgmgfehgff) - _Chrome extension for scraping data_
-7. [CSVLint](https://csvlint.io/) - _For validating CSV files_
-
----
-
-**Exercise - Using Databases**
+# Exercise - Using Databases
 
 - Install SQLite DB Browser
 - Create a new database
 - Load the judges_clean dataset in the DB
 - Find the distribution of male/female judges in **Bengaluru** district court where judge position is _chief metropolitan magistrate_
 - Save the file, as CSV, in the drive
-
----
 
