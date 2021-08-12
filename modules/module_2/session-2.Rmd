@@ -60,9 +60,13 @@ style_mono_accent(base_color = "#A63A50",colors = c(
 [Worksheet Link](https://docs.google.com/spreadsheets/d/1IEit4GN7w_d-a855qpa3_eq_J7PnVV5wL0OGu1_OXjo/edit#gid=199180986)
 
 ---
+class: center, middle
 
 # Working with databases
 
+---
+
+# Why to use a database ?
 
 - Dealing with large datasets
 
@@ -78,16 +82,76 @@ style_mono_accent(base_color = "#A63A50",colors = c(
 
 - Data stored as tables
 
-- Uses [SQL (Structured Query Language)](https://www.w3schools.com/sql/) to query ( _storing_, _manipulating_, _retrieving_) data
+- Each row in the table is a record with a unique ID called the key (Primary Key). 
 
+- The columns of the table hold attributes of the data, and each record usually has a value for each attribute.
+
+- Uses [SQL (Structured Query Language)](https://www.w3schools.com/sql/) to query ( _storing_, _manipulating_, _retrieving_) data
 
 ---
 
 # Database terminologies
 
+1.  **Schema** - _A database schema is the design of tables, columns, relations, and constraints that make up a logically distinct section of a database_. 
+2. **Key** - _A key is a database field whose purpose is to uniquely identify a record_. Type off keys:
+    - **Candidate Key** - _The set of columns that can each uniquely identify a record and from which the primary key is chosen._
+    - **Primary Key** - _This key uniquely identifies a record in a table. It cannot be null.There can be only one Primary key in a table._
+    - **Foreign Key** - _The key linking a record to a record in another table. A table's foreign key must exist as the primary key of another table._
+4. **SQL** - _Structured Query Language, or SQL, is the most commonly used language to access data from a database_
+
+---
+
+# Understanding keys
+
+```{r xaringan-panelset-1, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+.panel[
+.panel-name[Table 1]
+
+![](assets/keys_master.webp)
+
+]
+
+.panel[.panel-name[Candidate]
+
+![](assets/candidate_keys.webp)
+]
+
+.panel[.panel-name[Primary]
+
+![](assets/primary_alternate.webp)
+]
+
+.panel[.panel-name[Composite]
+
+![](assets/composite_key.webp)
+]
+]
+
+---
+
+# Foregin Keys
+
+.pull-left[
+
+![](assets/foreign_1.webp)
+
+]
+
+.pull-right[
+
+![](assets/foreign_2.webp)
+
+]
+
 ---
 
 # SQL Basics
+
+
 
 ---
 
