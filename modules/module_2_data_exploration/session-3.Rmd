@@ -30,21 +30,6 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_tachyons()
 ```
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-library(fontawesome)
-style_mono_accent(base_color = "#A63A50",colors = c(
-  red = "#f34213",
-  purple = "#3e2f5b",
-  orange = "#ff8811",
-  green = "#136f63",
-  white = "#FFFFFF",
-  yellow = "#F1A208"
-  ),link_decoration="underline",table_row_even_background_color = "#FFFFFF")
-
-```
-
-
 # Exercise - Exploring data from eCourts
 
 **Dataset** - [Link](https://www.dropbox.com/sh/hkcde3z2l1h9mq1/AADRe-BuBQ92ozAJiG7YERdCa?dl=0) - _The database contains 81.2 million cases_
@@ -76,8 +61,431 @@ style_mono_accent(base_color = "#A63A50",colors = c(
 
 # SQL - Recap 👇
 
-<iframe src="https://https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html" frameborder="0" height="480" width="640">
-</iframe>
+.center[
+<iframe src="https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html" frameborder="0" height="480" width="640" ></iframe>
+]
 
+---
+class: center, middle
+
+# Working with SQL JOINS
+
+---
+
+# JOINing Tables
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+A JOIN command is used where we need to query data that is spread across multiple tables
+]
+
+<br>
+
+> Merging two data sets using SQL or SQL tools can be accomplished through JOINS. **A JOIN is a SQL instruction in the FROM clause** of your query that is used to identify the tables you are querying and how they should be combined.<sup>1</sup>
+
+.footnote[
+[1] [Dataschool](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/)
+]
+---
+
+# Type of JOINs
+
+.left-column[
+### OUTER JOIN
+]
+
+.right-column[
+
+![](assets/outer-join.webp)
+
+.card[
+
+SELECT *
+FROM facebook
+FULL OUTER JOIN linkedin
+ON facebook.name = linkedin.name
+
+
+]
+
+.center[
+[Example](https://dataschool.com/how-to-teach-people-sql/full-outer-join-animated/)
+]
+
+]
+
+---
+
+# Type of JOINs
+
+.left-column[
+
+### OUTER JOIN
+### INNER JOIN
+
+]
+
+.right-column[
+
+![](assets/inner-join.webp)
+.card[
+
+SELECT *
+FROM facebook
+JOIN linkedin
+ON facebook.name = linkedin.name
+
+
+]
+
+.center[
+[Example](https://dataschool.com/how-to-teach-people-sql/inner-join-animated/)
+]
+
+]
+
+---
+
+# Type of JOINs
+
+.left-column[
+
+### OUTER JOIN
+### INNER JOIN
+### LEFT JOIN
+
+]
+
+.right-column[
+
+![](assets/left-join.webp)
+
+.card[
+
+SELECT *
+FROM facebook
+LEFT JOIN linkedin
+ON facebook.name = linkedin.name
+
+]
+
+.center[
+[Example](https://dataschool.com/how-to-teach-people-sql/left-right-join-animated/)
+]
+
+]
+
+---
+
+# Type of JOINs
+
+.left-column[
+
+### OUTER JOIN
+### INNER JOIN
+### LEFT JOIN
+### UNION JOIN
+
+
+]
+
+.right-column[
+
+![](assets/union-join.webp)
+
+.card[
+
+SELECT *
+FROM facebook
+UNION ALL
+SELECT *
+FROM linkedin
+
+]
+
+.center[
+[Example](https://dataschool.com/how-to-teach-people-sql/union-animated/)
+]
+
+]
+
+---
+
+# Type of JOINs
+
+.left-column[
+
+### OUTER JOIN
+### INNER JOIN
+### LEFT JOIN
+### UNION JOIN
+### CROSS JOIN
+
+]
+
+.right-column[
+
+![](assets/cross-join.webp)
+
+.card[
+
+SELECT *
+FROM facebook
+CROSS JOIN linkedin
+
+]
+
+.center[
+[Example](https://dataschool.com/how-to-teach-people-sql/cross-join-animated/)
+]
+
+
+]
+
+---
+
+.center[
+
+![](assets/all-joins.webp)
+
+]
+
+---
+class: center, middle
+
+# JOIN - Quiz
+
+---
+class: center
+
+![](assets/inner-join-GIF.gif)
+
+
+--
+
+.card[
+
+**INNER JOIN**
+
+]
+---
+class: center
+
+![](assets/union-GIF.gif)
+
+--
+
+
+.card[
+
+**UNION**
+
+]
+
+---
+class: center
+
+![](assets/full-join-GIF.gif)
+
+--
+
+
+.card[
+
+**OUTER JOIN**
+
+]
+
+---
+# Excercise - JOINS
+
+---
+class: center, middle
+
+# Other SQL Concepts
+
+---
+class: center
+
+## CASE WHEN
+
+.card[
+**SELECT** City,
+**CASE WHEN** City = "SF" **THEN** "San Francisco"
+**ELSE** City
+**END** AS "Updated City"  
+FROM friends
+]
+
+--
+
+.pull-left[
+
+.bg-yellow[Example 1]
+
+.card[
+```sql
+select month, year, deaths, 
+	CASE 
+	WHEN deaths < 5000 THEN "lt 5K"
+	WHEN 5000<=deaths<10000 THEN "5K-10K"
+	WHEN deaths > 10000 THEN "gt10K"
+	END as "trends" 
+FROM mortality_data;
+
+```
+]
+]
+
+.pull-right[
+
+.bg-yellow[Example 2]
+
+
+.card[
+```sql
+select month, year, deaths, 
+	CASE 
+	WHEN month = 1 THEN "Jan"
+	WHEN month = 2 THEN "Feb"
+	WHEN month = 3 THEN "Mar"
+	WHEN month = 4 THEN "Apr"
+	END as "monthName" 
+FROM mortality_data 
+WHERE
+	month <= 4 AND 
+	year= 2019 AND 
+	state="Rajasthan";
+```
+]
+]
+
+---
+
+## Subqueries
+
+.bg-yellow[
+Subquery in the **FROM clause**]
+
+.card[
+
+SELECT *
+FROM (SELECT State, SUM (# of friends)
+FROM facebook
+GROUP BY state);
+
+]
+
+<br>
+--
+
+.bg-yellow[
+Subquery in the **WHERE clause** ( _Returns single value_)
+]
+
+.card[
+SELECT *
+FROM facebook
+WHERE # of friends = (SELECT MAX(# of connections)
+FROM linkedin)
+
+]
+
+<br>
+--
+
+.bg-yellow[Subquery in the **WHERE clause** ( _Returns multiple values_)]
+
+.card[
+
+SELECT *
+FROM facebook
+WHERE # of friends IN (SELECT # of connections
+FROM linkedin)
+
+]
+
+---
+
+## EXERCISE - CASE WHEN & Subqueries
+
+- Load [Mortaliy data](https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/data/mortality_data.csv) in the database
+- Create a column to tag months where the total number of deaths was above or below average for the state of Rajasthan.
+- The column can have only two values _Above average_ and _Below average_
+- Sort the result dataset by year
+
+--
+
+.center[
+.card[
+```sql
+select month, year, deaths, 
+CASE WHEN 
+	deaths < (select avg(deaths) as avg_deaths_RJ from mortality_data where state='Rajasthan') 
+	THEN "belowAvg" 
+	ELSE "aboveAvg" 
+	END as "trends" 
+FROM mortality_data where state='Rajasthan' order by year desc;
+```
+]
+]
+
+---
+
+## Regular Expressions (REGEX)
+
+.center[
+
+.card[
+Regex, or Regular Expressions, is a sequence of characters, used to search and locate specific sequences of characters that match a pattern.
+]
+]
+
+<br>
+
+.center[
+.bg-yellow[The **LIKE** clause]
+]
+
+.pull-left[
+
+Find all states that start with letter `A`
+
+.card[
+```sql
+SELECT distinct state 
+FROM mortality_data 
+WHERE state LIKE 'A%';
+
+```
+]
+
+]
+
+.pull-right[
+
+Find all states that end with word `Pradesh`
+.card[
+```sql
+SELECT distinct state 
+FROM mortality_data 
+WHERE state LIKE '%Pradesh';
+
+```
+]
+
+]
+
+
+---
+
+# REGEX Exercise
+
+1. Import [NCRB data]() as a table
+2. Find all crime heads related to `children` [can contain `child` or `children`]
+3. Find all crime heads that mention `Murder`
+4. Find all crime heads that start with `Murder`
+5. Find all crime heads that are either `SLL` or `IPC` [ _REGEXP_ / _UNION_ ]
+
+---
 
 
