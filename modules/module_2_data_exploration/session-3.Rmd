@@ -1,0 +1,83 @@
+---
+title: "Module 2 - Session 3 - Data exploration"
+subtitle: "Working effectively with data"
+institute: "CivicDataLab"
+date: "2021/08/24 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+library(fontawesome)
+style_mono_accent(base_color = "#A63A50",colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF",
+  yellow = "#F1A208"
+  ),link_decoration="underline",table_row_even_background_color = "#FFFFFF")
+
+```
+
+
+# Exercise - Exploring data from eCourts
+
+**Dataset** - [Link](https://www.dropbox.com/sh/hkcde3z2l1h9mq1/AADRe-BuBQ92ozAJiG7YERdCa?dl=0) - _The database contains 81.2 million cases_
+
+**Source**: [Devdatalab](http://www.devdatalab.org/judicial-data)
+
+**Objective**:
+
+- Understand how the data is structured
+- Import the data in a database
+- Explore the sample datasets
+- Find out the total cases present for each district for the year 2018
+
+**Tags**
+
+.bg-yellow[.black[_database_]]  .bg-yellow[.black[_large-datasets_]]  .bg-yellow[.black[_sqlite_]]  .bg-yellow[.black[_eCourts_]]  
+
+---
+
+# Exercise - Using Databases
+
+- Install SQLite DB Browser
+- Create a new database
+- Load the judges_clean dataset in the DB
+- Find the distribution of male/female judges in **Bengaluru** district court where judge position is _chief metropolitan magistrate_
+- Save the file, as CSV, in the drive
+
+---
+
+# SQL - Recap 👇
+
+<iframe src="https://https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html" frameborder="0" height="480" width="640">
+</iframe>
+
+
+
