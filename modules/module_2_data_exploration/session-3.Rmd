@@ -30,7 +30,15 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_tachyons()
 ```
 
-# Exercise - Exploring data from eCourts
+
+# SQL - Recap 👇
+
+.center[
+<iframe src="https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html" frameborder="0" height="480" width="640" ></iframe>
+]
+
+---
+## Exercise - Exploring data from eCourts
 
 **Dataset** - [Link](https://www.dropbox.com/sh/hkcde3z2l1h9mq1/AADRe-BuBQ92ozAJiG7YERdCa?dl=0) - _The database contains 81.2 million cases_
 
@@ -47,9 +55,24 @@ xaringanExtra::use_tachyons()
 
 .bg-yellow[.black[_database_]]  .bg-yellow[.black[_large-datasets_]]  .bg-yellow[.black[_sqlite_]]  .bg-yellow[.black[_eCourts_]]  
 
+--
+
+.center[
+.card[
+```sql
+SELECT 
+	state_code, dist_code, count(*) AS total_cases 
+FROM 
+	cases_2018 
+GROUP BY state_code, dist_code
+```
+]
+
+]
+
 ---
 
-# Exercise - Using Databases
+## Exercise - Using Databases
 
 - Install SQLite DB Browser
 - Create a new database
@@ -57,15 +80,57 @@ xaringanExtra::use_tachyons()
 - Find the distribution of male/female judges in **Bengaluru** district court where judge position is _chief metropolitan magistrate_
 - Save the file, as CSV, in the drive
 
----
-
-# SQL - Recap 👇
+--
 
 .center[
-<iframe src="https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html" frameborder="0" height="480" width="640" ></iframe>
+.card[
+```sql
+SELECT 
+	judge_position, female_judge, count(*) as total_judges
+FROM 
+	judges_clean
+WHERE 
+	state_code = 3 AND dist_code = 20 AND judge_position = 'chief metropolitan magistrate'
+GROUP BY 
+	judge_position, female_judge
+```
+]
 ]
 
 ---
+
+# Working with Dates
+
+Find the average duration of male and female judges appointed as `chief metropolitan magistrate` in the district courts of `BENGALURU`
+
+
+--
+
+.center[
+.card[
+```sql
+SELECT 
+	judge_position, female_judge, count(*) AS total_judges, 
+	avg(
+		julianday(substr(end_date,7,4) || '-' ||  substr(end_date,4,2) || '-' || substr(end_date,1,2)) - 
+		julianday(substr(start_date,7,4) || '-' ||  substr(start_date,4,2) || '-' || substr(start_date,1,2))
+		) as avg_judge_duration 
+FROM judges_clean 
+WHERE 
+	state_code = 3 AND 
+	dist_code = 20 AND 
+	judge_position = 'chief metropolitan magistrate' 
+	AND female_judge LIKE '%female%'
+GROUP BY 
+	judge_position, female_judge 
+ORDER BY 
+	avg_judge_duration desc
+```
+]
+]
+
+---
+
 class: center, middle
 
 # Working with SQL JOINS
@@ -296,7 +361,32 @@ class: center
 ]
 
 ---
-# Excercise - JOINS
+## JOINS - Exercise 1
+
+- Create a table that only contains cases registered with the Karnataka district courts
+- Join the above table with `cases_district_key` to get district name
+- Find the total number of cases in each district. Arrange the results in descending order
+- Use a subquery to combine the two queries in one
+
+--
+
+.center[
+.card[
+```sql
+SELECT a2.district_name, count(*) AS total_cases 
+FROM (SELECT 
+	a.*, b.district_name 
+FROM 
+	cases_2018_karnataka AS a 
+LEFT JOIN
+	cases_district_key AS b
+ON a.state_code = b.state_code AND a.dist_code = b.dist_code) AS a2 
+GROUP BY a2.district_name 
+ORDER BY total_cases DESC
+```
+]
+]
+
 
 ---
 class: center, middle
@@ -408,7 +498,7 @@ FROM linkedin)
 
 ## EXERCISE - CASE WHEN & Subqueries
 
-- Load [Mortaliy data](https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/data/mortality_data.csv) in the database
+- Load [Mortality data](https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/data/mortality_data.csv) in the database
 - Create a column to tag months where the total number of deaths was above or below average for the state of Rajasthan.
 - The column can have only two values _Above average_ and _Below average_
 - Sort the result dataset by year
@@ -430,6 +520,42 @@ FROM mortality_data where state='Rajasthan' order by year desc;
 ]
 
 ---
+## JOINS - Exercise 2
+
+Find the top 5 districts of Karnataka in terms of the number of cases that ended in conviction
+
+--
+
+
+.center[
+.card[
+```sql
+SELECT d.*, e.district_name FROM (
+SELECT c.dist_code, count(*) as total_convict_cases
+FROM (
+SELECT a.dist_code, a.disp_name, b.disp_name_s FROM 
+	cases_2018_karnataka AS a 
+LEFT JOIN
+	disp_name_key AS b
+ON 
+	a.disp_name = b.disp_name) AS c
+WHERE c.disp_name_s 
+LIKE '%convict%' 
+GROUP BY c.dist_code) as d 
+LEFT JOIN 
+	cases_district_key as e 
+ON
+	d.dist_code = e.dist_code 
+WHERE 
+	e.state_code = 3 
+ORDER BY 
+	total_convict_cases DESC LIMIT 5
+```
+]
+]
+
+
+---
 
 ## Regular Expressions (REGEX)
 
@@ -439,6 +565,8 @@ FROM mortality_data where state='Rajasthan' order by year desc;
 Regex, or Regular Expressions, is a sequence of characters, used to search and locate specific sequences of characters that match a pattern.
 ]
 ]
+
+--
 
 <br>
 
@@ -478,7 +606,7 @@ WHERE state LIKE '%Pradesh';
 
 ---
 
-# REGEX Exercise
+## REGEX Exercise
 
 1. Import [NCRB data](https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/data/ncrb.csv)
 2. Find all crime heads related to `children` [can contain `child` or `children`]
@@ -488,4 +616,6 @@ WHERE state LIKE '%Pradesh';
 
 ---
 
+class: center, middle
 
+# Queries and Feedback
