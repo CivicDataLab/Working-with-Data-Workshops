@@ -480,7 +480,7 @@ WHERE state LIKE '%Pradesh';
 
 # REGEX Exercise
 
-1. Import [NCRB data]() as a table
+1. Import [NCRB data](https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/data/ncrb.csv)
 2. Find all crime heads related to `children` [can contain `child` or `children`]
 3. Find all crime heads that mention `Murder`
 4. Find all crime heads that start with `Murder`
