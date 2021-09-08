@@ -5,4 +5,4 @@
 
 # Local Folders
 logistics/
-/modules/module_2_data_exploration/data/test-db*
+modules/module_2_data_exploration/data/test*
