@@ -5,5 +5,4 @@
 
 # Local Folders
 logistics/
-modules/module_1_data_collection/session-2/session-recording
-/modules/module_2_data_exploration/data/devdatalab.db
+/modules/module_2_data_exploration/data/test-db*
