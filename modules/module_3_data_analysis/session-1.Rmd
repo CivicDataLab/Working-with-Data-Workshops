@@ -1,0 +1,37 @@
+---
+title: "Module 3 - Session 1 - Data Analysis"
+subtitle: "Working effectively with data"
+institute: "CivicDataLab"
+date: "2021/09/08 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+---
+
+class: center, middle
+
+# Queries and Feedback
