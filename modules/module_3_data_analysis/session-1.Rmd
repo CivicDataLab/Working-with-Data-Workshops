@@ -30,7 +30,7 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_tachyons()
 ```
 
-# What we will .bg-red[not] cover
+# Things we will .bg-red[.white[not]] cover
 
 1. This is not an introduction to Statistics
 2. No, we'll not learn AI and ML
@@ -39,7 +39,7 @@ xaringanExtra::use_tachyons()
 
 ---
 
-# What .bg-green[we will cover] instead
+# What .bg-green[.white[we will cover]] instead
 
 1. In what ways can analysis of legal data help us
 2. Common challenges with any data analysis project
@@ -73,8 +73,6 @@ and the list continues ....
 
 # But there are hurdles to cross
 
-## Challenges associated with most data driven engagements that can lessen the intended impact:
-
 1. Availability of granular datasets
 2. Bias in data collection and analysis
 3. Beneficiaries not in alignment with the proposed outcomes
@@ -94,11 +92,16 @@ and the list continues as well ..
 
 > If I had only one hour to save the world, I would spend fifty-five minutes defining the questions, and only five minutes finding the answers. 
 
-- Albert Einstein
+_Albert Einstein_
+
+.card[.center[
 
 [The 100 Questions project](https://the100questions.org/about.html) by [The GovLab](https://www.thegovlab.org/)
 
 ![](assets/100questions_process.png)
+
+]
+]
 ---
 
 ## The 100 Questions Project - Initiatives
@@ -107,7 +110,7 @@ and the list continues as well ..
 2. [Gender](https://gender.the100questions.org/)
 3. [Governance](https://governance.the100questions.org/)
 
-Other initiatives can be explored at [https://the100questions.org/](https://the100questions.org/about.html)
+Explore other initiatives at [https://the100questions.org/](https://the100questions.org/about.html)
 
 ---
 class: center, middle
@@ -119,17 +122,19 @@ class: center, middle
 ## Analysing Court Performance
 
 .pull-left[.card[
-[![](assets/court_statistics_hlr.png)](https://harvardlawreview.org/category/statistics/)
+![](assets/court_statistics_hlr.png)
+
+SCOTUS - Statistics - HLR - [Link](https://harvardlawreview.org/category/statistics/)
 ]
 ]
 
 .pull-right[.card[
-[![]()](https://www.courtstatistics.org/csp-stat-nav-cards-first-row/csp-stat-civil)
-]
+![](assets/statpack_scotus_thumb.png)
+The Court Statistics Project - NCSC
 
 [Report](https://www.courtstatistics.org/__data/assets/pdf_file/0014/40820/2018-Digest.pdf) [Dashboard](https://www.courtstatistics.org/interactive-data-displays-nav-cards-first-row/pandemic-data)
 ]
-
+]
 ---
 
 ### Supreme Court - Statistics Pack
@@ -137,6 +142,7 @@ class: center, middle
 .pull-left[
 .card[
 ![](assets/statpack_scotus.png)
+
 [United States ( _SCOTUS blog_ )](https://www.scotusblog.com/2020/07/final-stat-pack-for-october-term-2019/)
 ]
 ]
@@ -144,14 +150,17 @@ class: center, middle
 .pull-right[
 .card[
 ![](assets/statpack_clpr.png)
+
 [India ( _by CLPR_ )](https://scobserver-production.s3.amazonaws.com/uploads/ckeditor/attachments/440/Statistics_Pack_SCO.pdf)
 ]
 ]
 
-Other Analysis:
+---
+
+## Other Court level analysis:
 
 - [A Quantitative Analysis of the Indian Supreme Court Workload - Nick Robinson](https://www.cprindia.org/sites/default/files/articles/SSRN-id2189181.pdf)
-- [An empirical assessment of the Indian Supreme Court - Rangin Tripathy and Soumendra Dhanee](https://nlsir.com/wp-content/uploads/2020/09/An-Empirical-Assessment-of-the-Collegium%E2%80%99s-Impact-on-Composition-of-the-Indian-Supreme-Court.pdf)
+- [An Empirical Assessment Of The Collegium’s Impact On Composition Of The Indian Supreme Court](https://nlsir.com/wp-content/uploads/2020/09/An-Empirical-Assessment-of-the-Collegium%E2%80%99s-Impact-on-Composition-of-the-Indian-Supreme-Court.pdf)
 
 ---
 
@@ -175,38 +184,75 @@ Other Analysis:
 
 ### The CaseLaw Access Project by Harvard Law School
 
+.pull-left[
+.card[
+
+CAP includes all official, book-published United States case law — every volume designated as an official report of decisions by a court within the United States.
+
+Case Law Access Project - [Link](https://case.law/)
+]
+]
+
+
+.pull-right[
+.card[
 ![](assets/case_law_project.png)
+
+]
+]
+
 ---
 
 ### The CaseLaw Access Project - Use Cases
 
+.pull-left[
 ![](assets/case_law_project_usecases.png)
+]
 
-[Telling Stories with CAP Data: The Prolific Mr. Cartwright](https://lil.law.harvard.edu/blog/2018/08/24/telling-stories-with-cap-data-the-prolific-mr-cartwright/)
-
+.pull-right[
+.middle[
+- [Telling Stories with CAP Data: The Prolific Mr. Cartwright](https://lil.law.harvard.edu/blog/2018/08/24/telling-stories-with-cap-data-the-prolific-mr-cartwright/)
+]
+]
 ---
 
 ## Comparing entities - Creating Indices
 
+.center[
 .card[
 ![](assets/IJR_india_summary.png)
-India in the World - [IJR 2020](https://www.tatatrusts.org/Upload/pdf/ijr-2020-overall-report-january-26.pdf)
+
+]
 ]
 
 ---
 
 ### IJR Ranking
-
+.center[
+.card[
 ![](assets/ijr_ranking.png)
+
+[India Justice Report](https://www.tatatrusts.org/Upload/pdf/ijr-2020-overall-report-january-26.pdf)
+
+]
+]
 
 ---
 
 ### World Justice Project - Rule of Law Index
 
+.pull-left[
 .card[
 ![](assets/wjp_rule_of_law.png)
 
+]
+]
+
+.pull-right[.card[
+Covering 128 countries and jurisdictions, the Index relies on national surveys of more than 130,000 households and 4,000 legal practitioners and experts to measure how the rule of law is experienced and perceived worldwide. 
+
 World Justice Project - [Report](https://worldjusticeproject.org/our-work/research-and-data/wjp-rule-law-index-2020)
+]
 ]
 
 ---
@@ -222,8 +268,10 @@ World Justice Project - [Report](https://worldjusticeproject.org/our-work/resear
 ]
 
 ---
+class: center
 
-## Criminal Justice Data Explorers - The Commons Project
+## Criminal Justice Data - The Commons Project
+
 
 .card[
 Commons is a co-created space for the community, police, prosecutors, and courts to make criminal justice data transparent & shared goals public.
@@ -234,6 +282,7 @@ Commons is a co-created space for the community, police, prosecutors, and courts
 Explore here - [https://measuresforjustice.org/commons/yoloda/](https://measuresforjustice.org/commons/yoloda/)
 
 ---
+class: center
 
 ## Incident based Crime Data Explorer - FBI
 
@@ -246,6 +295,7 @@ FBI - Crime Data Explorer
 Explore [here](https://crime-data-explorer.fr.cloud.gov/pages/home)
 
 ---
+class: center
 
 ## Mapping Police Violence - Alternate Datasets
 
@@ -260,16 +310,19 @@ Explore [here](https://mappingpoliceviolence.org/)
 ## Human Rights Data Analysis group (HRDAG)
 
 .card[
-The Human Rights Data Analysis Group is a non-profit, non-partisan organization that applies rigorous science to the analysis of human rights violations around the world. Their work has been used by truth commissions, international criminal tribunals, and non-governmental human rights organizations across countries. 
+_The Human Rights Data Analysis Group is a non-profit, non-partisan organization that applies rigorous science to the analysis of human rights violations around the world. Their work has been used by truth commissions, international criminal tribunals, and non-governmental human rights organizations across countries._
 ]
 
-Projects:
+**Projects**
+
 - [Violent Deaths and Enforced Disappearances During the Counterinsurgency in Punjab](https://hrdag.org/india/)
 - [Estimating the Human Toll in Syria](https://hrdag.org/syria/)
 - [How many people disappeared on 17–19 May 2009 in Sri Lanka?](https://hrdag.org/wp-content/uploads/2018/12/HRDAG-ITJPSL-2018-12-12-1.pdf)
 - [A dataset on Human Rights violations in Guatemala during the period 1960-1996](https://hrdag.org/guatemala-ciidh-data/)
 
-Talks and Discussions - [Link](https://hrdag.org/talks-discussions/)
+**Other Resources**
+
+- [Talks and Discussions](https://hrdag.org/talks-discussions/)
 
 ---
 
@@ -294,8 +347,9 @@ Talks and Discussions - [Link](https://hrdag.org/talks-discussions/)
 
 ## A story from WW2
 
+.center[
 ![](assets/survivorship-bias.png)
-
+]
 ---
 
 ## How to avoid bias
@@ -319,19 +373,22 @@ Talks and Discussions - [Link](https://hrdag.org/talks-discussions/)
 
 ## What to use when
 
+.pull-left[
 .card[
-It can be hard to know which methodology to use when designing a data project. The most important thing for the success of your selection (and equity) is to make sure that your chosen methodology matches the kinds of research questions you have.
+_It can be hard to know which methodology to use when designing a data project. The most important thing for the success of your selection (and equity) is to make sure that your chosen methodology matches the kinds of research questions you have._
 ]
 
+Read more [here](https://heatherkrause.medium.com/the-methodology-matrix-how-to-not-get-bullied-blindsided-or-bored-when-designing-your-data-d34f16963b1e)
+
+]
+
+.pull-right[
 .card[
 ![](assets/wac_methodology_matrix.png)
 
 Methodology Matrix - [Link](https://weallcount.com/methodology-matrix/)
 
-]
-
-Read more [here](https://heatherkrause.medium.com/the-methodology-matrix-how-to-not-get-bullied-blindsided-or-bored-when-designing-your-data-d34f16963b1e)
-
+]]
 
 ---
 
