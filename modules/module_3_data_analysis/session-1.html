@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Module 3 - Session 1 - Data Analysis</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <script src="libs/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Module 3 - Session 1 - Data Analysis
+## Working effectively with data
+### CivicDataLab
+### 2021/09/08 (updated: 2021-09-09)
+
+---
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://civicdatalab.in'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+
+
+
+# What we will .bg-red[not] cover
+
+1. This is not an introduction to Statistics
+2. No, we'll not learn AI and ML
+3. We will not learn about using the Microsoft Excel Analytics ToolPak addin
+4. We will not use any additional analytical tools like Stata or SPSS to analyse data
+
+---
+
+# What .bg-green[we will cover] instead
+
+1. In what ways can analysis of legal data help us
+2. Common challenges with any data analysis project
+3. Asking the right questions 
+4. Data Analysis use cases
+  1. Court Performance
+  2. Case level analytics
+  3. Comparing entities - Creating Indices
+  4. Text Based Analysis
+  5. Criminal Justice Data Explorers - Commons Project
+  6. FBI Crime Data Explorer
+  7. Human Rights Data Analysis Group (HRDAG)
+5. How can we analyse the data in an un-biased way
+6. The methodology matrix - What to use when
+
+---
+
+# Analysing legal data can help us in
+
+1. Understanding how the judiciary functions
+2. Creating more accountable institutions
+3. Analysing the structural capacity of justice system across the country
+4. Designing evidence-based judicial reforms
+5. Designing better court/case management practices
+6. Predict/Simulate the impact of laws on different stakeholders
+7. Re-engineering judicial processes
+
+and the list continues .... 
+
+---
+
+# But there are hurdles to cross
+
+## Challenges associated with most data driven engagements that can lessen the intended impact:
+
+1. Availability of granular datasets
+2. Bias in data collection and analysis
+3. Beneficiaries not in alignment with the proposed outcomes
+4. Setting up a multidisciplinary team that: 
+  1. Understands the context
+  2. Has the right set of skills to analyse data
+  3. Can publish with purpose
+5. Ethical use of datasets
+6. Sustainability
+7. Periodic data updates
+
+and the list continues as well .. 
+ 
+---
+
+# It starts with asking the right questions
+
+&gt; If I had only one hour to save the world, I would spend fifty-five minutes defining the questions, and only five minutes finding the answers. 
+
+- Albert Einstein
+
+[The 100 Questions project](https://the100questions.org/about.html) by [The GovLab](https://www.thegovlab.org/)
+
+![](assets/100questions_process.png)
+---
+
+## The 100 Questions Project - Initiatives
+
+1. [Migration](https://migration.the100questions.org/)
+2. [Gender](https://gender.the100questions.org/)
+3. [Governance](https://governance.the100questions.org/)
+
+Other initiatives can be explored at [https://the100questions.org/](https://the100questions.org/about.html)
+
+---
+class: center, middle
+
+# Data Analysis - Use-Cases
+
+---
+
+## Analysing Court Performance
+
+.pull-left[.card[
+[![](assets/court_statistics_hlr.png)](https://harvardlawreview.org/category/statistics/)
+]
+]
+
+.pull-right[.card[
+[![]()](https://www.courtstatistics.org/csp-stat-nav-cards-first-row/csp-stat-civil)
+]
+
+[Report](https://www.courtstatistics.org/__data/assets/pdf_file/0014/40820/2018-Digest.pdf) [Dashboard](https://www.courtstatistics.org/interactive-data-displays-nav-cards-first-row/pandemic-data)
+]
+
+---
+
+### Supreme Court - Statistics Pack
+
+.pull-left[
+.card[
+![](assets/statpack_scotus.png)
+[United States ( _SCOTUS blog_ )](https://www.scotusblog.com/2020/07/final-stat-pack-for-october-term-2019/)
+]
+]
+
+.pull-right[
+.card[
+![](assets/statpack_clpr.png)
+[India ( _by CLPR_ )](https://scobserver-production.s3.amazonaws.com/uploads/ckeditor/attachments/440/Statistics_Pack_SCO.pdf)
+]
+]
+
+Other Analysis:
+
+- [A Quantitative Analysis of the Indian Supreme Court Workload - Nick Robinson](https://www.cprindia.org/sites/default/files/articles/SSRN-id2189181.pdf)
+- [An empirical assessment of the Indian Supreme Court - Rangin Tripathy and Soumendra Dhanee](https://nlsir.com/wp-content/uploads/2020/09/An-Empirical-Assessment-of-the-Collegium%E2%80%99s-Impact-on-Composition-of-the-Indian-Supreme-Court.pdf)
+
+---
+
+## Analysing Case Laws
+
+.pull-left[
+.card[
+![](assets/court_data_contracts.png)
+[Litigation in public contracts - NIPFP](https://blog.theleapjournal.org/2021/05/litigation-in-public-contracts-some.html)
+]
+]
+
+.pull-right[
+.card[
+![](assets/sc_caselaw.png)
+[The Supreme Court of India: A People’s Court?](https://cpb-us-east-1-juc1ugur1qwqqqo4.stackpathdns.com/blogs.cornell.edu/dist/2/7529/files/2017/05/The-Supreme-Court-of-India-A-Peoples-Court-2m3odf8.pdf)
+]
+]
+
+---
+
+### The CaseLaw Access Project by Harvard Law School
+
+![](assets/case_law_project.png)
+---
+
+### The CaseLaw Access Project - Use Cases
+
+![](assets/case_law_project_usecases.png)
+
+[Telling Stories with CAP Data: The Prolific Mr. Cartwright](https://lil.law.harvard.edu/blog/2018/08/24/telling-stories-with-cap-data-the-prolific-mr-cartwright/)
+
+---
+
+## Comparing entities - Creating Indices
+
+.card[
+![](assets/IJR_india_summary.png)
+India in the World - [IJR 2020](https://www.tatatrusts.org/Upload/pdf/ijr-2020-overall-report-january-26.pdf)
+]
+
+---
+
+### IJR Ranking
+
+![](assets/ijr_ranking.png)
+
+---
+
+### World Justice Project - Rule of Law Index
+
+.card[
+![](assets/wjp_rule_of_law.png)
+
+World Justice Project - [Report](https://worldjusticeproject.org/our-work/research-and-data/wjp-rule-law-index-2020)
+]
+
+---
+
+## Text based analysis - Natural Language Processing
+
+.center[
+.card[
+![](assets/blackstone.png)
+
+[Open source natural language processing for Legal Texts](https://research.iclr.co.uk/blackstone)
+]
+]
+
+---
+
+## Criminal Justice Data Explorers - The Commons Project
+
+.card[
+Commons is a co-created space for the community, police, prosecutors, and courts to make criminal justice data transparent &amp; shared goals public.
+]
+
+![](assets/commons.png)
+
+Explore here - [https://measuresforjustice.org/commons/yoloda/](https://measuresforjustice.org/commons/yoloda/)
+
+---
+
+## Incident based Crime Data Explorer - FBI
+
+.card[
+![](assets/fbi_data_explorer.png)
+
+FBI - Crime Data Explorer
+]
+
+Explore [here](https://crime-data-explorer.fr.cloud.gov/pages/home)
+
+---
+
+## Mapping Police Violence - Alternate Datasets
+
+.card[
+![](assets/police_violence.png)
+
+Explore [here](https://mappingpoliceviolence.org/)
+]
+
+---
+
+## Human Rights Data Analysis group (HRDAG)
+
+.card[
+The Human Rights Data Analysis Group is a non-profit, non-partisan organization that applies rigorous science to the analysis of human rights violations around the world. Their work has been used by truth commissions, international criminal tribunals, and non-governmental human rights organizations across countries. 
+]
+
+Projects:
+- [Violent Deaths and Enforced Disappearances During the Counterinsurgency in Punjab](https://hrdag.org/india/)
+- [Estimating the Human Toll in Syria](https://hrdag.org/syria/)
+- [How many people disappeared on 17–19 May 2009 in Sri Lanka?](https://hrdag.org/wp-content/uploads/2018/12/HRDAG-ITJPSL-2018-12-12-1.pdf)
+- [A dataset on Human Rights violations in Guatemala during the period 1960-1996](https://hrdag.org/guatemala-ciidh-data/)
+
+Talks and Discussions - [Link](https://hrdag.org/talks-discussions/)
+
+---
+
+# Biases in data analysis
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+**Confirmation bias** is the tendency to seek out or interpret data to confirm beliefs you already hold. It does this to the exclusion of contrary evidence.
+]
+
+--
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+**Selection Bias** is when the group chosen to be analyzed is not representative of the population you are trying to draw conclusions about.
+]
+
+--
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+**Survivorship bias** is the tendency to draw conclusions based on things that have survived, some selection process, and to ignore things that did not survive.] 
+
+---
+
+## A story from WW2
+
+![](assets/survivorship-bias.png)
+
+---
+
+## How to avoid bias
+
+1. Better documentation of data collection practices, research questions, analysis methods, assumptions, stakeholders, funders, etc. 
+2. Conducting reproducible research experiments
+3. Peer reviewed research
+4. Regular audits
+5. Correct framing of the research[1] questions[2]
+6. Curating a representative sample - Exploratory data analyis will help in assessing if a sample is representative enough.
+
+
+.footnote[
+[1][What is a research question](https://weallcount.com/2020/10/02/what-is-a-research-question/)
+[2][How to frame your research questions equitably. ](https://weallcount.com/2020/05/22/framing-research-questions-that-reflect-who-is-expected-to-change/)
+]
+
+---
+
+# Data Analysis Methodologies
+
+## What to use when
+
+.card[
+It can be hard to know which methodology to use when designing a data project. The most important thing for the success of your selection (and equity) is to make sure that your chosen methodology matches the kinds of research questions you have.
+]
+
+.card[
+![](assets/wac_methodology_matrix.png)
+
+Methodology Matrix - [Link](https://weallcount.com/methodology-matrix/)
+
+]
+
+Read more [here](https://heatherkrause.medium.com/the-methodology-matrix-how-to-not-get-bullied-blindsided-or-bored-when-designing-your-data-d34f16963b1e)
+
+
+---
+
+# Resources
+
+- [Statistics for lawyers](http://ndl.ethernet.edu.et/bitstream/123456789/63099/1/348.pdf)
+- [OpenIntro - Statistics](https://www.openintro.org/book/os/)
+- A course by SDGAcademy on [Measuring Sustainable Development](https://www.edx.org/course/measuring-sustainable-development)
+- [The Seductions of Quantification - 
+Measuring Human Rights, Gender Violence, and Sex Trafficking](https://www.google.co.in/books/edition/The_Seductions_of_Quantification/0FcqDAAAQBAJ?hl=en&amp;gbpv=0)
+- [The Summer Institutes in Computational Social Science - SICSS](https://sicss.io/overview)
+- [Bit By Bit - Social Research in the Digital Age](https://www.bitbybitbook.com/en/1st-ed/preface/)
+
+---
+
+class: center, middle
+
+# Queries and Feedback
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
