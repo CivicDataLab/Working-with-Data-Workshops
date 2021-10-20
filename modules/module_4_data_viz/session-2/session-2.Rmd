@@ -41,9 +41,182 @@ style_mono_accent(base_color = "#0E273C",colors = c(
 ),link_color = '#F75C03')
 ```
 
+# RECAP
+
+Topics covered in the last session:
+
+1. The data viz quadrant
+2. What restricts us from visualising data
+3. Data viz storytelling components **Story | Audience | Medium**
+4. Activity - Building a narrative
+5. Activity - Reading a data viz
+6. Building accessible data visualisations - Check the [Chartability project](https://chartability.fizz.studio/)
+7. How to select the most appropriate graph for your data
+8. Things to avoid when developing visualisations
+9. Information sharing framework when working with external consultants on data viz projects
+
+<br/>
+<br/>
+
+-----
 
 
+.center[
+[**Slides**](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.html) | [**Video**](https://youtu.be/qieuVFrFxRo)
+]
 
+-----
+
+
+---
+
+# The data viz storytelling process
+
+.center[
+![](../session-2/assets/storytelling-process.png) 
+
+_The  storytelling  process  from  the  story  idea  to  visually  shared  
+stories._<sup>1</sup>
+
+]
+.footnote[
+[1][Data Driven Storytelling](https://medium.com/nightingale/data-driven-%3Cmark%3Estorytelling%3C/mark%3E-a-short-review-93926262a74a)
+]
+
+---
+class: center, middle
+
+# Data Viz - The Tooling Landscape
+
+---
+class: center, middle
+
+![](assets/tool_landscape.jpg)
+---
+class: center, middle
+
+# Static viz
+
+---
+
+# Charticulator
+
+.center[**Objective** : Plot month wise cases for all districts of Karnataka from the year 2018]
+
+
+.pull-left[
+
+[![](assets/charticulator-logo.png)](https://charticulator.com/)
+
+.center[
+
+Charticulator is a project from Microsoft Research.
+
+]
+
+]
+
+.pull-right[
+![](assets/KA_district_cases_2018.png)
+]
+
+------
+
+.center[
+
+**[Tool](https://charticulator.com/) | [Dataset]((datasets/KA_2018_monthly_cases_districts.csv)**
+
+]
+
+------
+
+---
+
+# DataWrapper
+
+.center[**Objective** : Plot district wise total conviction cases for all districts of Karnataka from the year 2018]
+
+
+.pull-left[
+
+[![](assets/datawrapper-logo.png)](https://app.datawrapper.de/)
+
+.center[
+
+Datawrapper helps some of the world’s best teams to tell their stories with data.
+]
+
+]
+
+.pull-right[
+[![](assets/KA_convictions_2018.png)](https://www.datawrapper.de/_/yGrFO/)
+]
+
+------
+
+.center[
+**[Tool](https://app.datawrapper.de) | [Dataset](datasets/KA_2018_district_wise_convictions.csv)**
+]
+
+------
+
+---
+
+# Dynamic (or Interactive) viz
+
+---
+
+# Maps
+
+---
+
+# Infographics
+
+---
+
+
+# Dashboards
+
+---
+
+# Storytelling conventions for better data viz
+
+https://medium.com/nightingale/how-to-use-storytelling-conventions-to-create-better-visualizations-45177ae517ba
+---
+
+# Resources - To select a chart
+
+.pull-left[
+![](assets/visual-vocab.png)
+]
+
+.pull-right[
+[![](../session-2/assets/ft-visual-vocabulary.png)](https://raw.githubusercontent.com/Financial-Times/chart-doctor/main/visual-vocabulary/poster.png)
+
+1. [From Data to Viz](https://www.data-to-viz.com/)
+2. [FT - Visual Vocabulary](https://raw.githubusercontent.com/Financial-Times/chart-doctor/main/visual-vocabulary/poster.png)
+
+]
+---
+
+# Other Resources
+
+.pull-left[
+
+### Creating accessible data viz
+
+- The [Chartability project](https://chartability.fizz.studio/)
+- [Accessibility Features Demo - HighCharts](https://www.highcharts.com/accessibility/)
+
+### 
+
+]
+
+.pull-right[
+
+1. [Creating responsive data visualisations](https://www.gurmanbhatia.com/talk/2020/11/28/responsive-data-viz-phone.html)
+
+]
 ---
 class: center, middle
 
