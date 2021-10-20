@@ -1,0 +1,50 @@
+---
+title: "Module 4 - Session 2 - Data Visualisation"
+subtitle: "Working effectively with data"
+institute: "CivicDataLab"
+date: "2021/10/21 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css","libs/extras.css"]
+    lib_dir: libs
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(base_color = "#0E273C",colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF"
+),link_color = '#F75C03')
+```
+
+
+
+
+---
+class: center, middle
+
+# Queries and Feedback
