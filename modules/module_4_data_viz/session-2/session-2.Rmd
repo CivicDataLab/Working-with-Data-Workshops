@@ -161,11 +161,45 @@ Datawrapper helps some of the world’s best teams to tell their stories with da
 ------
 
 ---
+class: center, middle
 
 # Dynamic (or Interactive) viz
 
 ---
 
+# Flourish
+
+.center[
+**Objective** : Plot the spread of COVID-19 across states from Jan, 20 - Oct, 21
+]
+
+
+.pull-left[
+
+[![](assets/flourish-logo.png)](https://flourish.studio/)
+
+.center[
+Beautiful and easy data visualization and storytelling
+]
+]
+
+.pull-right[
+[![](assets/covid-19-dynamic.png)](https://app.flourish.studio/visualisation/7586483/edit)
+]
+
+------
+.center[
+**[Tool](https://app.flourish.studio/) | [Dataset](datasets/covid_data_transposed.csv)**
+]
+
+------
+
+---
+
+## COVID-19 Dynamic Data Viz
+
+<iframe src='https://flo.uri.sh/visualisation/7586483/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/7586483/?utm_source=embed&utm_campaign=visualisation/7586483' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+---
 # Maps
 
 ---
