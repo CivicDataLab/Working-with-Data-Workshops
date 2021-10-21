@@ -199,17 +199,142 @@ Beautiful and easy data visualization and storytelling
 ## COVID-19 Dynamic Data Viz
 
 <iframe src='https://flo.uri.sh/visualisation/7586483/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/7586483/?utm_source=embed&utm_campaign=visualisation/7586483' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
 ---
+class: center, middle
+
 # Maps
 
 ---
 
-# Infographics
+## Maps - StoryMap - KnightLab
+
+.pull-left[
+
+[![](assets/story-map-logo.png)](https://storymap.knightlab.com/)
+
+.center[
+StoryMapJS is a free tool to help you tell stories on the web that highlight the locations of a series of events. 
+]
+]
+
+.pull-right[
+[![](assets/storymap-demo.png)](https://storymap.knightlab.com/edit/?id=optimal-road-trip)
+]
+
+------
+
+.center[
+**[Tool](https://storymap.knightlab.com/) | [Dataset](https://behindbars.netlify.app/docs/optimal-trip/)**
+]
+
+------
 
 ---
 
+## Maps - Designing a Road Trip around India
 
-# Dashboards
+<iframe src='https://uploads.knightlab.com/storymapjs/f287bd3a137f982d797c44bf54fb3e9b/optimal-road-trip/index.html' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+
+---
+## Maps - Static
+
+.pull-left[
+
+[![](assets/datawrapper-maps.png)](https://www.datawrapper.de/maps)
+
+.center[
+More than static maps: responsive, customizable and live-updating.
+
+**[Tool](https://www.datawrapper.de/maps) | [Dataset](datasets/covid_state_wise_cumulative.csv)**
+
+]
+]
+
+.pull-right[
+[![](assets/static-maps-demo.png)](https://datawrapper.dwcdn.net/VJAyt/1/)
+]
+
+
+---
+
+<iframe title="Confirmed COVID cases as on 07/10/21" aria-label="Map" id="datawrapper-chart-VJAyt" src="https://datawrapper.dwcdn.net/VJAyt/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="775"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+---
+class: center, middle
+
+# Tables
+
+---
+# Table - Datawrapper
+
+.center[
+**Objective** : 
+Display the total number of registered calls of women users across states from 2016-17 till 2019-20  
+]
+
+
+.pull-left[
+
+[![](assets/datawrapper-logo.png)](https://app.datawrapper.de/)
+
+.center[
+Create responsive tables with Datawrapper
+]
+]
+
+.pull-right[
+[![](assets/table-demo.png)](https://datawrapper.dwcdn.net/a06XO/2/)
+]
+
+------
+
+.center[
+**[Tool](https://www.datawrapper.de/tables) | [Dataset](datasets/wcd_whl_data.csv)**
+]
+
+------
+
+---
+## Table - Women help line scheme
+
+<iframe title="Women Help Line Scheme" aria-label="table" id="datawrapper-chart-a06XO" src="https://datawrapper.dwcdn.net/a06XO/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="896"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+---
+class: center, middle
+
+# Timeline
+
+---
+# Timeline - KnightLab
+
+.pull-left[
+
+[![](assets/timeline-logo.png)](https://timeline.knightlab.com/)
+
+.center[
+TimelineJS is an open-source tool that enables anyone to build visually rich, interactive timelines. 
+]
+]
+
+.pull-right[
+[![](assets/timeline-banner.png)](https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&initial_zoom=2&height=100%)
+]
+
+------
+
+.center[
+**[Tool](https://timeline.knightlab.com/#examples)**
+]
+
+------
+---
+
+## Timeline demo - Women in Computing
+
+<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&height=70%' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
 
 ---
 
@@ -229,7 +354,7 @@ https://medium.com/nightingale/how-to-use-storytelling-conventions-to-create-bet
 
 1. [From Data to Viz](https://www.data-to-viz.com/)
 2. [FT - Visual Vocabulary](https://raw.githubusercontent.com/Financial-Times/chart-doctor/main/visual-vocabulary/poster.png)
-
+3. [Information design for the human brain](http://paldhous.github.io/NICAR/2016/infodesign.html)
 ]
 ---
 
@@ -242,15 +367,30 @@ https://medium.com/nightingale/how-to-use-storytelling-conventions-to-create-bet
 - The [Chartability project](https://chartability.fizz.studio/)
 - [Accessibility Features Demo - HighCharts](https://www.highcharts.com/accessibility/)
 
-### 
+### Tools
+
+- [Visualisation Tools](https://gijn.org/visualization-tools/)
+- [RAWGraphs](https://rawgraphs.io)
+- [DataWrapper](https://www.datawrapper.de)
+- [For creating infographics - Infogram](https://infogram.com/)
+- [Dashboard - Metabase](https://www.metabase.com/)
+- [Dashboard - Superset](https://superset.apache.org/)
 
 ]
 
 .pull-right[
 
+### Links
+
 1. [Creating responsive data visualisations](https://www.gurmanbhatia.com/talk/2020/11/28/responsive-data-viz-phone.html)
+2. [Visualizing How India Reacted to Decriminalization of Homosexuality](https://towardsdatascience.com/the-13-x-29-project-visualizing-how-india-reacted-to-decriminalization-of-homosexuality-8d105f828748)
+3. [India in Pixels](https://www.instagram.com/india.in.pixels/)
+4. [Demo of how data can tell any story you want, ode to Tokyo](https://junkcharts.typepad.com/numbersruleyourworld/2021/08/demo-of-how-data-can-tell-any-story-you-want-ode-to-tokyo.html)
+5. [Data Viz - Style Guides](https://policyviz.com/2016/11/30/style-guides/)
+6. [PolicyViz](https://policyviz.com/blog/)
 
 ]
+
 ---
 class: center, middle
 
