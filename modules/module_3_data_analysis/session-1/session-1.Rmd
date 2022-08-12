@@ -41,7 +41,7 @@ style_mono_accent(base_color = "#2A9D8E",colors = c(
 ))
 ```
 
-# Things we will .bg-red[.white[not]] cover
+# Things we will .bg-green[.white[not]] cover
 
 1. This is not an introduction to Statistics
 2. No, we'll not learn AI and ML

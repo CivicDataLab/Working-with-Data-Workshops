@@ -1,0 +1,110 @@
+---
+title: "Exploring datasets - Examples"
+subtitle: "Workshop at NLU Odisha"
+institute: "CivicDataLab"
+date: "2022/08/08 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+# Crime in India
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Crime_in_India)
+
+## Objective:
+
+1. Download the table _Absolute number of reported crimes & crime rates across India_
+2. Calculate _total reported crimes from 2016-2019_ in all states
+3. Calculate _percent share of each state_ in reported crimes
+4. Arrange the results in decreasing order of percent share
+
+---
+
+# Most cited acts and sections
+
+Source: [Justice Hub - Indian Kanoon Statistics](https://justicehub.in/dataset/indian-kanoon-statistics)
+
+
+## Objective:
+
+1. Import data in google sheets
+2. Filter data for IPC sections
+3. Find how many sections contribute to 50% of the cases
+4. Add a column for the section title
+
+---
+
+# Mortality data from DevDataLab
+
+Source: Dropbox
+
+Link: https://www.dropbox.com/sh/y949ncp39towulf/AACJRhJs6uzbjkB6uM5O9mKga/mortality/csv?dl=0&subfolder_nav_tracking=1
+
+## Objective:
+
+1. Import data in google sheets
+2. Compare mortality data across states from 2019 - 2021
+3. Compare mortality data for Karnataka across years, as shown [here](https://devdatalab.medium.com/making-sense-of-excess-mortality-f26cffe3643e)
+
+---
+
+# Judges of the Orissa High Court
+
+Source: Justice Hub
+
+Link: https://justicehub.in/dataset/dataset-on-judges-of-the-odisha-high-court/resource/92c89ebb-3612-4ad5-a327-d55f65327577
+
+## Objective:
+
+1. Import data in google sheets
+2. Find the number of Male and Female judges
+3. Find the percentage of judges where _Parent High court_ is Odisha High Court
+4. Find the total number of judges appointed each year
+5. Find the total number of judges retiring each year
+
+---
+
+# India at CommonWealth Games 
+
+Source: Wikipedia
+
+Link: https://en.wikipedia.org/wiki/India_at_the_Commonwealth_Games
+
+## Objective:
+
+1. Find the table titled - _Overall Medal Tally By Sport_
+2. Import data in Microsoft Excel
+3. Find the percentage share of total medals by sports
+4. Arrange the sports in decreasing order of percentage share of total medals
+5. Find the percentage share of gold, silver and bronze medals by each sport
+6. Remove Grand Totals from Columns
+7. Highlight the cells with the largest contribution to gold, silver and bronze medals respectively
+
+---
+
+class: center, middle
+
+# Queries and Feedback

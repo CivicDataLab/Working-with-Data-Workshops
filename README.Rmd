@@ -34,5 +34,6 @@ library(fontawesome)
 | 10 | Data Visualisation | 12/10/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.pdf) |
 | 11 | Data Visualisation - Tools and Resources | 21/10/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.pdf) | 
 | 12 | Qualitative Data Analysis & Publishing Open Data | 28/10/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.pdf) | 
+| 13 | Exploring Datasets - Session at NLU Odisha | 08/08/22 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.pdf) | 
 
 _Note: The keyboard shortcuts for the HTML version of the slide deck can be viewed by pressing the `h` key_
