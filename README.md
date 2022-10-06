@@ -42,4 +42,4 @@ be viewed by pressing the `h` key*
 ### License
 
 All content in this repository is licensed under
-[![CC-BY-SA](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](#license)
+[![CC-BY-SA](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](LICENSE.md)
