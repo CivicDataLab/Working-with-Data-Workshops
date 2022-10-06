@@ -3,37 +3,40 @@ output: rmarkdown::github_document
 ---
 
 
-
 ```{r libraries, message=FALSE, warning=FALSE, include=FALSE}
 library(fontawesome)
 ```
 
-# Working with Data Workshops
+## Working with Data
 
-## Course Modules
+The repository contains slide decks (HTML and PDF) on topics related to retrieving, viewing, managing, and manipulating data for exploration, research and analysis.
 
-1. Data Collection
-2. Data Management
-3. Data Processing and Analysis
-4. Telling stories using data
-5. Introduction to scripting languages
+Check [wiki](https://github.com/CivicDataLab/Working-with-Data-Workshops/wiki/Resources) for more resources.
 
-## Resources
+Visit our [website](https://civicdatalab.in/work/lawandjustice/data-workshops/) to know more about the workshops. If you're interested in organising a in-person/online sessions around these topics, write to us at `info[at]civicdatalab.in`. 
 
-| Session | Topic | Date | Slide Deck | 
+
+### Resources
+
+Slides created using the [xaringan](https://github.com/yihui/xaringan) package. 
+
+| Session | Title | Topics | Slide Deck | 
 | :-----: | :---: | :--: | :--------: | 
-| 1 | Data Collection | 16/07/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.pdf) |
-| 2 | Web scraping & Data Standards | 26/07/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-2/session-2.pdf) |
-| 3 | Data Exploration | 04/08/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-1.pdf) | 
-| 4 | Working with databases | 12/08/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.pdf) |
-| 5 | Working with databases | 26/08/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-3.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-3.pdf) | 
-| 6 | Working with databases | 02/09/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-4.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-4.pdf) | 
-| 7 | Data Analysis - Use Cases | 09/09/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-1/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-1/session-1.pdf) |
-| 8 | Data Analysis - Analysis Deep Dive | 17/09/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-2/session-2.pdf) |
-| 9 | Data Analysis - UWAZI & GIS Analysis | 29/09/21 | [HTML](https://docs.google.com/presentation/d/16-2zyEQI_Mn93LZ7iTcVKMG40POPGw_RThNwCsQNqls/edit?usp=sharing) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-3/session-3.pdf) | 
-| 10 | Data Visualisation | 12/10/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.pdf) |
-| 11 | Data Visualisation - Tools and Resources | 21/10/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.pdf) | 
-| 12 | Qualitative Data Analysis & Publishing Open Data | 28/10/21 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.pdf) | 
-| 13 | Exploring Datasets - Session at NLU Odisha | 08/08/22 | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.pdf) | 
+| 1 | Data Collection | `structured vs unstructured datasets`  `csv files` `tidy dataset` `data dictionary` `pdf` `web scraping` `google sheets`| [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-1.pdf) |
+| 2 | Web scraping & Data Standards | `data standards` `akoma ntoso` `data exploration` `spreadsheets` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_1_data_collection/session-2/session-2.pdf) |
+| 3 | Data Exploration | `data processing tools` `data exploration` `pivot` `database` `sqlite` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-1.pdf) | 
+| 4 | Working with databases | `database` `sql` `keys` `sqlite` `database tools` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-2.pdf) |
+| 5 | Working with databases | `sql queries` `handling dates` `joins` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-3.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-3.pdf) | 
+| 6 | Working with databases | `subquries` `case when` `regular expressions`  `window fundtions` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-4.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-4.pdf) | 
+| 7 | Data Analysis - Use Cases | `analysing legal data` `100 questions project` `data analysis use cases` `bias`  | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-1/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-1/session-1.pdf) |
+| 8 | Data Analysis - Analysis Deep Dive | `data analysis methodologies` `reading research` `data analysis deep dive` `uwazi`|   [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-2/session-2.pdf) |
+| 9 | Data Analysis - GIS Analysis | `maps` `spatial data sources` `case studies` `gis data formats` `tools` `policies`| [HTML](https://docs.google.com/presentation/d/16-2zyEQI_Mn93LZ7iTcVKMG40POPGw_RThNwCsQNqls/edit?usp=sharing) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_3_data_analysis/session-3/session-3.pdf) | 
+| 10 | Data Visualisation | `data viz quadrant` `stories` `audience` `medium` `accessibility` `selecting charts`  `collaboration` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-1/session-1.pdf) |
+| 11 | Data Visualisation - Tools and Resources | `storytelling` `tools` `interactivity` `maps` `tables` `resources` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.pdf) | 
+| 12 | Qualitative Data Analysis & Publishing Open Data | `content analysis` `coding` `grounded theory` `tools`  `open data license`  | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.pdf) | 
+| 13 | Exploring Datasets - Session at NLU Odisha | `datasets` `google sheets` `excel` `wikipedia` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.pdf) | 
 
 _Note: The keyboard shortcuts for the HTML version of the slide deck can be viewed by pressing the `h` key_
+
+### License
+All content in this repository is licensed under [![CC-BY-SA](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](#license)
