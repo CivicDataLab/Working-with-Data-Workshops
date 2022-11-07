@@ -1,0 +1,65 @@
+---
+title: "Explore data using SQL"
+subtitle: "A two-day workshop at SNEHA, Mumbai"
+institute: "CivicDataLab"
+date: "14th - 15th November, 2022"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+## Workshop Overview
+
+Topics to be covered:
+
+
+
+
+Outline:
+
+Day 1
+1. Overview - Agenda for the two-day workshop
+2. Working with structured datasets - Data Representation / Data Types
+3. Data Types - Examples and Use-cases
+4. Spreadsheets vs Databases
+5. Tools / Installation - About Postgres
+6. Reading and Writing SQL (Select, Sorting and Removing Duplicates, Filtering, Aggregation)
+7. SQL - Basic Examples
+8. A SQL project - Best practices
+
+Day 2
+1. Day 1 - Recap
+2. SQL - Examples - Contd.
+3. Writing SQL (Calculating New Values, Missing Data, ) 
+4. SQL - Case Study (Using datasets managed by SNEHA)
+5. SQL - Advance (Working with Dates, Combining Datasets, Joins, Case When, Subqueries)
+6. SQL puzzle - https://mystery.knightlab.com/
+7. Resources to learn and practice SQL
+
+---
+
+class: center, middle
+
+# Queries and Feedback
