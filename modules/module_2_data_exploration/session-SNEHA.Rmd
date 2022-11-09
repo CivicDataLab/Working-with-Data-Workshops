@@ -30,36 +30,323 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_tachyons()
 ```
 
-## Workshop Overview
+## Our Journey (Workshop Overview)
 
-Topics to be covered:
-
-
-
-
-Outline:
-
-Day 1
-1. Overview - Agenda for the two-day workshop
-2. Working with structured datasets - Data Representation / Data Types
-3. Data Types - Examples and Use-cases
-4. Spreadsheets vs Databases
-5. Tools / Installation - About Postgres
-6. Reading and Writing SQL (Select, Sorting and Removing Duplicates, Filtering, Aggregation)
-7. SQL - Basic Examples
-8. A SQL project - Best practices
-
-Day 2
-1. Day 1 - Recap
-2. SQL - Examples - Contd.
-3. Writing SQL (Calculating New Values, Missing Data, ) 
-4. SQL - Case Study (Using datasets managed by SNEHA)
-5. SQL - Advance (Working with Dates, Combining Datasets, Joins, Case When, Subqueries)
-6. SQL puzzle - https://mystery.knightlab.com/
-7. Resources to learn and practice SQL
 
 ---
 
+## Learning Objectives
+
+A good session will be if by the end you:
+
+1. Are aware about the **basic structure of a dataset**
+
+--
+
+2. Can describe any **tabular dataset** in terms of its features
+
+--
+
+3. Are aware about the **ways in which each data point can be stored in a file**
+
+--
+
+4. Can evaluate the **data quality** of any data set 
+
+--
+
+5. Have a basic understanding about **databases**
+
+--
+
+6. Can **read and write basic SQL queries**
+
+--
+
+7. Have a **pathway to develop your skills**
+
+
+---
+
+## A basic dataset
+
+.center[.card[
+
+![](assets/penguin-dataset-kaggle.png)
+
+]]
+
+---
+
+## Features of dataset
+
+.pull-left[
+.card[
+![](assets/penguin-dataset-kaggle.png)
+
+<center>A tablular dataset </center>
+]
+]
+
+--
+
+.pull-right[
+
+**Features** of a dataset:
+
+1. Total Rows
+2. Total Columns
+3. Type of columns (Data Types)
+  1. Categorical
+  2. Numeric
+  3. Text
+  4. Date
+]
+
+---
+
+## Quiz - Identify the features of a dataset
+
+
+---
+
+## Evaluating a dataset (Dataset Quality)
+
+How to create a **good quality** dataset
+
+1. Be consistent.
+
+--
+
+2. Formatting dates.
+
+--
+
+3. Fill in all of the cells.
+
+--
+
+4. Don’t use font color or highlighting as data.
+
+--
+
+5. Choose good names for things.
+
+---
+### Be Consistent
+
+.center[.middle[.card[
+![](assets/data-quality-consistency.jpg)
+
+</n> Sample Table
+]
+]
+]
+
+---
+
+### Be Consistent - Principles
+
+1. Consistent codes for categorical variables
+
+--
+
+2. Single fixed code for any missing values
+
+--
+
+3. Single common format for all dates
+
+--
+
+4. Extra spaces within cells
+
+---
+
+### Be Consistent -  The difference
+
+.pull-left[
+
+.middle[.card[
+
+
+![](assets/data-quality-consistency.jpg)
+<center> Sample Table </center>
+]
+]
+]
+
+.pull-right[
+
+.middle[.card[
+
+
+![](assets/data-quality-consistency-alt.jpg)
+<center>Formatted Table</center>
+]
+]
+]
+
+---
+### Formatting dates
+
+.center[.middle[.card[
+![](assets/data-quality-dates.jpg)
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Be consistent in the way in which you write dates. And always use the YYYY-MM-DD format (or put the year, month, and day in separate columns).
+
+]
+]
+]
+
+---
+### No empty cells
+
+```{r xaringan-panelset-1, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+
+.panel[
+
+.panel-name[Missing Values]
+
+![](assets/data-quality-missing-value.jpg)
+
+]
+
+.panel[
+
+.panel-name[Better alternative]
+
+![](assets/data-quality-missing-value-alt.jpg)
+]
+]
+
+
+
+---
+### Formatting data within files
+
+```{r xaringan-panelset-3, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+
+.panel[
+
+.panel-name[Formatted Table]
+
+![](../module_1_data_collection/assets/formatting-table-1.png)
+
+]
+
+.panel[
+
+.panel-name[Better alternative]
+
+![](../module_1_data_collection/assets/formatting-table-2.png)
+]
+]
+
+---
+
+### Naming things
+
+.pull-left[
+
+.card[
+
+![](assets/data-quality-missing-names.jpg)
+
+</n>
+
+<center> Variable Names </center>
+
+]
+
+]
+
+--
+
+.pull-right[
+
+.card[
+
+![](assets/data-quality-file-names.jpg)
+
+</n>
+
+<center>File Names </center>
+
+]
+
+
+]
+
+---
+
+## Spreadsheet (Excel) vs Database 
+
+
+---
+
+## Database Tools
+
+
+---
+class: center, middle
+
+## Structured Query Language (SQL)
+
+---
+
+## SQL Query
+
+--- 
+
+## SQL Functions
+
+---
+
+## SQL Examples
+
+---
+
+## Create and maintain a SQL project
+
+---
+
+## Day 1 - RECAP
+
+--- 
+
+## SQL Examples (Contd)
+
+---
+
+## SQL Functions
+
+---
+
+## Case Study
+
+---
+
+## SQL Puzzle
+
+---
+
+## Resources to learn and practice SQL
+
+
+
+---
 class: center, middle
 
 # Queries and Feedback
