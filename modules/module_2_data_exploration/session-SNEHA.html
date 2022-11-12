@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <script src="libs/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
     <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view-0.2.6/tile-view.js"></script>
     <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
-    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
-    <script src="libs/panelset-0.2.6/panelset.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -65,8 +65,6 @@ top:1em;right:1em;
 
 
 
-
-
 ## Our Journey (Workshop Overview)
 
 
@@ -107,10 +105,15 @@ A good session will be if by the end you:
 
 ## A basic dataset
 
+Format - https://allisonhorst.github.io/palmerpenguins/
+
 .center[.card[
 
 ![](assets/penguin-dataset-kaggle.png)
 
+&lt;/n&gt;
+
+&lt;center&gt;&lt;b&gt;A tabular dataset&lt;/b&gt;&lt;/center&gt;
 ]]
 
 ---
@@ -121,7 +124,7 @@ A good session will be if by the end you:
 .card[
 ![](assets/penguin-dataset-kaggle.png)
 
-&lt;center&gt;A tabular dataset &lt;/center&gt;
+&lt;center&gt;&lt;b&gt;A tabular dataset&lt;/b&gt;&lt;/center&gt;
 ]
 ]
 
@@ -132,13 +135,17 @@ A good session will be if by the end you:
 **Features** of a dataset:
 
 1. Total Rows
+
 2. Total Columns
+
 3. Variables
+
 4. Type of variables (Data Types)
   1. Categorical
   2. Numeric
   3. Text
   4. Date
+
 ]
 
 ---
@@ -179,6 +186,14 @@ How to create a **good quality** dataset
 &lt;/n&gt; Sample Table
 ]
 ]
+]
+
+--
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Do you see any issues with this table ?
+
 ]
 
 ---
@@ -1178,10 +1193,6 @@ Total Rows -&gt; 2
 ]
 
 ---
-
-
-
----
 ## SQL Query - Calculate SUM
 
 .center[
@@ -1333,7 +1344,7 @@ SELECT &lt;b&gt;MAX(Points)&lt;/b&gt; FROM employee
 &lt;h3&gt;
 
 ```
-Maximum Points -&gt; 25
+Maximum Points = 25
 ```
 &lt;/h3&gt;
 ]
@@ -1341,6 +1352,8 @@ Maximum Points -&gt; 25
 
 ---
 ## SQL Quiz
+
+Format - Write Query
 
 Find the row with maximum number of points **without using MAX**
 
@@ -2336,10 +2349,6 @@ Find the top 10 villages, having at-least 50 households, with highest percentage
 ]
 
 ---
-SQL Query - Subqueries
-
-
----
 
 ## Case Study - Tracking field visits
 
@@ -2373,6 +2382,75 @@ SQL Query - Subqueries
 ]
 ]
 
+
+---
+## SQL Subqueries - Working with more than 1 table
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+How many women with high risk pregnancy were visited at-least once in September, 2022
+]
+]
+
+--
+
+.center[
+.bg-yellow[.black[
+We don't have all the information in one table so we have to get information from multiple tables. 
+]]
+]
+
+--
+
+&lt;center&gt;&lt;b&gt;Break the query&lt;/b&gt;&lt;/center&gt;
+
+--
+
+.panelset[
+.panel[.panel-name[Part 1]
+Find the women with high risk pregnancy (current)
+
+.center[.card[
+.bg-yellow[
+.black[
+
+SELECT id FROM case_anc_visit_reduced WHERE closed=FALSE AND high_risk_preg='Yes'
+
+]]]]
+
+]
+
+.panel[.panel-name[Part 2]
+Find the women who were visited at-least once in September, 2022
+
+.center[.card[
+.bg-yellow[
+.black[
+
+SELECT DISTINCT(caseid) FROM form_anc_visit_reduced WHERE TO_CHAR(anc_visit_date,'YYYY-MM') = '2022-09'
+
+]]]
+
+&lt;a href='https://dataschool.com/learn-sql/dates/' target='_blank'&gt;Learn more about working with Dates&lt;/a&gt;
+
+]
+
+
+]
+
+.panel[.panel-name[Final Query]
+Find the womenID which are present in both Part 1 and 2
+
+.center[.card[
+.bg-yellow[
+.black[
+
+SELECT id FROM case_anc_visit_reduced WHERE closed=FALSE AND high_risk_preg='Yes' AND &lt;b&gt;id IN (SELECT DISTINCT(caseid) FROM form_anc_visit_reduced WHERE TO_CHAR(anc_visit_date,'YYYY-MM') = '2022-09')&lt;/b&gt;
+
+]]]]
+
+]
+]
 ---
 ## SQL Detective
 
@@ -2394,12 +2472,14 @@ SQL Query - Subqueries
 &lt;iframe title="SQL Resources" aria-label="Table" id="datawrapper-chart-NKL6f" src="https://datawrapper.dwcdn.net/NKL6f/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="559" data-external="1"&gt;&lt;/iframe&gt;&lt;script type="text/javascript"&gt;!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r&lt;t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 &lt;/script&gt;
 
-&lt;center&gt;Click [here]() to download the list of resources&lt;/center&gt;
+&lt;center&gt;Click [here](https://raw.githubusercontent.com/CivicDataLab/Working-with-Data-Workshops/master/modules/module_2_data_exploration/data/sql-resources.csv) to download the list of resources&lt;/center&gt;
 
 ---
 class: center, middle
 
 # Queries and Feedback
+
+Format - Add feedback form
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

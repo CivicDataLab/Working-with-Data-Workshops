@@ -18,25 +18,26 @@ output:
 knitr::opts_chunk$set(comment = NA)
 ```
 
-```{r xaringan-logo, echo=FALSE}
+```{r xaringan-extra-options, echo=FALSE}
 xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
-```
-
-```{r xaringan-fit-screen, echo=FALSE}
 xaringanExtra::use_fit_screen()
-```
-
-```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_panelset()
 xaringanExtra::use_tile_view()
-```
-
-```{r xaringan-tachyons, echo=FALSE}
 xaringanExtra::use_tachyons()
 ```
 
 ```{r source-files, message=FALSE, warning=FALSE, include=FALSE}
 source("../../scripts/utils.R")
 ```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+library(fontawesome)
+style_mono_accent(base_color = "#5b7aa1",link_decoration="underline")
+
+```
+
+
 ## Our Journey (Workshop Overview)
 
 
@@ -77,10 +78,15 @@ A good session will be if by the end you:
 
 ## A basic dataset
 
+Format - https://allisonhorst.github.io/palmerpenguins/
+
 .center[.card[
 
 ![](assets/penguin-dataset-kaggle.png)
 
+</n>
+
+<center><b>A tabular dataset</b></center>
 ]]
 
 ---
@@ -91,7 +97,7 @@ A good session will be if by the end you:
 .card[
 ![](assets/penguin-dataset-kaggle.png)
 
-<center>A tabular dataset </center>
+<center><b>A tabular dataset</b></center>
 ]
 ]
 
@@ -102,13 +108,17 @@ A good session will be if by the end you:
 **Features** of a dataset:
 
 1. Total Rows
+
 2. Total Columns
+
 3. Variables
+
 4. Type of variables (Data Types)
   1. Categorical
   2. Numeric
   3. Text
   4. Date
+
 ]
 
 ---
@@ -149,6 +159,14 @@ How to create a **good quality** dataset
 </n> Sample Table
 ]
 ]
+]
+
+--
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+Do you see any issues with this table ?
+
 ]
 
 ---
@@ -697,10 +715,6 @@ kableExtra::kable(sample_df,align = "l")
 ]
 
 ---
-
-
-
----
 ## SQL Query - Calculate SUM
 
 .center[
@@ -752,7 +766,7 @@ kableExtra::kable(sample_df,align = "l")
 ```{r max-row, echo=FALSE, message=FALSE, warning=FALSE}
   tmax <- sample_df %>% 
     select(Points) %>% max()
-  cat(glue::glue("Maximum Points -> {tmax}"))
+  cat(glue::glue("Maximum Points = { tmax }"))
 ```
 </h3>
 ]
@@ -760,6 +774,8 @@ kableExtra::kable(sample_df,align = "l")
 
 ---
 ## SQL Quiz
+
+Format - Write Query
 
 Find the row with maximum number of points **without using MAX**
 
@@ -1259,10 +1275,6 @@ kableExtra::kable(
 ]
 
 ---
-SQL Query - Subqueries
-
-
----
 
 ## Case Study - Tracking field visits
 
@@ -1296,6 +1308,75 @@ SQL Query - Subqueries
 ]
 ]
 
+
+---
+## SQL Subqueries - Working with more than 1 table
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+How many women with high risk pregnancy were visited at-least once in September, 2022
+]
+]
+
+--
+
+.center[
+.bg-yellow[.black[
+We don't have all the information in one table so we have to get information from multiple tables. 
+]]
+]
+
+--
+
+<center><b>Break the query</b></center>
+
+--
+
+.panelset[
+.panel[.panel-name[Part 1]
+Find the women with high risk pregnancy (current)
+
+.center[.card[
+.bg-yellow[
+.black[
+
+SELECT id FROM case_anc_visit_reduced WHERE closed=FALSE AND high_risk_preg='Yes'
+
+]]]]
+
+]
+
+.panel[.panel-name[Part 2]
+Find the women who were visited at-least once in September, 2022
+
+.center[.card[
+.bg-yellow[
+.black[
+
+SELECT DISTINCT(caseid) FROM form_anc_visit_reduced WHERE TO_CHAR(anc_visit_date,'YYYY-MM') = '2022-09'
+
+]]]
+
+<a href='https://dataschool.com/learn-sql/dates/' target='_blank'>Learn more about working with Dates</a>
+
+]
+
+
+]
+
+.panel[.panel-name[Final Query]
+Find the womenID which are present in both Part 1 and 2
+
+.center[.card[
+.bg-yellow[
+.black[
+
+SELECT id FROM case_anc_visit_reduced WHERE closed=FALSE AND high_risk_preg='Yes' AND <b>id IN (SELECT DISTINCT(caseid) FROM form_anc_visit_reduced WHERE TO_CHAR(anc_visit_date,'YYYY-MM') = '2022-09')</b>
+
+]]]]
+
+]
+]
 ---
 ## SQL Detective
 
@@ -1317,9 +1398,11 @@ SQL Query - Subqueries
 <iframe title="SQL Resources" aria-label="Table" id="datawrapper-chart-NKL6f" src="https://datawrapper.dwcdn.net/NKL6f/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="559" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 
-<center>Click [here]() to download the list of resources</center>
+<center>Click [here](https://raw.githubusercontent.com/CivicDataLab/Working-with-Data-Workshops/master/modules/module_2_data_exploration/data/sql-resources.csv) to download the list of resources</center>
 
 ---
 class: center, middle
 
 # Queries and Feedback
+
+Format - Add feedback form
