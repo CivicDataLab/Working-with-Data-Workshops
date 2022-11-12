@@ -24,6 +24,8 @@ class: center, middle, inverse, title-slide
 ---
 
 
+
+
 <div>
 <style type="text/css">.xaringan-extra-logo {
 width: 110px;
@@ -57,6 +59,7 @@ top:1em;right:1em;
   document.addEventListener('DOMContentLoaded', addLogo)
 })()</script>
 </div>
+
 
 
 
@@ -118,7 +121,7 @@ A good session will be if by the end you:
 .card[
 ![](assets/penguin-dataset-kaggle.png)
 
-&lt;center&gt;A tablular dataset &lt;/center&gt;
+&lt;center&gt;A tabular dataset &lt;/center&gt;
 ]
 ]
 
@@ -130,7 +133,8 @@ A good session will be if by the end you:
 
 1. Total Rows
 2. Total Columns
-3. Type of columns (Data Types)
+3. Variables
+4. Type of variables (Data Types)
   1. Categorical
   2. Numeric
   3. Text
@@ -231,9 +235,13 @@ How to create a **good quality** dataset
 .bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
 
 Be consistent in the way in which you write dates. And always use the YYYY-MM-DD format (or put the year, month, and day in separate columns).
+&lt;sup&gt;1&lt;/sup&gt;
+]
+]
+]
 
-]
-]
+.footnote[
+[1][Dates as Data](https://datacarpentry.org/spreadsheets-socialsci/03-dates-as-data/index.html)
 ]
 
 ---
@@ -258,8 +266,6 @@ Be consistent in the way in which you write dates. And always use the YYYY-MM-DD
 ![](assets/data-quality-missing-value-alt.jpg)
 ]
 ]
-
-
 
 ---
 ### Formatting data within files
@@ -315,47 +321,1645 @@ Be consistent in the way in which you write dates. And always use the YYYY-MM-DD
 &lt;center&gt;File Names &lt;/center&gt;
 
 ]
-
-
 ]
 
 ---
 
-## Spreadsheet (Excel) vs Database 
+## Analysing data in Excel
 
+.middle[
+.pull-left[
+.card[
+![](assets/census-pca.jpg)
+
+&lt;/n&gt;
+
+&lt;center&gt; &lt;a href="https://ndap.niti.gov.in/dataset/6000?tab=data"&gt;Primary Population Census 2011 &lt;/a&gt; &lt;/center&gt;
+]
+]
+
+.pull-right[
+
+**To-Do**
+
+Link to the file - [Download from here](https://github.com/CivicDataLab/Working-with-Data-Workshops/raw/master/modules/module_2_data_exploration/data/census-2011-pca-ndap.csv)
+
+1. Open the file in excel
+2. Count the total number of districts
+3. Find the district with the highest number of sub districts
+4. Find the village with the highest number of households
+5. Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  1. Female population
+  2. Female literate population
+  3. Female working population
+]
+]
 
 ---
 
 ## Database Tools
 
+.center[.middle[
+.pull-left[
+
+**Database**
+.card[
+![](assets/postgresql.png)
+
+&lt;/n&gt;
+
+&lt;a href="https://www.postgresql.org/" target="_blank"&gt;PostgreSQL&lt;/a&gt;
+]
+
+]
+
+.pull-right[
+**Database Manager**
+
+.card[
+
+![](assets/pgadmin.jpg)
+
+&lt;/n&gt;
+
+&lt;a href="https://www.pgadmin.org/" target="_blank"&gt;pgAdmin&lt;/a&gt;
+
+]
+
+]
+]]
+
+---
+
+## Database Schema
+
+.center[.middle[
+
+.card[
+![](assets/schema.png)
+
+&lt;/n&gt; 
+
+&lt;b&gt; A schema diagram &lt;/b&gt;
+
+]
+
+]]
+
+---
+
+## Database Tables
+
+.pull-left[.middle[
+
+.card[
+![](assets/db-tables.png)
+
+&lt;/n&gt; 
+
+&lt;center&gt;&lt;b&gt; Tables in a database &lt;/b&gt;&lt;/center&gt;
+
+]
+
+]]
+
+--
+
+.pull-right[.middle[
+
+**Table Names**
+
+1. `person`
+
+2. `drivers_license`
+
+3. `income`
+
+]
+]
 
 ---
 class: center, middle
 
 ## Structured Query Language (SQL)
 
----
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
 
+**SQL** is the most commonly used language to access data from a database.
+
+]
+
+---
 ## SQL Query
 
---- 
+.center[
+.card[
+![](assets/keys_master.webp)
+&lt;/n&gt; 
 
+&lt;center&gt; Table Name: &lt;b&gt;employee&lt;/b&gt;&lt;center&gt; 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+SELECT * FROM employee
+
+]
+]
+
+---
+## SQL Query - SELECT
+
+.center[
+.card[
+![](assets/keys_master.webp)
+&lt;/n&gt; 
+
+&lt;center&gt; Table Name: &lt;b&gt;employee&lt;/b&gt;&lt;center&gt; 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+&lt;b&gt;SELECT&lt;/b&gt; * FROM employee
+
+]
+]
+
+---
+## SQL Query - All
+
+.center[
+.card[
+![](assets/keys_master.webp)
+&lt;/n&gt; 
+
+&lt;center&gt; Table Name: &lt;b&gt;employee&lt;/b&gt;&lt;center&gt; 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+SELECT &lt;b&gt;*&lt;/b&gt; FROM employee
+
+]
+]
+
+---
+
+## SQL Query - FROM
+
+.center[
+.card[
+![](assets/keys_master.webp)
+&lt;/n&gt; 
+
+&lt;center&gt; Table Name: &lt;b&gt;employee&lt;/b&gt;&lt;center&gt; 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+SELECT * &lt;b&gt;FROM&lt;/b&gt; employee
+
+]
+]
+
+---
+## SQL Query - Select variable[s]
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Name, Gender&lt;/b&gt; FROM employee
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## SQL Query - WHERE (Filter Table)
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Name&lt;/b&gt; FROM employee &lt;b&gt;WHERE gender='M'&lt;/b&gt;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## SQL Query - Sort Rows - Ascending
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Name, Dep_Id&lt;/b&gt; FROM employee &lt;b&gt;ORDER BY&lt;/b&gt; Dep_Id
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## SQL Query - Sort Rows - Descending
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Name, Dep_Id&lt;/b&gt; FROM employee &lt;b&gt;ORDER BY&lt;/b&gt; Dep_Id &lt;b&gt;DESC&lt;/b&gt;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## SQL Query - Limit Rows
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Name, Gender&lt;/b&gt; FROM employee &lt;b&gt;LIMIT 1&lt;/b&gt;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
 ## SQL Functions
 
+.center[
+.middle[
+.card[
+![](assets/sql-aggregations.png)
+]
+]
+]
+
+---
+## SQL Query - Count all rows
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;COUNT(*)&lt;/b&gt; FROM employee
+]]
+
+&lt;/br&gt;
+
+.center[.middle[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]]
+
+--
+
+.center[.middle[
+&lt;h3&gt;
+
+```
+Total Rows -&gt; 5
+```
+&lt;/h3&gt;
+]
+]
+
+---
+## SQL Query - Count unique rows
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;COUNT(DISTINCT Gender)&lt;/b&gt; FROM employee
+]]
+
+&lt;/br&gt;
+
+.center[.middle[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]]
+
+--
+
+.center[.middle[
+&lt;h3&gt;
+
+```
+Total Rows -&gt; 2
+```
+&lt;/h3&gt;
+]
+]
+
 ---
 
-## SQL Examples
+
+
+---
+## SQL Query - Calculate SUM
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;SUM(Points)&lt;/b&gt; FROM employee
+]]
+
+&lt;/br&gt;
+
+.center[.middle[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]]
+
+--
+
+.center[.middle[
+&lt;h3&gt;
+
+```
+Total Sum -&gt; 65
+```
+&lt;/h3&gt;
+]
+]
+
+---
+## SQL Query - Find Maximum value
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;MAX(Points)&lt;/b&gt; FROM employee
+]]
+
+&lt;/br&gt;
+
+.center[.middle[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]]
+
+--
+
+.center[.middle[
+&lt;h3&gt;
+
+```
+Maximum Points -&gt; 25
+```
+&lt;/h3&gt;
+]
+]
+
+---
+## SQL Quiz
+
+Find the row with maximum number of points **without using MAX**
+
+
+---
+## SQL Query - GROUP BY 
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Gender, COUNT(*) as Total&lt;/b&gt; FROM employee &lt;b&gt;GROUP BY Gender&lt;/b&gt;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+---
+## SQL Query - GROUP BY (SUM)
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;Dep_Id, sum(Points) as Total_Points&lt;/b&gt; FROM employee &lt;b&gt;GROUP BY Dep_Id&lt;/b&gt;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total_Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 40 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## SQL Query - GROUP BY (MAX) + ORDER BY
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT &lt;b&gt;City, MAX(Points) as max_Points&lt;/b&gt; FROM employee &lt;b&gt;GROUP BY City ORDER BY max_Points DESC&lt;/b&gt;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; max_Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## SQL Query - GROUP BY + HAVING (Group Filter)
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT 
+  City, sum(Points) as total_Points
+  FROM employee 
+  &lt;b&gt;GROUP BY city HAVING sum(points) &gt; 10&lt;/b&gt; 
+  ORDER BY total_points desc;
+]]
+
+&lt;/br&gt;&lt;/br&gt;
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Gender &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Dep_Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ajay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Delhi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Vijay &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mumbai &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Radhika &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shikha &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hrithik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; City &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; total_Points &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jaipur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bhipal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## Order of SQL commands
+
+.center[.middle[
+
+.card[
+
+![](assets/query-steps.jpg)
+&lt;center&gt;&lt;b&gt;&lt;a href='https://towardsdatascience.com/the-6-steps-of-a-sql-select-statement-process-b3696a49a642'&gt;The 6 Steps of a SQL Select Statement Process
+&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;
+
+]
+
+]]
+
+---
+## Analysing data using SQL
+
+.middle[
+.pull-left[
+.card[
+![](assets/census-pca.jpg)
+
+&lt;/n&gt;
+
+&lt;center&gt; &lt;a href="https://ndap.niti.gov.in/dataset/6000?tab=data"&gt;Primary Population Census 2011 &lt;/a&gt; &lt;/center&gt;
+]
+]
+
+.pull-right[
+
+**To-Do**
+
+1. Locate the table in the database and print the first 10 rows
+2. Count the total number of districts
+3. Find the district with the highest number of sub districts
+4. Find the village with the highest number of households
+5. Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  1. Female population
+  2. Female literate population
+  3. Female working population
+]
+]
+
+---
+## Query - 1
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Locate the table in the database and print the first 10 rows
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+.card[
+.bg-yellow[
+.black[
+&lt;b&gt;SELECT * FROM census11 LIMIT 10&lt;/b&gt;
+]
+]
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; State &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; District &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; SubDistrict &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Village_Town &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Rural_Urban &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maharashtra &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Akola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Babhul Wandi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2011 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rural &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maharashtra &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Akola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bari &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2011 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rural &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maharashtra &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Akola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ladgaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2011 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rural &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maharashtra &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Akola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Waranghushi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2011 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rural &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maharashtra &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Akola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Samrad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2011 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rural &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+&lt;s&gt;1. Locate the table in the database and print the first 10 rows&lt;/s&gt;
+
+2. Count the total number of districts
+]
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+3. Find the district with the highest number of sub districts
+]
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Find the district with the highest number of sub districts~~
+
+4. Find the village with the highest number of households
+]
+]
 
 ---
 
-## Create and maintain a SQL project
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Find the district with the highest number of sub districts~~
+
+~~4. Find the village with the highest number of households~~
+
+Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  
+.bg-green[.white[&lt;b&gt;Female population&lt;/b&gt;]]   
+]
+]
 
 ---
 
-## Day 1 - RECAP
+## Analyse data using SQL
 
---- 
+.center[.middle[
+**To-Do**
 
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Find the district with the highest number of sub districts~~
+
+~~4. Find the village with the highest number of households~~
+
+Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  
+.bg-green[.white[&lt;b&gt;Female population&lt;/b&gt;]]   .bg-green[.white[&lt;b&gt;Female literate population&lt;/b&gt;]]  
+]
+]
+
+---
+
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Find the district with the highest number of sub districts~~
+
+~~4. Find the village with the highest number of households~~
+
+Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  
+.bg-green[.white[&lt;b&gt;Female population&lt;/b&gt;]]   .bg-green[.white[&lt;b&gt;Female literate population&lt;/b&gt;]]   .bg-green[.white[&lt;b&gt;Female working population&lt;/b&gt;]]
+]
+]
+---
 ## SQL Examples (Contd)
 
 ---
@@ -374,7 +1978,7 @@ class: center, middle
 
 ## Resources to learn and practice SQL
 
-
+1. https://dataschool.com/learn-sql/
 
 ---
 class: center, middle

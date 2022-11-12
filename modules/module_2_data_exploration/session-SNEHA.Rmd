@@ -14,6 +14,10 @@ output:
       countIncrementalSlides: false
 ---
 
+```{r knitr-opts, message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo("https://drive.google.com/uc?id=1WbdosVvi6SBjYtEF6kHj-f0wotdHMRgw",link_url = "https://civicdatalab.in",exclude_class = NULL)
 ```
@@ -30,6 +34,9 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_tachyons()
 ```
 
+```{r source-files, message=FALSE, warning=FALSE, include=FALSE}
+source("../../scripts/utils.R")
+```
 ## Our Journey (Workshop Overview)
 
 
@@ -84,7 +91,7 @@ A good session will be if by the end you:
 .card[
 ![](assets/penguin-dataset-kaggle.png)
 
-<center>A tablular dataset </center>
+<center>A tabular dataset </center>
 ]
 ]
 
@@ -96,7 +103,8 @@ A good session will be if by the end you:
 
 1. Total Rows
 2. Total Columns
-3. Type of columns (Data Types)
+3. Variables
+4. Type of variables (Data Types)
   1. Categorical
   2. Numeric
   3. Text
@@ -197,9 +205,13 @@ How to create a **good quality** dataset
 .bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
 
 Be consistent in the way in which you write dates. And always use the YYYY-MM-DD format (or put the year, month, and day in separate columns).
+<sup>1</sup>
+]
+]
+]
 
-]
-]
+.footnote[
+[1][Dates as Data](https://datacarpentry.org/spreadsheets-socialsci/03-dates-as-data/index.html)
 ]
 
 ---
@@ -226,8 +238,6 @@ xaringanExtra::use_panelset()
 ![](assets/data-quality-missing-value-alt.jpg)
 ]
 ]
-
-
 
 ---
 ### Formatting data within files
@@ -285,56 +295,945 @@ xaringanExtra::use_panelset()
 <center>File Names </center>
 
 ]
-
-
 ]
 
 ---
 
-## Spreadsheet (Excel) vs Database 
+## Analysing data in Excel
 
+.middle[
+.pull-left[
+.card[
+![](assets/census-pca.jpg)
+
+</n>
+
+<center> <a href="https://ndap.niti.gov.in/dataset/6000?tab=data">Primary Population Census 2011 </a> </center>
+]
+]
+
+.pull-right[
+
+**To-Do**
+
+Link to the file - [Download from here](https://github.com/CivicDataLab/Working-with-Data-Workshops/raw/master/modules/module_2_data_exploration/data/census-2011-pca-ndap.csv)
+
+1. Open the file in excel
+2. Count the total number of districts
+3. Find the district with the highest number of sub districts
+4. Find the village with the highest number of households
+5. Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  1. Female population
+  2. Female literate population
+  3. Female working population
+]
+]
 
 ---
 
 ## Database Tools
 
+.center[.middle[
+.pull-left[
+
+**Database**
+.card[
+![](assets/postgresql.png)
+
+</n>
+
+<a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
+]
+
+]
+
+.pull-right[
+**Database Manager**
+
+.card[
+
+![](assets/pgadmin.jpg)
+
+</n>
+
+<a href="https://www.pgadmin.org/" target="_blank">pgAdmin</a>
+
+]
+
+]
+]]
+
+---
+
+## Database Schema
+
+.center[.middle[
+
+.card[
+![](assets/schema.png)
+
+</n> 
+
+<b> A schema diagram </b>
+
+]
+
+]]
+
+---
+
+## Database Tables
+
+.pull-left[.middle[
+
+.card[
+![](assets/db-tables.png)
+
+</n> 
+
+<center><b> Tables in a database </b></center>
+
+]
+
+]]
+
+--
+
+.pull-right[.middle[
+
+**Table Names**
+
+1. `person`
+
+2. `drivers_license`
+
+3. `income`
+
+]
+]
 
 ---
 class: center, middle
 
 ## Structured Query Language (SQL)
 
----
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
 
+**SQL** is the most commonly used language to access data from a database.
+
+]
+
+---
 ## SQL Query
 
---- 
+.center[
+.card[
+![](assets/keys_master.webp)
+</n> 
 
+<center> Table Name: <b>employee</b><center> 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+SELECT * FROM employee
+
+]
+]
+
+---
+## SQL Query - SELECT
+
+.center[
+.card[
+![](assets/keys_master.webp)
+</n> 
+
+<center> Table Name: <b>employee</b><center> 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+<b>SELECT</b> * FROM employee
+
+]
+]
+
+---
+## SQL Query - All
+
+.center[
+.card[
+![](assets/keys_master.webp)
+</n> 
+
+<center> Table Name: <b>employee</b><center> 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+SELECT <b>*</b> FROM employee
+
+]
+]
+
+---
+
+## SQL Query - FROM
+
+.center[
+.card[
+![](assets/keys_master.webp)
+</n> 
+
+<center> Table Name: <b>employee</b><center> 
+
+]
+
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+
+SELECT * <b>FROM</b> employee
+
+]
+]
+
+---
+## SQL Query - Select variable[s]
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Name, Gender</b> FROM employee
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-1, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-2, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df[,c("Name","Gender")],align = "l")
+```
+]
+
+---
+## SQL Query - WHERE (Filter Table)
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Name</b> FROM employee <b>WHERE gender='M'</b>
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-3, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-4, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% filter(Gender == 'M') %>% select(Name), 
+  align = "l")
+```
+]
+
+---
+## SQL Query - Sort Rows - Ascending
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Name, Dep_Id</b> FROM employee <b>ORDER BY</b> Dep_Id
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-5, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-6, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% select(Name,Dep_Id) %>% arrange(Dep_Id), 
+  align = "l")
+```
+]
+
+---
+## SQL Query - Sort Rows - Descending
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Name, Dep_Id</b> FROM employee <b>ORDER BY</b> Dep_Id <b>DESC</b>
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-7, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-8, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% select(Name,Dep_Id) %>% arrange(desc(Dep_Id)), 
+  align = "l")
+```
+]
+
+---
+## SQL Query - Limit Rows
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Name, Gender</b> FROM employee <b>LIMIT 1</b>
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-9, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-10, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% select(Name, Gender) %>% head(1), 
+  align = "l")
+```
+]
+
+---
 ## SQL Functions
 
----
-
-## SQL Examples
-
----
-
-## Create and maintain a SQL project
-
----
-
-## Day 1 - RECAP
-
---- 
-
-## SQL Examples (Contd)
+.center[
+.middle[
+.card[
+![](assets/sql-aggregations.png)
+]
+]
+]
 
 ---
+## SQL Query - Count all rows
 
-## SQL Functions
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>COUNT(*)</b> FROM employee
+]]
+
+</br>
+
+.center[.middle[
+```{r kable-11, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]]
+
+--
+
+.center[.middle[
+<h3>
+```{r total-row, echo=FALSE, message=FALSE, warning=FALSE}
+  trows <- sample_df %>% nrow()
+  cat(glue::glue("Total Rows -> {trows}"))
+```
+</h3>
+]
+]
+
+---
+## SQL Query - Count unique rows
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>COUNT(DISTINCT Gender)</b> FROM employee
+]]
+
+</br>
+
+.center[.middle[
+```{r kable-12, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]]
+
+--
+
+.center[.middle[
+<h3>
+```{r total-unique-row, echo=FALSE, message=FALSE, warning=FALSE}
+  trows <- sample_df %>% 
+    select(Gender) %>% unique() %>% nrow()
+  cat(glue::glue("Total Rows -> {trows}"))
+```
+</h3>
+]
+]
 
 ---
 
-## Case Study
+
+
+---
+## SQL Query - Calculate SUM
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>SUM(Points)</b> FROM employee
+]]
+
+</br>
+
+.center[.middle[
+```{r kable-13, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]]
+
+--
+
+.center[.middle[
+<h3>
+```{r total-sum, echo=FALSE, message=FALSE, warning=FALSE}
+  tsum <- sample_df %>% 
+    select(Points) %>% sum()
+  cat(glue::glue("Total Sum -> {tsum}"))
+```
+</h3>
+]
+]
+
+---
+## SQL Query - Find Maximum value
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>MAX(Points)</b> FROM employee
+]]
+
+</br>
+
+.center[.middle[
+```{r kable-14, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]]
+
+--
+
+.center[.middle[
+<h3>
+```{r max-row, echo=FALSE, message=FALSE, warning=FALSE}
+  tmax <- sample_df %>% 
+    select(Points) %>% max()
+  cat(glue::glue("Maximum Points -> {tmax}"))
+```
+</h3>
+]
+]
+
+---
+## SQL Quiz
+
+Find the row with maximum number of points **without using MAX**
+
+
+---
+## SQL Query - GROUP BY 
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Gender, COUNT(*) as Total</b> FROM employee <b>GROUP BY Gender</b>
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-15, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-16, echo=FALSE, message=FALSE, warning=FALSE}
+  trows <- sample_df %>% group_by(Gender) %>% summarise(Total=length(Gender)) %>% arrange(desc(Total))
+  trows %>% kableExtra::kable()
+```
+]
+
+
+---
+## SQL Query - GROUP BY (SUM)
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>Dep_Id, sum(Points) as Total_Points</b> FROM employee <b>GROUP BY Dep_Id</b>
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-17, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-18, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% group_by(Dep_Id) %>% summarise(Total_Points=sum(Points)), 
+  align = "l")
+```
+]
+
+---
+## SQL Query - GROUP BY (MAX) + ORDER BY
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT <b>City, MAX(Points) as max_Points</b> FROM employee <b>GROUP BY City ORDER BY max_Points DESC</b>
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-19, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-20, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% group_by(City) %>% summarise(max_Points=max(Points)) %>% arrange(desc(max_Points)), 
+  align = "l")
+```
+]
+
+---
+## SQL Query - GROUP BY + HAVING (Group Filter)
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT 
+  City, sum(Points) as total_Points
+  FROM employee 
+  <b>GROUP BY city HAVING sum(points) > 10</b> 
+  ORDER BY total_points desc;
+]]
+
+</br></br>
+
+.pull-left[
+```{r kable-21, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]
+
+--
+
+.pull-right[
+```{r kable-22, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  sample_df %>% group_by(City) %>% summarise(total_Points = sum(Points)) %>% filter(total_Points > 10) %>% arrange(desc(total_Points)),
+  align = "l"
+)
+```
+]
+
+---
+## Order of SQL commands
+
+.center[.middle[
+
+.card[
+
+![](assets/query-steps.jpg)
+<center><b><a href='https://towardsdatascience.com/the-6-steps-of-a-sql-select-statement-process-b3696a49a642'>The 6 Steps of a SQL Select Statement Process
+</a></b></center>
+
+]
+
+]]
+
+---
+## Analysing data using SQL
+
+.middle[
+.pull-left[
+.card[
+![](assets/census-pca.jpg)
+
+</n>
+
+<center> <a href="https://ndap.niti.gov.in/dataset/6000?tab=data">Primary Population Census 2011 </a> </center>
+]
+]
+
+.pull-right[
+
+**To-Do**
+
+1. Locate the table in the database and print the first 10 rows
+2. Count the total number of districts
+3. Select the top 10 districts with the highest number of sub districts
+4. Select the top 10 villages with the highest number of households
+5. Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  1. Female population
+  2. Female literate population
+  3. Female working population
+]
+]
+
+---
+## Query - 1
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Locate the table in the database and print the first 10 rows
+]
+]
+
+--
+</n>
+
+.center[
+.card[
+.bg-yellow[
+.black[
+<b>SELECT * FROM census11 LIMIT 10</b>
+]
+]
+]
+]
+
+--
+</n>
+
+.center[
+```{r kable-23, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  census_11 %>% 
+    select(names(census_11[1:8])) %>% 
+    head(5), 
+  align = "l")
+```
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+<s>1. Locate the table in the database and print the first 10 rows</s>
+
+2. Count the total number of districts
+]
+]
+
+---
+## Query - 2
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Count the total number of districts
+]
+]
+
+--
+</n>
+
+.center[
+.card[
+.bg-yellow[
+.black[
+<b>SELECT COUNT(DISTINCT district) as Total_Districts FROM census11</b>
+]
+]
+]
+]
+
+--
+</n>
+
+.center[
+```{r kable-24, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  census_11 %>% select(District) %>% unique() %>% nrow() %>% data.frame() %>% setNames("Total_Districts"), 
+  align = "l")
+```
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+3. Select the top 10 districts with the highest number of sub districts
+]
+]
+
+---
+## Query - 3
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Select the top 10 district with the highest number of sub districts
+]
+]
+
+--
+</n>
+
+.center[
+.card[
+.bg-yellow[
+.black[
+<b>
+  SELECT 
+    district, COUNT(DISTINCT subdistrict) as Total_SubDistricts
+    FROM census11 
+    GROUP BY district 
+    ORDER BY Total_SubDistricts DESC, district
+  LIMIT 10
+</b>
+]
+]
+]
+]
+
+--
+</n>
+
+.center[
+```{r kable-25, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  census_11 %>% 
+    group_by(District) %>% 
+    summarise(Total_SubDistricts = n_distinct(SubDistrict)) %>%
+    arrange(desc(Total_SubDistricts),District) %>% 
+    head(10), 
+  align = "l")
+```
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Select the top 10 districts with the highest number of sub districts~~
+
+4. Select the top 10 villages with the highest number of households
+]
+]
+
+---
+## Query - 4
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Select the top 10 villages with the highest number of households
+]
+]
+
+--
+</n>
+
+.center[
+.card[
+.bg-yellow[
+.black[
+<b>
+  SELECT 
+    district, subdistrict,village_town, Households 
+      as total_Households
+    FROM census11 
+    WHERE rural_urban = 'Rural'
+    ORDER BY Households DESC
+  LIMIT 10
+</b>
+]
+]
+]
+]
+
+--
+</n>
+
+.center[
+```{r kable-26, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  census_11 %>% 
+    filter(Rural_Urban == 'Rural') %>% 
+    select(District, SubDistrict, Village_Town,Households) %>% 
+    arrange(desc(Households)) %>% 
+    head(10), 
+  align = "l")
+```
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Select the top 10 districts with the highest number of sub districts~~
+
+~~4. Select the top 10 villages with the highest number of households~~
+
+Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  
+.bg-green[.white[<b>Female population</b>]]   
+]
+]
+
+---
+
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Select the top 10 districts with the highest number of sub districts~~
+
+~~4. Select the top 10 villages with the highest number of households~~
+
+Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  
+.bg-green[.white[<b>Female population</b>]]   .bg-green[.white[<b>Female literate population</b>]]  
+]
+]
+
+---
+
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Select the top 10 districts with the highest number of sub districts~~
+
+~~4. Select the top 10 villages with the highest number of households~~
+
+Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
+  
+.bg-green[.white[<b>Female population</b>]]   .bg-green[.white[<b>Female literate population</b>]]   .bg-green[.white[<b>Female working population</b>]]
+]
+]
+---
+## Query - 5 (Calculated fields)
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Find the top 10 villages, having at-least 50 households, with highest percentage of Female population
+]
+]
+
+--
+</n>
+
+.center[
+.card[
+.bg-yellow[
+.black[
+<b>
+  SELECT 
+    district, subdistrict,
+    village_town, (cast(femalepopulation as decimal)/population)*100 as percent_female_pop 
+    FROM census11 
+    WHERE rural_urban = 'Rural' AND households >= 50
+    ORDER BY percent_female_pop DESC
+  LIMIT 10
+</b>
+]
+]
+]
+]
+
+--
+</n>
+
+.center[
+```{r kable-27, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(
+  census_11 %>% 
+    filter(Rural_Urban == 'Rural' & Households>50) %>% 
+    mutate(percent_female_pop=FemalePopulation/Population*100) %>% 
+    arrange(desc(percent_female_pop)) %>%
+    select(District, SubDistrict, Village_Town,percent_female_pop) %>%
+    head(10), 
+  align = "l")
+```
+]
+
+---
+
+## Case Study - 
+
+.pull-left[
+.card[
+
+![](assets/sneha-map.jpg)
+]
+]
+
+
 
 ---
 
@@ -344,7 +1243,7 @@ class: center, middle
 
 ## Resources to learn and practice SQL
 
-
+1. https://dataschool.com/learn-sql/
 
 ---
 class: center, middle
