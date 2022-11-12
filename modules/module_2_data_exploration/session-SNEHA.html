@@ -1752,8 +1752,8 @@ SELECT
 
 1. Locate the table in the database and print the first 10 rows
 2. Count the total number of districts
-3. Find the district with the highest number of sub districts
-4. Find the village with the highest number of households
+3. Select the top 10 districts with the highest number of sub districts
+4. Select the top 10 villages with the highest number of households
 5. Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
   1. Female population
   2. Female literate population
@@ -1868,17 +1868,43 @@ Locate the table in the database and print the first 10 rows
 ]
 
 ---
-## Analyse data using SQL
+## Query - 2
 
-.center[.middle[
-**To-Do**
-
-~~1. Locate the table in the database and print the first 10 rows~~
-
-~~2. Count the total number of districts~~
-
-3. Find the district with the highest number of sub districts
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Count the total number of districts
 ]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+.card[
+.bg-yellow[
+.black[
+&lt;b&gt;SELECT COUNT(DISTINCT district) as Total_Districts FROM census11&lt;/b&gt;
+]
+]
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Total_Districts &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 35 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 ]
 
 ---
@@ -1891,14 +1917,96 @@ Locate the table in the database and print the first 10 rows
 
 ~~2. Count the total number of districts~~
 
-~~3. Find the district with the highest number of sub districts~~
-
-4. Find the village with the highest number of households
+3. Select the top 10 districts with the highest number of sub districts
 ]
 ]
 
 ---
+## Query - 3
 
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Select the top 10 district with the highest number of sub districts
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+.card[
+.bg-yellow[
+.black[
+&lt;b&gt;
+  SELECT 
+    district, COUNT(DISTINCT subdistrict) as Total_SubDistricts
+    FROM census11 
+    GROUP BY district 
+    ORDER BY Total_SubDistricts DESC, district
+  LIMIT 10
+&lt;/b&gt;
+]
+]
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; District &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total_SubDistricts &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nanded &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nashik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Yavatmal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Chandrapur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jalgaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nagpur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pune &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Raigad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Amravati &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
 ## Analyse data using SQL
 
 .center[.middle[
@@ -1908,9 +2016,132 @@ Locate the table in the database and print the first 10 rows
 
 ~~2. Count the total number of districts~~
 
-~~3. Find the district with the highest number of sub districts~~
+~~3. Select the top 10 districts with the highest number of sub districts~~
 
-~~4. Find the village with the highest number of households~~
+4. Select the top 10 villages with the highest number of households
+]
+]
+
+---
+## Query - 4
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Select the top 10 villages with the highest number of households
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+.card[
+.bg-yellow[
+.black[
+&lt;b&gt;
+  SELECT 
+    district, subdistrict,village_town, Households 
+    FROM census11 
+    WHERE rural_urban = 'Rural'
+    ORDER BY Households DESC
+  LIMIT 10
+&lt;/b&gt;
+]
+]
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; District &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; SubDistrict &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Village_Town &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Households &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pune &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Haveli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Fursungi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15595 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Thane &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kalyan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nandiwali Tarf Pachanand (N.V.) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9087 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pune &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Haveli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Manjari Bk &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8401 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nashik &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Niphad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pimpalgaon Baswant &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8187 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ahmednagar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shevgaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Shevgaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8013 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pune &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Haveli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Keshavnagar-Mundwa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7537 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pune &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Haveli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lahagaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7526 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sangli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jat &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jat &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7411 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Thane &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kalyan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pisavali &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7207 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pune &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Haveli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Uruli Kanchan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6693 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## Analyse data using SQL
+
+.center[.middle[
+**To-Do**
+
+~~1. Locate the table in the database and print the first 10 rows~~
+
+~~2. Count the total number of districts~~
+
+~~3. Select the top 10 districts with the highest number of sub districts~~
+
+~~4. Select the top 10 villages with the highest number of households~~
 
 Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
   
@@ -1929,9 +2160,9 @@ Find the top 10 villages (**having at-least 50 households**) with highest percen
 
 ~~2. Count the total number of districts~~
 
-~~3. Find the district with the highest number of sub districts~~
+~~3. Select the top 10 districts with the highest number of sub districts~~
 
-~~4. Find the village with the highest number of households~~
+~~4. Select the top 10 villages with the highest number of households~~
 
 Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
   
@@ -1950,9 +2181,9 @@ Find the top 10 villages (**having at-least 50 households**) with highest percen
 
 ~~2. Count the total number of districts~~
 
-~~3. Find the district with the highest number of sub districts~~
+~~3. Select the top 10 districts with the highest number of sub districts~~
 
-~~4. Find the village with the highest number of households~~
+~~4. Select the top 10 villages with the highest number of households~~
 
 Find the top 10 villages (**having at-least 50 households**) with highest percentage of:
   
@@ -1960,25 +2191,210 @@ Find the top 10 villages (**having at-least 50 households**) with highest percen
 ]
 ]
 ---
-## SQL Examples (Contd)
+## Query - 5 (Calculated fields)
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+Find the top 10 villages, having at-least 50 households, with highest percentage of Female population
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+.card[
+.bg-yellow[
+.black[
+&lt;b&gt;
+  SELECT 
+    district, subdistrict,
+    village_town, (cast(femalepopulation as decimal)/population)*100 as percent_female_pop 
+    FROM census11 
+    WHERE rural_urban = 'Rural' AND households &gt;= 50
+    ORDER BY percent_female_pop DESC
+  LIMIT 10
+&lt;/b&gt;
+]
+]
+]
+]
+
+--
+&lt;/n&gt;
+
+.center[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; District &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; SubDistrict &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Village_Town &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; percent_female_pop &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gondia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Deori &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Charbhata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 77.05287 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gadchiroli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chamorshi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tumdi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75.07599 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gadchiroli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dhanora &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sode &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 71.55050 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ratnagiri &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dapoli &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Borivali &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 71.32616 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Raigad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mangaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Nhave &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 70.82803 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Raigad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mhasla &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dehen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 69.96337 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nandurbar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Talode &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lobhani &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 69.77863 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ratnagiri &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Chiplun &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Devpat &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 69.65021 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Raigad &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mangaon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mangrul &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 69.17431 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Palghar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jawhar &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sakur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 69.05797 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 
 ---
 
-## SQL Functions
+## Case Study - Tracking field visits
+
+.middle[
+.pull-left[
+.card[
+
+![](assets/sneha-map.jpg)
+&lt;center&gt;&lt;a href='https://snehamumbai.org/our-story/#:~:text=Brihanmumbai%20Municipal%20Corporation-,Areas%20of%20Work,-We%20work%20across' target='_blank'&gt;Source: SNEHA&lt;/a&gt;&lt;/center&gt;
+]
+]
+
+.pull-right[
+
+
+&lt;b&gt;To-Do&lt;/b&gt;:
+
+&lt;center&gt; &lt;b&gt;Filter out all cases which are closed&lt;/b&gt; &lt;/center&gt;
+
+1. For each &lt;b&gt; cluster, center and CO (community organiser) &lt;/b&gt;:
+
+  1. Count the total number of pregnant women
+  
+  2. Count the number of high risk pregnancies 
+  
+  3. Find the distribution of pregnant women by month of pregnancy 
+
+2. Find the cluster, center and CO with the highest number of pregnancies in the sixth and seventh month
+
+3. For all women in this group, find the total number of field visits
+
+4. For all women in the above group, count the total number of visits per month
+
+]
+]
+
+---
+SQL Query - Subqueries
+
 
 ---
 
-## Case Study
+## Case Study - Tracking field visits
+
+.middle[
+.pull-left[
+
+&lt;b&gt;To-Do&lt;/b&gt;:
+
+1. For each &lt;b&gt; cluster, center and CO (community organiser) &lt;/b&gt;:
+
+  1. Count the total number of pregnant women
+  
+  2. Count the number of high risk pregnancies 
+  
+  3. Find the distribution of pregnant women by month of pregnancy 
+
+2. Find the cluster, center and CO with the highest number of pregnancies in the sixth and seventh month
+
+3. For all women in this group, find the total number of field visits
+
+4. For all women in the above group, count the total number of visits per month
+
+]
+
+.pull-right[
+.card[
+
+![](assets/pgadmin.jpg)
+&lt;center&gt;&lt;a href='' target='_blank'&gt;SQL file&lt;/a&gt;&lt;/center&gt;
+]
+]
+]
 
 ---
+## SQL Detective
 
-## SQL Puzzle
+.center[.middle[.card[
+
+![](assets/sql-murder-mystery.png)
+
+&lt;center&gt;&lt;b&gt;&lt;a href='https://mystery.knightlab.com/' target='_blank'&gt;Source: knightlab&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;
+
+]]
+
+[SQL file]()
+
+]
 
 ---
-
 ## Resources to learn and practice SQL
 
-1. https://dataschool.com/learn-sql/
+&lt;iframe title="SQL Resources" aria-label="Table" id="datawrapper-chart-NKL6f" src="https://datawrapper.dwcdn.net/NKL6f/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="559" data-external="1"&gt;&lt;/iframe&gt;&lt;script type="text/javascript"&gt;!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r&lt;t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+&lt;/script&gt;
+
+&lt;center&gt;Click [here]() to download the list of resources&lt;/center&gt;
 
 ---
 class: center, middle

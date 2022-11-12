@@ -1089,7 +1089,6 @@ Select the top 10 villages with the highest number of households
 <b>
   SELECT 
     district, subdistrict,village_town, Households 
-      as total_Households
     FROM census11 
     WHERE rural_urban = 'Rural'
     ORDER BY Households DESC
@@ -1224,26 +1223,101 @@ kableExtra::kable(
 
 ---
 
-## Case Study - 
+## Case Study - Tracking field visits
 
+.middle[
 .pull-left[
 .card[
 
 ![](assets/sneha-map.jpg)
+<center><a href='https://snehamumbai.org/our-story/#:~:text=Brihanmumbai%20Municipal%20Corporation-,Areas%20of%20Work,-We%20work%20across' target='_blank'>Source: SNEHA</a></center>
 ]
 ]
 
+.pull-right[
+
+
+<b>To-Do</b>:
+
+<center> <b>Filter out all cases which are closed</b> </center>
+
+1. For each <b> cluster, center and CO (community organiser) </b>:
+
+  1. Count the total number of pregnant women
+  
+  2. Count the number of high risk pregnancies 
+  
+  3. Find the distribution of pregnant women by month of pregnancy 
+
+2. Find the cluster, center and CO with the highest number of pregnancies in the sixth and seventh month
+
+3. For all women in this group, find the total number of field visits
+
+4. For all women in the above group, count the total number of visits per month
+
+]
+]
+
+---
+SQL Query - Subqueries
 
 
 ---
 
-## SQL Puzzle
+## Case Study - Tracking field visits
+
+.middle[
+.pull-left[
+
+<b>To-Do</b>:
+
+1. For each <b> cluster, center and CO (community organiser) </b>:
+
+  1. Count the total number of pregnant women
+  
+  2. Count the number of high risk pregnancies 
+  
+  3. Find the distribution of pregnant women by month of pregnancy 
+
+2. Find the cluster, center and CO with the highest number of pregnancies in the sixth and seventh month
+
+3. For all women in this group, find the total number of field visits
+
+4. For all women in the above group, count the total number of visits per month
+
+]
+
+.pull-right[
+.card[
+
+![](assets/pgadmin.jpg)
+<center><a href='' target='_blank'>SQL file</a></center>
+]
+]
+]
 
 ---
+## SQL Detective
 
+.center[.middle[.card[
+
+![](assets/sql-murder-mystery.png)
+
+<center><b><a href='https://mystery.knightlab.com/' target='_blank'>Source: knightlab</a></b></center>
+
+]]
+
+[SQL file]()
+
+]
+
+---
 ## Resources to learn and practice SQL
 
-1. https://dataschool.com/learn-sql/
+<iframe title="SQL Resources" aria-label="Table" id="datawrapper-chart-NKL6f" src="https://datawrapper.dwcdn.net/NKL6f/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="559" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+<center>Click [here]() to download the list of resources</center>
 
 ---
 class: center, middle
