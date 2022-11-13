@@ -64,15 +64,59 @@ top:1em;right:1em;
 
 
 
+---
+class: center, middle
 
-## Our Journey (Workshop Overview)
+.card[
+&lt;b&gt;View the slides at &lt;a href='https://bit.ly/sql-sneha' target='_blank'&gt;https://bit.ly/sql-sneha&lt;/a&gt;
+&lt;/b&gt;
 
+![](assets/sql-session-sneha-qr.png)
+]
 
 ---
+## Our Journey (Workshop Overview)
 
+--
+
+.center[
+Over the next two days, we will learn about:
+]
+
+--
+
+1. &lt;b&gt;A dataset&lt;/b&gt;
+
+--
+
+2. &lt;b&gt;What makes a dataset more accesible&lt;/b&gt;
+
+--
+
+3. &lt;b&gt;Analysing data in Excel&lt;/b&gt;
+
+--
+
+4. &lt;b&gt;Database Tools&lt;/b&gt;
+
+--
+
+5. &lt;b&gt;Reading and Writing Structured Query Language (SQL)&lt;/b&gt;
+
+--
+
+6. &lt;b&gt;Analysing data using SQL&lt;/b&gt;
+
+---
 ## Learning Objectives
 
+--
+
+.center[
 A good session will be if by the end you:
+]
+
+--
 
 1. Are aware about the **basic structure of a dataset**
 
@@ -105,16 +149,21 @@ A good session will be if by the end you:
 
 ## A basic dataset
 
-Format - https://allisonhorst.github.io/palmerpenguins/
 
-.center[.card[
+.left-column[
 
-![](assets/penguin-dataset-kaggle.png)
+.middle[.card[
+![](assets/palmerpenguinslogo.png)
 
-&lt;/n&gt;
+&lt;b&gt;[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)&lt;/b&gt;
+]]]
 
-&lt;center&gt;&lt;b&gt;A tabular dataset&lt;/b&gt;&lt;/center&gt;
-]]
+.right-column[
+
+&lt;iframe title="palmerpenguins dataset" aria-label="Table" id="datawrapper-chart-38Mqw" src="https://datawrapper.dwcdn.net/38Mqw/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="614" data-external="1"&gt;&lt;/iframe&gt;&lt;script type="text/javascript"&gt;!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r&lt;t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+&lt;/script&gt;
+
+]
 
 ---
 
@@ -152,6 +201,19 @@ Format - https://allisonhorst.github.io/palmerpenguins/
 
 ## Quiz - Identify the features of a dataset
 
+&lt;br&gt;
+
+.center[
+.card[
+![](assets/ndap.jpg)
+
+&lt;a href='https://ndap.niti.gov.in/info' target='_blank'&gt;National Data and Analytics Platform (or NDAP)&lt;/a&gt; 
+]
+]
+
+.center[.middle[
+Dataset: &lt;b&gt;&lt;a href='' target='_blank'&gt;Statewise Reproductive Child Health (RCH) Report Indicator Related to Maternal Health Antenatal Care (ANC)&lt;/a&gt;&lt;/b&gt;
+]]
 
 ---
 
@@ -183,7 +245,8 @@ How to create a **good quality** dataset
 .center[.middle[.card[
 ![](assets/data-quality-consistency.jpg)
 
-&lt;/n&gt; Sample Table
+&lt;/n&gt;
+&lt;b&gt;Sample Table&lt;/b&gt;
 ]
 ]
 ]
@@ -199,6 +262,8 @@ Do you see any issues with this table ?
 ---
 
 ### Be Consistent - Principles
+
+--
 
 1. Consistent codes for categorical variables
 
@@ -293,7 +358,7 @@ Be consistent in the way in which you write dates. And always use the YYYY-MM-DD
 
 .panel-name[Formatted Table]
 
-![](../module_1_data_collection/assets/formatting-table-1.png)
+![](assets/formatting-table-1.png)
 
 ]
 
@@ -301,7 +366,7 @@ Be consistent in the way in which you write dates. And always use the YYYY-MM-DD
 
 .panel-name[Better alternative]
 
-![](../module_1_data_collection/assets/formatting-table-2.png)
+![](assets/formatting-table-2.png)
 ]
 ]
 
@@ -317,7 +382,7 @@ Be consistent in the way in which you write dates. And always use the YYYY-MM-DD
 
 &lt;/n&gt;
 
-&lt;center&gt; Variable Names &lt;/center&gt;
+&lt;center&gt; &lt;b&gt;Variable Names&lt;/b&gt; &lt;/center&gt;
 
 ]
 
@@ -333,7 +398,7 @@ Be consistent in the way in which you write dates. And always use the YYYY-MM-DD
 
 &lt;/n&gt;
 
-&lt;center&gt;File Names &lt;/center&gt;
+&lt;center&gt;&lt;b&gt;File Names&lt;/b&gt; &lt;/center&gt;
 
 ]
 ]
@@ -1353,10 +1418,23 @@ Maximum Points = 25
 ---
 ## SQL Quiz
 
-Format - Write Query
-
+.center[.card[
+.bg-yellow[
+.black[
 Find the row with maximum number of points **without using MAX**
+]
+]]]
 
+--
+
+.bg-green[ Hint: &lt;b&gt;Use ORDER BY and LIMIT&lt;/b&gt; ]
+
+--
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT * FROM employee &lt;b&gt;ORDER BY points LIMIT 1&lt;/b&gt;
+]]
 
 ---
 ## SQL Query - GROUP BY 

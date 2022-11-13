@@ -37,15 +37,59 @@ style_mono_accent(base_color = "#5b7aa1",link_decoration="underline")
 
 ```
 
+---
+class: center, middle
 
-## Our Journey (Workshop Overview)
+.card[
+<b>View the slides at <a href='https://bit.ly/sql-sneha' target='_blank'>https://bit.ly/sql-sneha</a>
+</b>
 
+![](assets/sql-session-sneha-qr.png)
+]
 
 ---
+## Our Journey (Workshop Overview)
 
+--
+
+.center[
+Over the next two days, we will learn about:
+]
+
+--
+
+1. <b>A dataset</b>
+
+--
+
+2. <b>What makes a dataset more accesible</b>
+
+--
+
+3. <b>Analysing data in Excel</b>
+
+--
+
+4. <b>Database Tools</b>
+
+--
+
+5. <b>Reading and Writing Structured Query Language (SQL)</b>
+
+--
+
+6. <b>Analysing data using SQL</b>
+
+---
 ## Learning Objectives
 
+--
+
+.center[
 A good session will be if by the end you:
+]
+
+--
 
 1. Are aware about the **basic structure of a dataset**
 
@@ -78,16 +122,21 @@ A good session will be if by the end you:
 
 ## A basic dataset
 
-Format - https://allisonhorst.github.io/palmerpenguins/
 
-.center[.card[
+.left-column[
 
-![](assets/penguin-dataset-kaggle.png)
+.middle[.card[
+![](assets/palmerpenguinslogo.png)
 
-</n>
+<b>[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)</b>
+]]]
 
-<center><b>A tabular dataset</b></center>
-]]
+.right-column[
+
+<iframe title="palmerpenguins dataset" aria-label="Table" id="datawrapper-chart-38Mqw" src="https://datawrapper.dwcdn.net/38Mqw/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="614" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+]
 
 ---
 
@@ -125,6 +174,19 @@ Format - https://allisonhorst.github.io/palmerpenguins/
 
 ## Quiz - Identify the features of a dataset
 
+<br>
+
+.center[
+.card[
+![](assets/ndap.jpg)
+
+<a href='https://ndap.niti.gov.in/info' target='_blank'>National Data and Analytics Platform (or NDAP)</a> 
+]
+]
+
+.center[.middle[
+Dataset: <b><a href='' target='_blank'>Statewise Reproductive Child Health (RCH) Report Indicator Related to Maternal Health Antenatal Care (ANC)</a></b>
+]]
 
 ---
 
@@ -156,7 +218,8 @@ How to create a **good quality** dataset
 .center[.middle[.card[
 ![](assets/data-quality-consistency.jpg)
 
-</n> Sample Table
+</n>
+<b>Sample Table</b>
 ]
 ]
 ]
@@ -172,6 +235,8 @@ Do you see any issues with this table ?
 ---
 
 ### Be Consistent - Principles
+
+--
 
 1. Consistent codes for categorical variables
 
@@ -270,7 +335,7 @@ xaringanExtra::use_panelset()
 
 .panel-name[Formatted Table]
 
-![](../module_1_data_collection/assets/formatting-table-1.png)
+![](assets/formatting-table-1.png)
 
 ]
 
@@ -278,7 +343,7 @@ xaringanExtra::use_panelset()
 
 .panel-name[Better alternative]
 
-![](../module_1_data_collection/assets/formatting-table-2.png)
+![](assets/formatting-table-2.png)
 ]
 ]
 
@@ -294,7 +359,7 @@ xaringanExtra::use_panelset()
 
 </n>
 
-<center> Variable Names </center>
+<center> <b>Variable Names</b> </center>
 
 ]
 
@@ -310,7 +375,7 @@ xaringanExtra::use_panelset()
 
 </n>
 
-<center>File Names </center>
+<center><b>File Names</b> </center>
 
 ]
 ]
@@ -766,7 +831,7 @@ kableExtra::kable(sample_df,align = "l")
 ```{r max-row, echo=FALSE, message=FALSE, warning=FALSE}
   tmax <- sample_df %>% 
     select(Points) %>% max()
-  cat(glue::glue("Maximum Points = { tmax }"))
+  cat(paste0(c("Maximum Points = ",tmax)))
 ```
 </h3>
 ]
@@ -775,10 +840,33 @@ kableExtra::kable(sample_df,align = "l")
 ---
 ## SQL Quiz
 
-Format - Write Query
-
+.center[.card[
+.bg-yellow[
+.black[
 Find the row with maximum number of points **without using MAX**
+]
+]]]
 
+<br>
+
+.center[.middle[
+```{r kable-14-1, echo=FALSE, message=FALSE, warning=FALSE}
+kableExtra::kable(sample_df,align = "l")
+```
+]]
+
+--
+
+.center[
+.bg-green[ Hint: <b>Use ORDER BY and LIMIT</b> ]
+]
+
+--
+
+.center[
+.bg-washed-red.b--dark-red.ba.bw2.br3.shadow-5.ph4.mt5[
+SELECT * FROM employee <b>ORDER BY points LIMIT 1</b>
+]]
 
 ---
 ## SQL Query - GROUP BY 
@@ -975,7 +1063,7 @@ kableExtra::kable(
 
 <s>1. Locate the table in the database and print the first 10 rows</s>
 
-2. Count the total number of districts
+Count the total number of districts
 ]
 ]
 
@@ -1022,7 +1110,7 @@ kableExtra::kable(
 
 ~~2. Count the total number of districts~~
 
-3. Select the top 10 districts with the highest number of sub districts
+Select the top 10 districts with the highest number of sub districts
 ]
 ]
 
@@ -1082,7 +1170,7 @@ kableExtra::kable(
 
 ~~3. Select the top 10 districts with the highest number of sub districts~~
 
-4. Select the top 10 villages with the highest number of households
+Select the top 10 villages with the highest number of households
 ]
 ]
 
