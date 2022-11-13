@@ -1391,7 +1391,7 @@ kableExtra::kable(
 .card[
 
 ![](assets/pgadmin.jpg)
-<center><a href='' target='_blank'>SQL file</a></center>
+<center><a href='https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/sql/tracking-field-visits.sql' target='_blank'>SQL file</a></center>
 ]
 ]
 ]
