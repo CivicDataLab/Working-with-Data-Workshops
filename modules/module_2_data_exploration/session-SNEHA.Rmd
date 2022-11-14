@@ -1477,8 +1477,45 @@ SELECT id FROM case_anc_visit_reduced WHERE closed=FALSE AND high_risk_preg='Yes
 
 ]]
 
-[SQL file]()
+[SQL file](https://github.com/CivicDataLab/Working-with-Data-Workshops/blob/master/modules/module_2_data_exploration/sql/sql-murder-mystery.sql)
 
+]
+
+---
+## SQL Detective - Step by Step
+
+.center[
+<b>Open the <a href='https://mystery.knightlab.com/schema.png' target='_blank'>schema diagram</a></b>
+]
+
+.card[
+.center[
+![](assets/schema.png)
+]
+]
+
+---
+## SQL Detective - Step by Step
+
+.center[
+<b>Read the clues & Execute the commands inside the web page</b>
+]
+
+.card[.center[
+![](assets/sql-murder-mystery-window.png)
+]
+]
+
+---
+## SQL Detective - Step by Step
+
+.center[
+<b>Check the answer!</b>
+]
+
+.card[.center[
+![](assets/sql-murder-mystery-answer.png)
+]
 ]
 
 ---
