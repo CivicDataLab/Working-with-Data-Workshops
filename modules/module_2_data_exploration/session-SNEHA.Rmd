@@ -33,7 +33,8 @@ source("../../scripts/utils.R")
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
 library(fontawesome)
-style_mono_accent(base_color = "#5b7aa1",link_decoration="underline")
+style_mono_accent(base_color = "#2A2B2A",link_decoration="underline",
+                  background_color = "#E1E5F2")
 
 ```
 
@@ -1493,4 +1494,4 @@ class: center, middle
 
 # Queries and Feedback
 
-Format - Add feedback form
+<!-- Format - Add feedback form -->
