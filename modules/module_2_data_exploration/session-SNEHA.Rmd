@@ -1532,3 +1532,5 @@ class: center, middle
 # Queries and Feedback
 
 <!-- Format - Add feedback form -->
+
+Share your feedback here -> https://forms.gle/nBwwbiTXCbAdv5Gz5
