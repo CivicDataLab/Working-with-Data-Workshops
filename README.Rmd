@@ -35,6 +35,7 @@ Slides created using the [xaringan](https://github.com/yihui/xaringan) package.
 | 11 | Data Visualisation - Tools and Resources | `storytelling` `tools` `interactivity` `maps` `tables` `resources` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_4_data_viz/session-2/session-2.pdf) | 
 | 12 | Qualitative Data Analysis & Publishing Open Data | `content analysis` `coding` `grounded theory` `tools`  `open data license`  | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_5_qualitative_data_analysis/session-1.pdf) | 
 | 13 | Exploring Datasets - Session at NLU Odisha | `datasets` `google sheets` `excel` `wikipedia` | [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session_nluo.pdf) | 
+| 14 | Explore datasets using SQL - A two day workshop at SNEHA, Mumbai | `database` `postgreSQL` `pgAdmin` `psql`| [HTML](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-SNEHA.html) [PDF](https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-SNEHA.pdf) | 
 
 _Note: The keyboard shortcuts for the HTML version of the slide deck can be viewed by pressing the `h` key_
 
