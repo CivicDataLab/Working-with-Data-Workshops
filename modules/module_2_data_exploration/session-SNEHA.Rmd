@@ -14,6 +14,31 @@ output:
       countIncrementalSlides: false
 ---
 
+```{r add-meta-tags, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "CivicDataLab/Working-with-Data-Workshops") %>%
+  meta_social(
+    title = "Explore data using SQL",
+    description = paste(
+      "A two day workshop at SNEHA, Mumbai"
+    ),
+    url = "https://civicdatalab.in/Working-with-Data-Workshops/modules/module_2_data_exploration/session-SNEHA.html",
+    image = "https://raw.githubusercontent.com/CivicDataLab/Working-with-Data-Workshops/master/modules/module_2_data_exploration/assets/sql-sneha-share-card.png",
+    image_alt = paste(
+      "Title slide:",
+      "Explore data using SQL",
+      "A two day workshop at SNEHA, Mumbai"
+    ),
+    og_type = "website",
+    og_author = "CivicDataLab",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@civicdatalab",
+    twitter_site = "@civicdatalab"
+  )
+
+```
+
 ```{r knitr-opts, message=FALSE, warning=FALSE, include=FALSE}
 knitr::opts_chunk$set(comment = NA)
 ```
