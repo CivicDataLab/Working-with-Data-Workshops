@@ -1,4 +1,3 @@
-library(kableExtra)
 library(dplyr)
 library(readr)
 
@@ -15,3 +14,34 @@ sample_df <- data.frame(
 census_11 <-
   readr::read_csv("data/census-2011-pca-ndap.csv",
                   col_types = cols())
+
+# For screenshots
+# https://www.garrickadenbuie.com/blog/sharing-xaringan-slides/#embed-your-slides
+
+library(webshot2)
+screenshot_share_image <- function(
+    slides_rmd,
+    path_image = "share-card.png"
+) {
+  if (!requireNamespace("webshot2", quietly = TRUE)) {
+    stop(
+      "`webshot2` is required: ",
+      'remotes::install_github("rstudio/webshot2")'
+    )
+  }
+  
+  webshot2::rmdshot(
+    doc = slides_rmd,
+    file = path_image,
+    vheight = 600,
+    vwidth = 600 * 191 / 100,
+    rmd_args = list(
+      output_options = list(
+        nature = list(ratio = "191:100"),
+        self_contained = TRUE
+      )
+    )
+  )
+  
+  path_image
+}
