@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: >-
+  An open module to learn about working with data.
+message: "If you reference this talk, please cite it using the metadata
+  from this file."
+type: course
+authors:
+  - given-names: Apoorv
+    family-names: Anand
+    email: apoorv7491@gmail.com
+    affiliation: 'Data Lead, CivicDataLab'
+url: "https://github.com/CivicDataLab/Working-with-Data-Workshops"
