@@ -105,6 +105,11 @@ Link: https://en.wikipedia.org/wiki/India_at_the_Commonwealth_Games
 
 ---
 
+# Vlookup
+
+[Practice Sheet](https://docs.google.com/spreadsheets/d/1zpfyASP_49zHicC3ExsCgvS9lgydNexumHUkBMeqRHE/edit#gid=894546776)
+
+---
 class: center, middle
 
 # Queries and Feedback
